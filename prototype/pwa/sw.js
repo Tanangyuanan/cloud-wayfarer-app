@@ -1,12 +1,12 @@
-const CACHE_NAME = "cloud_wayfarer-pwa-v21";
+const CACHE_NAME = "cloud_wayfarer-pwa-v25";
 const APP_SHELL = [
   "/app/",
   "/app/index.html",
   "/app/platform-entry.js?v=17",
   "/app/data-client.js?v=18",
   "/app/letter-archive.js?v=19",
-  "/app/styles.css?v=21",
-  "/app/app.js?v=21",
+  "/app/styles.css?v=25",
+  "/app/app.js?v=25",
   "/prototype/ajing-chat.css?v=17",
   "/prototype/ajing-chat.js?v=18",
   "/prototype/assets/ajing-avatar-v1.png",

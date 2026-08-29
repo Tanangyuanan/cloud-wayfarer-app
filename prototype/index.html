@@ -11,12 +11,13 @@
   <title>云游四方｜另一个自己，正在贵州旅行</title>
   <script src="responsive-entry.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="styles.css?v=20260829-journey-origin-v3">
+  <link rel="stylesheet" href="styles.css?v=20260829-someday-plan-v1">
   <link rel="stylesheet" href="/prototype/ajing-chat.css">
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
   <script src="map-config.js" defer></script>
   <script src="map-runtime.js" defer></script>
-  <script src="app.js?v=20260829-journey-origin-v3" defer></script>
+  <script src="mock-two-day-journey.js?v=20260829" defer></script>
+  <script src="app.js?v=20260829-empty-journal-mock-v2" defer></script>
   <script src="/prototype/ajing-chat.js" defer></script>
 </head>
 <body class="is-first-visit" data-state="closed" data-mobile-leaf="visual" data-view="travel" data-journal-mode="library" data-workspace-module="agent">
@@ -115,6 +116,17 @@
             <i class="module-nav-arrow" aria-hidden="true">→</i>
           </button>
 
+          <button class="workspace-module-card is-collection" type="button" role="tab" id="workspace-tab-collection" aria-controls="workspace-panel-collection" aria-selected="false" data-workspace-module-target="collection">
+            <span class="module-nav-index" aria-hidden="true">03</span>
+            <span class="module-nav-copy">
+              <small>有朝一日 · MY SOMEDAY</small>
+              <strong>想去</strong>
+              <b><span id="workspace-collection-count">0 个地方</span><i aria-hidden="true">·</i><span>等你亲自抵达</span></b>
+              <em id="workspace-collection-summary">收藏阿镜的途经点与沿途票据</em>
+            </span>
+            <i class="module-nav-arrow" aria-hidden="true">→</i>
+          </button>
+
           <p class="workspace-rail-note" aria-hidden="true"><i></i>贵州首发 · 阿镜在路上</p>
         </nav>
 
@@ -199,6 +211,42 @@
             <i aria-hidden="true"></i>
             <small>点页边或左右滑动</small>
           </footer>
+        </section>
+
+        <section class="travel-collection" id="workspace-panel-collection" role="tabpanel" aria-labelledby="workspace-tab-collection" aria-label="我的旅行收藏夹" tabindex="-1">
+          <header class="travel-collection-heading">
+            <div>
+              <p><span>MY SOMEDAY</span> · 有朝一日</p>
+              <h2>把远方收好，<br>等真正出发。</h2>
+            </div>
+            <p>阿镜走过的站、翻到的文化页和沿途票据，都可以先放在这里。等你来到贵州，她会照着自己的亲历，把收藏排成一条能走的路。</p>
+          </header>
+
+          <div class="travel-collection-layout">
+            <section class="travel-collection-ledger" aria-labelledby="travel-collection-list-title">
+              <header>
+                <div><small>COLLECTED CLUES</small><h3 id="travel-collection-list-title">我的想去清单</h3></div>
+                <span id="travel-collection-total">0 项</span>
+              </header>
+              <div class="travel-collection-list" id="travel-collection-list" aria-live="polite"></div>
+            </section>
+
+            <article class="travel-plan-sheet" id="travel-plan-sheet" aria-labelledby="travel-plan-title">
+              <header>
+                <span class="travel-plan-seal" aria-hidden="true">镜</span>
+                <div><small>A-JING'S ROUTE NOTE</small><h3 id="travel-plan-title">阿镜替你写攻略</h3></div>
+              </header>
+              <div class="travel-plan-empty" id="travel-plan-empty">
+                <p>先收藏一个真正牵挂的地方。</p>
+                <span>不用一次收很多。到出发那天，我会把每一处为什么值得停、怎样顺路、什么时间更合适，写成一张旅行笺。</span>
+              </div>
+              <div class="travel-plan-result" id="travel-plan-result" hidden aria-live="polite"></div>
+              <footer>
+                <p><b id="travel-plan-selection-count">尚未选择地点</b><span>只使用你主动收藏的内容，不会替你增加必打卡清单。</span></p>
+                <button id="generate-travel-plan" type="button" disabled><span>让阿镜排成一条路</span><i aria-hidden="true">→</i></button>
+              </footer>
+            </article>
+          </div>
         </section>
 
         <aside class="workspace-guide city-journal-library" aria-labelledby="workspace-guide-title">
@@ -310,6 +358,7 @@
             <p class="is-origin"><small>旅程起点</small><b id="journey-origin-name">甲秀楼</b></p>
             <span class="journey-route-stroke" aria-hidden="true"><i></i></span>
             <p class="is-next"><small id="journey-next-label">下一站</small><b id="journey-next-name">修文龙场</b><span id="journey-next-reason">沿山地生活与知行线索继续走</span></p>
+            <button class="route-save-action" id="save-current-waypoint" type="button" aria-pressed="false"><i aria-hidden="true">♡</i><span>收藏此站</span></button>
           </div>
         </div>
         <div class="journey-idle-state">
@@ -409,7 +458,7 @@
                   <p id="journey-discovery-question">想知道它为什么属于这里，再决定是否带走。</p>
                   <dl><div><dt>来自</dt><dd id="journey-discovery-origin">贵州</dd></div><div><dt>履约</dt><dd id="journey-discovery-fulfillment">由第三方平台完成</dd></div></dl>
                   <p class="journey-discovery-price" id="journey-discovery-price">价格以平台实时信息为准</p>
-                  <div class="journey-discovery-actions"><button id="journey-discovery-open" type="button" aria-expanded="false">想尝尝</button><button id="journey-discovery-save" type="button" aria-pressed="false">夹进手账</button></div>
+                  <div class="journey-discovery-actions"><button id="journey-discovery-open" type="button" aria-expanded="false">想尝尝</button><button id="journey-discovery-save" type="button" aria-pressed="false">♡ 收藏到想去</button></div>
                 </div>
               </div>
               <div class="journey-discovery-purchase" id="journey-discovery-purchase" hidden><div><small>第三方信息入口</small><b>地址、付款、订单、物流和售后都留在平台内</b></div><div id="journey-discovery-offers"></div></div>

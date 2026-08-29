@@ -10,7 +10,7 @@
     let hasSeenIntro = false;
 
     try {
-      hasSeenIntro = window.localStorage.getItem("cloud_wayfarer-pwa-recognized-v1") === "true";
+      hasSeenIntro = window.localStorage.getItem("cloud_wayfarer-pwa-onboarding-v2") === "true";
     } catch {
       // 无持久化权限时，优先保留首次邀请。
     }

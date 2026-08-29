@@ -14,7 +14,7 @@
   <link rel="manifest" href="/app/manifest.webmanifest">
   <link rel="icon" type="image/png" href="/app/assets/app-icon-512.png">
   <link rel="apple-touch-icon" href="/app/assets/app-icon-180.png">
-  <link rel="stylesheet" href="/app/styles.css?v=21">
+  <link rel="stylesheet" href="/app/styles.css?v=25">
   <link rel="stylesheet" href="/prototype/ajing-chat.css?v=17">
   <title>云游四方｜另一个自己，正在贵州旅行</title>
 </head>
@@ -37,17 +37,16 @@
           <img src="/prototype/assets/ajing-avatar-v1.png" alt="阿镜">
           <div class="ajing-card-copy">
             <p>你的远方同行者</p>
-            <h1 id="intro-title">嗨，我是阿镜。</h1>
-            <strong>我会替你多走一段路，<br>也把路上的感受寄回来。</strong>
+            <h1 id="intro-title">我是阿镜</h1>
           </div>
           <footer><span>A-JING · 云游四方</span><b>黔</b></footer>
         </div>
         <div class="onboarding-introduction">
-          <p>我沿真实路线在贵州旅行。每次抵达，我会把照片、声音和当地的故事写进你的手帐；等你真的来到这里，也可以拍下眼前，让我陪你一起看懂。</p>
+          <p>你告诉我想去哪里，我先去探探路，再把沿途的位置、照片、声音和故事装订进你的旅行手帐。</p>
           <ul>
-            <li><i>01</i><span><b>真实地走</b><small>路线、天气和停留都会留下痕迹</small></span></li>
-            <li><i>02</i><span><b>慢慢寄回</b><small>来信与见闻会长成你的一页手帐</small></span></li>
-            <li><i>03</i><span><b>到了也同行</b><small>拍下眼前，从一件小事读懂一地</small></span></li>
+            <li><i>01</i><span><b>告诉我去哪</b><small>选一个你想了解的地方</small></span></li>
+            <li><i>02</i><span><b>我先去探路</b><small>沿真实路线持续向前</small></span></li>
+            <li><i>03</i><span><b>把一路带回</b><small>照片、声音和故事写进手帐</small></span></li>
           </ul>
         </div>
       </article>
@@ -134,7 +133,7 @@
     <footer class="onboarding-controls">
       <p id="onboarding-status" role="status" aria-live="polite"></p>
       <button class="onboarding-back" id="onboarding-back" type="button" aria-label="返回上一步" hidden><svg aria-hidden="true"><use href="/app/assets/icons.svg#back"/></svg><span>上一步</span></button>
-      <button class="onboarding-next" id="enter-app" type="button"><span>认识了，继续</span><svg aria-hidden="true"><use href="/app/assets/icons.svg#arrow"/></svg></button>
+      <button class="onboarding-next" id="enter-app" type="button"><span>告诉我想去哪</span><svg aria-hidden="true"><use href="/app/assets/icons.svg#arrow"/></svg></button>
     </footer>
   </section>
 
@@ -280,9 +279,9 @@
       <section class="route-favorites" aria-labelledby="mobile-favorites-title">
         <header><div><small>MY FAVORITES</small><h2 id="mobile-favorites-title">我的收藏</h2></div><span id="mobile-favorite-count">0 项</span></header>
         <div class="mobile-favorite-list" id="mobile-favorite-list"><p>点亮路线上的小星星，把想亲自去看的地方收在这里。</p></div>
-        <button class="mobile-plan-route" id="mobile-plan-favorites" type="button" disabled><span><small>到达当地后</small><b>一键规划收藏路线</b></span><i>→</i></button>
+        <button class="mobile-plan-route" id="mobile-plan-favorites" type="button" disabled><span><small>让走过的阿镜来排</small><b>一键写成我的旅行计划</b></span><i>→</i></button>
         <p class="mobile-location-note">规划时才会请求位置，且不会保存。</p>
-        <div class="mobile-route-plan" id="mobile-route-plan" hidden><header><b>建议到访顺序</b><small id="mobile-route-plan-note"></small></header><ol id="mobile-route-plan-list"></ol><a id="mobile-route-navigation" href="#" target="_blank" rel="noreferrer">从第一站开始导航 ↗</a></div>
+        <div class="mobile-route-plan" id="mobile-route-plan" hidden><header><b>阿镜替你排的路</b><small id="mobile-route-plan-note"></small></header><blockquote id="mobile-route-plan-guide"></blockquote><ol id="mobile-route-plan-list"></ol><p class="mobile-route-plan-closing">真正出发前，我还会按日期、天气和开放情况再替你重排一次。—— 阿镜</p><a id="mobile-route-navigation" href="#" target="_blank" rel="noreferrer">从第一站开始导航 ↗</a></div>
       </section>
       <p class="route-note" id="route-note">起点与已经发生的路线会留在这里；下一站确定后也会写进行程。</p>
     </div>
@@ -303,7 +302,7 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="/app/data-client.js?v=20" defer></script>
   <script src="/app/letter-archive.js?v=19" defer></script>
-  <script src="/app/app.js?v=21" defer></script>
+  <script src="/app/app.js?v=25" defer></script>
   <script src="/prototype/ajing-chat.js?v=18" defer></script>
 </body>
 </html>

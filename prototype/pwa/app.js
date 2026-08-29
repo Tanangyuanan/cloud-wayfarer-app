@@ -3,8 +3,10 @@
   if (!Data) throw new Error("mobile_data_client_missing");
   const LetterArchive = window.CloudWayfarerLetterArchive;
 
-  const INTRO_KEY = "cloud_wayfarer-pwa-recognized-v1";
-  const FOOTPRINT_FAVORITES_KEY = "cloud_wayfarer-footprint-favorites-v1";
+  // 新版逐页引导必须独立于旧首页的“已看过”标记，否则老用户会直接跳过新体验。
+  const INTRO_KEY = "cloud_wayfarer-pwa-onboarding-v2";
+  const FOOTPRINT_FAVORITES_KEY = "cloud_wayfarer-travel-wishlist-v1";
+  const LEGACY_FOOTPRINT_FAVORITES_KEY = "cloud_wayfarer-footprint-favorites-v1";
   const FAVORITE_LOCATIONS = {
     guiyang: { lat: 26.647, lng: 106.6302 }, qingyan: { lat: 26.3311, lng: 106.6868 }, xiuwen: { lat: 26.8389, lng: 106.594 },
     anshun: { lat: 26.2537, lng: 105.9476 }, huangguoshu: { lat: 25.9907, lng: 105.6664 }, zhijin: { lat: 26.748, lng: 105.87 },
@@ -56,7 +58,7 @@
     pace: "沉浸节奏"
   };
   const ONBOARDING_STEP_LABELS = ["先认识一下", "01 / 05", "02 / 05", "03 / 05", "04 / 05", "确认出发"];
-  const ONBOARDING_NEXT_LABELS = ["认识了，继续", "选好了，下一页", "就看这些", "这样走", "用这个节奏", "和阿镜一起出发"];
+  const ONBOARDING_NEXT_LABELS = ["告诉我想去哪", "选好了，下一页", "就看这些", "这样走", "用这个节奏", "和阿镜一起出发"];
   const DEFAULT_SCENE_IMAGE = "/app/assets/guizhou-road.jpg";
   const failedSceneUrls = new Set();
   const ONSITE_LAYER_COPY = {
@@ -341,7 +343,18 @@
   function loadFootprintFavorites() {
     try {
       const stored = JSON.parse(localStorage.getItem(FOOTPRINT_FAVORITES_KEY) || "[]");
-      return Array.isArray(stored) ? stored.filter((item) => item?.id && item?.locationId) : [];
+      const legacy = Array.isArray(stored) && stored.length
+        ? []
+        : JSON.parse(localStorage.getItem(LEGACY_FOOTPRINT_FAVORITES_KEY) || "[]");
+      return [...(Array.isArray(stored) ? stored : []), ...(Array.isArray(legacy) ? legacy : [])]
+        .filter((item) => item?.id && (item?.locationName || item?.title))
+        .map((item) => ({
+          ...item,
+          id: item.locationId && item.entryId && !String(item.id).includes(":") ? `waypoint:${item.locationId}` : item.id,
+          locationName: item.locationName || item.title,
+          excerpt: item.excerpt || item.note || "想亲自去看看这里。",
+          imageUrl: item.imageUrl || item.image || DEFAULT_SCENE_IMAGE
+        }));
     } catch {
       return [];
     }
@@ -353,7 +366,10 @@
 
   function mobileFavoriteFromEntry(entry) {
     return {
-      id: String(entry.id || entry.locationId),
+      id: `waypoint:${entry.locationId}`,
+      source: "ajing-waypoint",
+      sourceId: String(entry.id || entry.locationId),
+      type: "阿镜途经点",
       journeyId: journey?.id || null,
       entryId: entry.id || null,
       locationId: entry.locationId,
@@ -361,18 +377,21 @@
       routeOrder: Number(entry.routeOrder) || 0,
       title: entry.content?.headline || entry.content?.letterTitle || entry.locationName,
       excerpt: entry.content?.postcardLine || entry.content?.observation || entry.content?.deck || "想亲自去看看这里。",
+      note: entry.content?.postcardLine || entry.content?.observation || entry.content?.deck || "想亲自去看看这里。",
       imageUrl: safeUrl(entry.image?.url) || DEFAULT_SCENE_IMAGE,
+      image: safeUrl(entry.image?.url) || DEFAULT_SCENE_IMAGE,
+      selected: true,
       savedAt: new Date().toISOString()
     };
   }
 
   function isMobileFavorite(entry) {
-    const id = String(entry?.id || entry?.locationId || "");
+    const id = entry?.locationId ? `waypoint:${entry.locationId}` : String(entry?.id || "");
     return Boolean(id && footprintFavorites.some((item) => item.id === id));
   }
 
   function toggleMobileFavorite(entry) {
-    const id = String(entry?.id || entry?.locationId || "");
+    const id = entry?.locationId ? `waypoint:${entry.locationId}` : String(entry?.id || "");
     const index = footprintFavorites.findIndex((item) => item.id === id);
     if (index >= 0) {
       footprintFavorites.splice(index, 1);
@@ -428,6 +447,9 @@
 
   function mobileOrderedFavorites(origin) {
     const remaining = footprintFavorites.map((favorite) => ({ favorite, location: FAVORITE_LOCATIONS[favorite.locationId] })).filter((item) => item.location);
+    const withoutCoordinates = footprintFavorites
+      .filter((favorite) => !FAVORITE_LOCATIONS[favorite.locationId])
+      .map((favorite) => ({ favorite, location: null, distance: null }));
     const ordered = [];
     let cursor = origin;
     while (remaining.length) {
@@ -444,7 +466,7 @@
       ordered.push({ ...next, distance: closestDistance });
       cursor = next.location;
     }
-    return ordered;
+    return [...ordered, ...withoutCoordinates];
   }
 
   function mobileNavigationUrl(origin, first, second = null) {
@@ -462,15 +484,26 @@
     const note = document.querySelector("#mobile-route-plan-note");
     const list = document.querySelector("#mobile-route-plan-list");
     const navigation = document.querySelector("#mobile-route-navigation");
+    const guide = document.querySelector("#mobile-route-plan-guide");
     list.replaceChildren();
     ordered.forEach((item, index) => {
       const row = document.createElement("li");
-      row.append(element("i", "", String(index + 1).padStart(2, "0")), element("b", "", item.favorite.locationName), element("small", "", origin ? `直线约 ${item.distance < 1000 ? `${Math.round(item.distance)}m` : `${(item.distance / 1000).toFixed(1)}km`}` : "按收藏顺序"));
+      const distanceLabel = origin && item.location
+        ? `直线约 ${item.distance < 1000 ? `${Math.round(item.distance)}m` : `${(item.distance / 1000).toFixed(1)}km`}`
+        : item.location ? "按收藏顺序" : "出发前核对位置";
+      row.append(element("i", "", String(index + 1).padStart(2, "0")), element("b", "", item.favorite.locationName), element("small", "", distanceLabel));
       list.append(row);
     });
     note.textContent = origin ? "已按离你由近到远整理" : "未读取位置，先按收藏顺序整理";
-    if (origin && ordered.length) {
-      navigation.href = mobileNavigationUrl(origin, ordered[0], ordered[1]);
+    if (guide) {
+      const names = ordered.map((item) => item.favorite.locationName).join("、");
+      const visitedCount = ordered.filter((item) => ["ajing-waypoint", "footprint"].includes(item.favorite.source) || item.favorite.entryId).length;
+      guide.textContent = visitedCount === ordered.length
+        ? `这些地方我都曾在路上停过。先从${ordered[0]?.favorite.locationName || "离你最近的一站"}开始，再顺着${names}慢慢走；不用赶着集邮，每一站都给自己留一点真正看懂它的时间。`
+        : `这份收藏里，有 ${visitedCount} 处是我亲自停过的，其余是认真查过的文化页或票据。我先顺着${names}替你排路，没到过的地方不会冒充亲历。`;
+    }
+    if (origin && ordered[0]?.location) {
+      navigation.href = mobileNavigationUrl(origin, ordered[0], ordered.slice(1).find((item) => item.location));
       navigation.hidden = false;
     } else navigation.hidden = true;
     panel.hidden = false;
@@ -489,23 +522,25 @@
   }
 
   async function planMobileFavorites() {
-    const available = footprintFavorites.map((favorite) => ({ favorite, location: FAVORITE_LOCATIONS[favorite.locationId] })).filter((item) => item.location);
+    const available = footprintFavorites.map((favorite) => ({ favorite, location: FAVORITE_LOCATIONS[favorite.locationId] || null }));
+    const routable = available.filter((item) => item.location);
     if (!available.length) {
-      showToast("这些收藏暂时没有可规划的地点坐标");
+      showToast("先收藏一个想去的地方");
       return;
     }
     const button = document.querySelector("#mobile-plan-favorites");
     button.disabled = true;
-    button.querySelector("b").textContent = "正在确认你的位置…";
+    button.querySelector("b").textContent = routable.length ? "正在确认你的位置…" : "阿镜正在翻自己的手账…";
     try {
+      if (!routable.length) throw new Error("no_routable_location");
       const origin = await locateUser();
       renderMobileRoutePlan(mobileOrderedFavorites(origin), origin);
     } catch {
       renderMobileRoutePlan(available.sort((a, b) => Number(a.favorite.routeOrder || 0) - Number(b.favorite.routeOrder || 0)), null);
-      showToast("没有读取你的位置，已先按收藏顺序整理");
+      showToast(routable.length ? "没有读取你的位置，已先按收藏顺序整理" : "已先写成旅行笺，出发前再核对具体位置");
     } finally {
       button.disabled = false;
-      button.querySelector("b").textContent = "重新规划收藏路线";
+      button.querySelector("b").textContent = "按这些收藏重新写计划";
     }
   }
 
@@ -1711,13 +1746,14 @@
       window.location.reload();
     });
     window.addEventListener("load", () => {
-      navigator.serviceWorker.register("/app/sw.js?v=19", { updateViaCache: "none" })
+      navigator.serviceWorker.register("/app/sw.js?v=25", { updateViaCache: "none" })
         .then((registration) => registration.update())
         .catch(() => {});
     });
   }
 
-  if (hasRecognized()) showApp(false);
-  if (params.get("screen")) switchScreen(params.get("screen"));
+  const hasCompletedCurrentOnboarding = hasRecognized();
+  if (hasCompletedCurrentOnboarding) showApp(false);
+  if (params.get("screen") && hasCompletedCurrentOnboarding) switchScreen(params.get("screen"));
   hydrateJourney({ silent: true });
 })();

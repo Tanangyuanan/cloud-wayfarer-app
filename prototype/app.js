@@ -7,6 +7,8 @@ const CITY_JOURNAL_STORAGE_KEY = "cloud_wayfarer-selected-city-journal";
 const LEAF_INTERACTIONS_STORAGE_KEY = "cloud_wayfarer-leaf-interactions";
 const COMMERCE_ACTIONS_STORAGE_KEY = "cloud_wayfarer-commerce-actions-v1";
 const COMMERCE_SAVED_STORAGE_KEY = "cloud_wayfarer-commerce-saved-v1";
+const TRAVEL_COLLECTION_STORAGE_KEY = "cloud_wayfarer-travel-wishlist-v1";
+const LEGACY_FOOTPRINT_FAVORITES_KEY = "cloud_wayfarer-footprint-favorites-v1";
 const ROUTE_SEGMENT_CACHE_STORAGE_KEY = "cloud_wayfarer-route-segments-v1";
 const TRAVEL_PACE_PROFILES = Object.freeze({
   "实时同行": { fallbackMinutes: 40, multiplier: 1, summary: "按真实道路时间" },
@@ -113,6 +115,7 @@ let onsitePhotoUrl = null;
 let onsiteStorySources = [];
 let activeCommerceDiscovery = null;
 let commerceDiscoveryLocationId = null;
+let travelCollectionItems = loadTravelCollectionItems();
 const completedLeafInteractions = new Set(loadCompletedLeafInteractions());
 
 const ONSITE_STORIES = {
@@ -179,7 +182,8 @@ function hasStartedAiJourney() {
 function initializeAiJourneyState() {
   const forceIdle = pageParams.get("idle") === "1";
   const forceActive = pageParams.get("active") === "1";
-  const isActive = forceActive || (!forceIdle && hasStartedAiJourney());
+  const demoJourney = pageParams.get("demo") === "1" ? window.CLOUD_WAYFARER_TWO_DAY_JOURNEY_MOCK : null;
+  const isActive = Boolean(demoJourney) || forceActive || (!forceIdle && hasStartedAiJourney());
   body.classList.toggle("is-ai-travelling", isActive);
   const clockState = document.querySelector(".travel-running-mark small");
   if (clockState) clockState.textContent = isActive ? "旅程进行中" : "阿镜正在准备";
@@ -189,7 +193,11 @@ function initializeAiJourneyState() {
   const mapCompactStatus = document.querySelector("#map-compact-status");
   if (mapCompactStatus) mapCompactStatus.textContent = isActive ? "实时位置 · 镜头跟随中" : "贵州 · 探索地图";
   renderUserJournalPage(0);
-  if (isActive) window.setTimeout(() => hydratePersonalJourney(), 0);
+  if (demoJourney) {
+    window.setTimeout(() => renderPersonalJourney(demoJourney, { focusLatest: true }), 0);
+  } else if (isActive) {
+    window.setTimeout(() => hydratePersonalJourney(), 0);
+  }
 }
 
 function initializeFirstVisitState() {
@@ -1266,6 +1274,357 @@ function saveBookmarks() {
   localStorage.setItem("cloud_wayfarer-unified-bookmarks", JSON.stringify([...bookmarks]));
   const count = document.querySelector("#bookmark-count");
   if (count) count.textContent = String(bookmarks.size);
+}
+
+function normalizeTravelCollectionItem(item) {
+  if (!item || typeof item !== "object") return null;
+  const locationId = String(item.locationId || "").trim();
+  const title = String(item.title || item.locationName || "").trim();
+  const id = String(item.id || item.sourceId || (locationId ? `waypoint:${locationId}` : "")).trim();
+  if (!id || !title) return null;
+  return {
+    id,
+    source: String(item.source || (item.entryId ? "footprint" : "saved")),
+    sourceId: String(item.sourceId || item.entryId || id),
+    type: String(item.type || "途经点"),
+    title,
+    locationName: String(item.locationName || title),
+    locationId: locationId || null,
+    city: String(item.city || "贵州"),
+    note: String(item.note || item.excerpt || "想亲自去看看这里。"),
+    image: String(item.image || item.imageUrl || ""),
+    routeOrder: Number(item.routeOrder) || 0,
+    selected: item.selected !== false,
+    savedAt: item.savedAt || new Date().toISOString()
+  };
+}
+
+function loadTravelCollectionItems() {
+  const read = (key) => {
+    try {
+      const value = JSON.parse(window.localStorage.getItem(key) || "[]");
+      return Array.isArray(value) ? value : [];
+    } catch {
+      return [];
+    }
+  };
+  const current = read(TRAVEL_COLLECTION_STORAGE_KEY);
+  const legacy = current.length ? [] : read(LEGACY_FOOTPRINT_FAVORITES_KEY);
+  const unique = new Map();
+  [...current, ...legacy].forEach((item) => {
+    const normalized = normalizeTravelCollectionItem(item);
+    if (normalized) unique.set(normalized.id, normalized);
+  });
+  return [...unique.values()];
+}
+
+function persistTravelCollection() {
+  try {
+    window.localStorage.setItem(TRAVEL_COLLECTION_STORAGE_KEY, JSON.stringify(travelCollectionItems));
+  } catch {
+    // 收藏仍保留在本次页面状态中。
+  }
+}
+
+function matchingTravelCollectionIndex(item) {
+  return travelCollectionItems.findIndex((saved) => saved.id === item.id
+    || (item.locationId && saved.locationId === item.locationId && saved.type === item.type));
+}
+
+function isTravelCollectionItemSaved(item) {
+  return Boolean(item && matchingTravelCollectionIndex(normalizeTravelCollectionItem(item) || item) >= 0);
+}
+
+function addTravelCollectionItem(item, { announce = true } = {}) {
+  const normalized = normalizeTravelCollectionItem(item);
+  if (!normalized) return false;
+  const index = matchingTravelCollectionIndex(normalized);
+  if (index >= 0) travelCollectionItems[index] = { ...travelCollectionItems[index], ...normalized, selected: true };
+  else travelCollectionItems.unshift(normalized);
+  persistTravelCollection();
+  renderTravelCollection();
+  if (announce) showTravelToast(`${normalized.title}已收藏到“想去”`);
+  return true;
+}
+
+function removeTravelCollectionItem(item, { announce = true } = {}) {
+  const normalized = normalizeTravelCollectionItem(item);
+  if (!normalized) return false;
+  const index = matchingTravelCollectionIndex(normalized);
+  if (index < 0) return false;
+  const [removed] = travelCollectionItems.splice(index, 1);
+  persistTravelCollection();
+  renderTravelCollection();
+  if (announce) showTravelToast(`${removed.title}已从“想去”取下`);
+  return true;
+}
+
+function toggleTravelCollectionItem(item, options = {}) {
+  return isTravelCollectionItemSaved(item)
+    ? removeTravelCollectionItem(item, options)
+    : addTravelCollectionItem(item, options);
+}
+
+function collectionItemFromNode(node) {
+  const city = CITY_JOURNALS.find((entry) => entry.id === node?.cityId)?.name || selectedCity()?.name || "贵州";
+  let image = "";
+  try { image = plateAssetFor(node)?.src || ""; } catch { /* node may not have a visual plate yet */ }
+  return normalizeTravelCollectionItem({
+    id: `culture:${node.id}`,
+    source: "culture-page",
+    sourceId: node.id,
+    type: "文化页",
+    title: node.name,
+    locationName: node.name,
+    locationId: node.locationId || null,
+    city,
+    note: node.summary || node.canvas?.scene || "翻到这里时，想起有一天可以亲自来看。",
+    image
+  });
+}
+
+function currentWaypointCollectionItem() {
+  const state = personalJourney?.state || {};
+  const locationId = state.currentLocationId || "guiyang";
+  const title = JOURNEY_LOCATION_NAMES[locationId] || document.querySelector("#journey-title")?.textContent?.split("·")[0]?.trim() || "贵阳";
+  const entry = [...(personalJourney?.entries || [])].reverse().find((candidate) => candidate.locationId === locationId);
+  return normalizeTravelCollectionItem({
+    id: `waypoint:${locationId}`,
+    source: "ajing-waypoint",
+    sourceId: entry?.id || locationId,
+    type: "阿镜途经点",
+    title,
+    locationName: title,
+    locationId,
+    city: "贵州",
+    note: entry?.content?.postcardLine || entry?.content?.observation || document.querySelector("#ajing-thought")?.textContent || "阿镜在这里停过，想留给未来的你。",
+    image: entry?.image?.url || document.querySelector("#ajing-scene-image")?.getAttribute("src") || "",
+    routeOrder: Number(entry?.routeOrder) || (personalJourney?.route || []).indexOf(locationId) + 1
+  });
+}
+
+function collectionItemFromJourneyEntry(entry) {
+  if (!entry?.locationId) return null;
+  const title = entry.locationName || JOURNEY_LOCATION_NAMES[entry.locationId] || entry.locationId;
+  return normalizeTravelCollectionItem({
+    id: `waypoint:${entry.locationId}`,
+    source: "ajing-waypoint",
+    sourceId: entry.id || entry.locationId,
+    type: "阿镜途经点",
+    title,
+    locationName: title,
+    locationId: entry.locationId,
+    city: "贵州",
+    note: entry.content?.postcardLine || entry.content?.observation || entry.content?.deck || `阿镜曾在${title}停过。`,
+    image: entry.image?.url || "",
+    routeOrder: Number(entry.routeOrder) || 0
+  });
+}
+
+function uniqueJournalDayCollectionItems(day) {
+  const unique = new Map();
+  (day?.entries || []).forEach((entry) => {
+    const item = collectionItemFromJourneyEntry(entry);
+    if (item && !unique.has(item.id)) unique.set(item.id, item);
+  });
+  return [...unique.values()];
+}
+
+function syncJournalDaySaveButtons() {
+  document.querySelectorAll("[data-journal-save-ids]").forEach((button) => {
+    const ids = String(button.dataset.journalSaveIds || "").split("|").filter(Boolean);
+    const savedCount = ids.filter((id) => travelCollectionItems.some((item) => item.id === id)).length;
+    const allSaved = ids.length > 0 && savedCount === ids.length;
+    button.setAttribute("aria-pressed", String(allSaved));
+    button.classList.toggle("is-partial", savedCount > 0 && !allSaved);
+    button.querySelector("span").textContent = allSaved ? "♥" : "♡";
+    const places = button.dataset.journalSavePlaces || "这一天的地点";
+    button.setAttribute("aria-label", `${allSaved ? "取消收藏" : "收藏"}${places}`);
+    button.title = allSaved ? "已收藏到想去" : "收藏这一天的地点";
+  });
+}
+
+function toggleJournalDayCollection(items) {
+  const validItems = items.map(normalizeTravelCollectionItem).filter(Boolean);
+  if (!validItems.length) return;
+  const allSaved = validItems.every((item) => isTravelCollectionItemSaved(item));
+  if (allSaved) {
+    const ids = new Set(validItems.map((item) => item.id));
+    travelCollectionItems = travelCollectionItems.filter((item) => !ids.has(item.id));
+  } else {
+    validItems.forEach((item) => {
+      const index = matchingTravelCollectionIndex(item);
+      if (index >= 0) travelCollectionItems[index] = { ...travelCollectionItems[index], ...item, selected: true };
+      else travelCollectionItems.unshift(item);
+    });
+  }
+  persistTravelCollection();
+  renderTravelCollection();
+  syncJournalDaySaveButtons();
+  const names = validItems.map((item) => item.title).join("、");
+  showTravelToast(allSaved ? `${names}已从“想去”取下` : `${names}已收藏到“想去”`);
+}
+
+function commerceTravelCollectionItem(discovery) {
+  if (!discovery) return null;
+  return normalizeTravelCollectionItem({
+    id: `discovery:${discovery.id}`,
+    source: "journey-discovery",
+    sourceId: discovery.id,
+    type: discovery.kind === "ticket" ? "沿途票据" : "沿途发现",
+    title: discovery.title,
+    locationName: discovery.title,
+    locationId: discovery.locationId || null,
+    city: discovery.origin || "贵州",
+    note: discovery.question || discovery.moment,
+    image: discovery.image || ""
+  });
+}
+
+function collectionVisitAdvice(item, index) {
+  const advice = [
+    "上午先到，不急着拍照，留一点时间顺着现场慢慢看。",
+    "把这一站放在午后，附近的街巷和日常生活比匆忙打卡更值得停。",
+    "傍晚再走这一段，光线柔下来以后，地形与建筑的关系会更清楚。"
+  ];
+  if (item.type === "沿途票据") return "先核对开放日期、预约与退改规则，再把它放进正式行程。";
+  if (item.type === "沿途发现") return "先尝小份、问清产地，把味道留给真实到访的那一天。";
+  if (item.type === "文化页") return "出发前先翻回这页，到了现场再找一件具体的物或一个正在生活的人。";
+  return advice[index % advice.length];
+}
+
+function renderTravelPlanResult(items) {
+  const result = document.querySelector("#travel-plan-result");
+  const empty = document.querySelector("#travel-plan-empty");
+  if (!result || !empty) return;
+  result.replaceChildren();
+  const days = Math.max(1, Math.ceil(items.length / 3));
+  const visitedCount = items.filter((item) => ["ajing-waypoint", "footprint"].includes(item.source)).length;
+  const intro = document.createElement("blockquote");
+  intro.textContent = visitedCount === items.length
+    ? `这些地方我都曾在路上停过。我把 ${items.length} 处收藏排成约 ${days} 天：不赶着集邮，每到一站都给你留一点真正看懂它的时间。`
+    : `这 ${items.length} 处收藏里，有 ${visitedCount} 处是我亲自停过的，其余是一路认真查过的文化页或票据。我先把它们排成约 ${days} 天，没到过的地方不会冒充亲历。`;
+  const meta = document.createElement("p");
+  meta.className = "travel-plan-meta";
+  const duration = document.createElement("span");
+  duration.textContent = `贵州 · ${days} 天参考`;
+  const trace = document.createElement("b");
+  trace.textContent = items.map((item) => item.title).join(" → ");
+  meta.append(duration, trace);
+  const route = document.createElement("ol");
+  route.className = "travel-plan-route";
+  items.forEach((item, index) => {
+    const stop = document.createElement("li");
+    const number = document.createElement("i");
+    number.textContent = String(index + 1).padStart(2, "0");
+    const copy = document.createElement("div");
+    const day = document.createElement("small");
+    day.textContent = `DAY ${String(Math.floor(index / 3) + 1).padStart(2, "0")} · ${item.type}`;
+    const title = document.createElement("b");
+    title.textContent = item.title;
+    const note = document.createElement("p");
+    note.textContent = collectionVisitAdvice(item, index);
+    copy.append(day, title, note);
+    stop.append(number, copy);
+    route.append(stop);
+  });
+  const closing = document.createElement("p");
+  closing.className = "travel-plan-closing";
+  closing.textContent = "真正出发前，再让我按你的日期、同行人和当天开放情况重排一次。天气和临时闭馆，比任何固定攻略都更有决定权。—— 阿镜";
+  result.append(intro, meta, route, closing);
+  empty.hidden = true;
+  result.hidden = false;
+}
+
+function renderTravelCollection() {
+  const list = document.querySelector("#travel-collection-list");
+  const total = document.querySelector("#travel-collection-total");
+  const count = document.querySelector("#workspace-collection-count");
+  const summary = document.querySelector("#workspace-collection-summary");
+  const selection = document.querySelector("#travel-plan-selection-count");
+  const generate = document.querySelector("#generate-travel-plan");
+  const plan = document.querySelector("#travel-plan-result");
+  const empty = document.querySelector("#travel-plan-empty");
+  if (!list) return;
+  list.replaceChildren();
+  const selected = travelCollectionItems.filter((item) => item.selected !== false);
+  if (total) total.textContent = `${travelCollectionItems.length} 项`;
+  if (count) count.textContent = `${travelCollectionItems.length} 个地方`;
+  if (summary) summary.textContent = travelCollectionItems.length ? `已收好 ${travelCollectionItems.length} 条远方线索` : "收藏阿镜的途经点与沿途票据";
+  if (selection) selection.textContent = selected.length ? `已选 ${selected.length} 处 · 可生成攻略` : "尚未选择地点";
+  if (generate) generate.disabled = selected.length === 0;
+
+  if (!travelCollectionItems.length) {
+    const shell = document.createElement("div");
+    shell.className = "travel-collection-empty";
+    shell.innerHTML = "<span aria-hidden=\"true\">♡</span><b>这里还空着</b><p>在阿镜的路线、票据或城市文化页点一下“收藏”，远方就会落进这只夹袋。</p>";
+    list.append(shell);
+  } else {
+    travelCollectionItems.forEach((item, index) => {
+      const row = document.createElement("article");
+      row.className = "travel-collection-item";
+      const check = document.createElement("button");
+      check.type = "button";
+      check.className = "travel-collection-check";
+      check.setAttribute("aria-pressed", String(item.selected !== false));
+      check.setAttribute("aria-label", `${item.selected !== false ? "不纳入" : "纳入"}本次计划：${item.title}`);
+      check.textContent = item.selected !== false ? "✓" : "";
+      const copy = document.createElement("div");
+      copy.className = "travel-collection-copy";
+      const kicker = document.createElement("small");
+      kicker.textContent = `${String(index + 1).padStart(2, "0")} · ${item.type}`;
+      const title = document.createElement("b");
+      title.textContent = item.title;
+      const note = document.createElement("p");
+      note.textContent = item.note;
+      copy.append(kicker, title, note);
+      const remove = document.createElement("button");
+      remove.type = "button";
+      remove.className = "travel-collection-remove";
+      remove.setAttribute("aria-label", `从想去清单移除：${item.title}`);
+      remove.textContent = "取下";
+      check.addEventListener("click", () => {
+        item.selected = item.selected === false;
+        persistTravelCollection();
+        renderTravelCollection();
+      });
+      remove.addEventListener("click", () => removeTravelCollectionItem(item));
+      row.append(check, copy, remove);
+      list.append(row);
+    });
+  }
+  if (plan && empty && !plan.hidden) {
+    plan.hidden = true;
+    plan.replaceChildren();
+    empty.hidden = false;
+  }
+  updateWorkspaceModuleSummaries();
+  syncJournalDaySaveButtons();
+}
+
+function initializeTravelCollection() {
+  document.querySelector("#save-current-waypoint")?.addEventListener("click", () => {
+    const item = currentWaypointCollectionItem();
+    toggleTravelCollectionItem(item);
+    syncCurrentWaypointSaveButton();
+  });
+  document.querySelector("#generate-travel-plan")?.addEventListener("click", () => {
+    const items = travelCollectionItems
+      .filter((item) => item.selected !== false)
+      .sort((a, b) => (a.routeOrder || Number.MAX_SAFE_INTEGER) - (b.routeOrder || Number.MAX_SAFE_INTEGER));
+    if (!items.length) return;
+    const button = document.querySelector("#generate-travel-plan");
+    button.disabled = true;
+    button.setAttribute("aria-busy", "true");
+    button.querySelector("span").textContent = "阿镜正在翻自己的手账…";
+    window.setTimeout(() => {
+      renderTravelPlanResult(items);
+      button.disabled = false;
+      button.removeAttribute("aria-busy");
+      button.querySelector("span").textContent = "按这些收藏重新排";
+    }, reduceMotion ? 0 : 620);
+  });
+  renderTravelCollection();
 }
 
 function selectedCity() {
@@ -3101,6 +3460,7 @@ function workspaceModulePanels() {
   return {
     map: travelMapStage,
     journal: document.querySelector("#workspace-panel-journal"),
+    collection: document.querySelector("#workspace-panel-collection"),
     agent: journeyBriefPanel
   };
 }
@@ -3210,7 +3570,7 @@ function initializeWorkspaceModules() {
   updateWorkspaceModuleSummaries();
   syncWorkspaceModuleAccessibility();
   const requestedModule = pageParams.get("module");
-  if (["journal", "agent"].includes(requestedModule)) setWorkspaceModule(requestedModule);
+  if (["journal", "agent", "collection"].includes(requestedModule)) setWorkspaceModule(requestedModule);
 }
 
 function setProductView(view) {
@@ -3389,9 +3749,12 @@ function createJourneyFootprintArchivePage(days, activeDayIndex, page, firstDayS
   list.className = "journal-day-traces";
   for (const [index, day] of days.entries()) {
     const routeNames = day.entries.map((entry) => entry.locationName).filter((name, routeIndex, all) => name && name !== all[routeIndex - 1]);
+    const collectionItems = uniqueJournalDayCollectionItems(day);
     const item = document.createElement("li");
+    item.className = "journal-day-trace-item";
     const button = document.createElement("button");
     button.type = "button";
+    button.className = "journal-day-trace-open";
     const targetSpreadPage = firstDaySpreadPage + index;
     button.dataset.journalTarget = String(targetSpreadPage);
     button.setAttribute("aria-label", `翻到${day.date.month}月${day.date.day}日：${routeNames.join("到")}`);
@@ -3400,16 +3763,30 @@ function createJourneyFootprintArchivePage(days, activeDayIndex, page, firstDayS
     const date = journalElement("time", "", `${day.date.month}/${day.date.day}`);
     date.dateTime = day.date.key;
     const copy = journalElement("span", "journal-day-trace-copy");
+    const dayStatus = day.date.isBackfilled
+      ? "阿镜补记"
+      : index === days.length - 1 ? "今日" : `第 ${index + 1} 天`;
     copy.append(
-      journalElement("small", "", `${day.date.weekday || `第 ${index + 1} 天`}${day.date.isBackfilled ? " · 阿镜补记" : " · 今日"}`),
+      journalElement("small", "", `${day.date.weekday || "旅行日"} · ${dayStatus}`),
       journalElement("b", "", routeNames.join(" → ") || "这一天还在路上"),
       journalElement("em", "", `${day.entries.length} 站 · 已装订成日页`)
     );
-    button.append(date, copy, journalElement("i", "", index === activeDayIndex ? "●" : "○"));
+    button.append(date, copy);
     button.addEventListener("click", () => renderUserJournalPage(targetSpreadPage));
-    item.append(button);
+
+    const saveButton = document.createElement("button");
+    saveButton.type = "button";
+    saveButton.className = "journal-day-save";
+    saveButton.dataset.journalSaveIds = collectionItems.map((entry) => entry.id).join("|");
+    saveButton.dataset.journalSavePlaces = routeNames.join("、") || "这一天的地点";
+    saveButton.setAttribute("aria-pressed", "false");
+    saveButton.append(journalElement("span", "", "♡"), journalElement("small", "", "想去"));
+    saveButton.addEventListener("click", () => toggleJournalDayCollection(collectionItems));
+    if (!collectionItems.length) saveButton.disabled = true;
+    item.append(button, saveButton);
     list.append(item);
   }
+  window.requestAnimationFrame(syncJournalDaySaveButtons);
 
   const totalStops = days.reduce((sum, day) => sum + day.entries.length, 0);
   const footer = journalElement("footer", "journal-footprint-archive-footer");
@@ -3509,6 +3886,13 @@ function appendDailyJournalSources(parent, entries) {
 }
 
 function dailyJournalProvenance(entries, date) {
+  if (entries.some((entry) => entry?.meta?.mock)) {
+    return {
+      kind: "mock",
+      label: "演示手记",
+      detail: "两天样例数据 · 不代表真实轨迹、实时天气或现场经历"
+    };
+  }
   if (date?.isBackfilled || entries.some((entry) => entry?.meta?.journalBackfilled)) {
     return {
       kind: "backfilled",
@@ -3748,6 +4132,17 @@ function setTouristMomentText(selector, value) {
   if (element && value) element.textContent = value;
 }
 
+function syncCurrentWaypointSaveButton() {
+  const button = document.querySelector("#save-current-waypoint");
+  if (!button) return;
+  const item = currentWaypointCollectionItem();
+  const saved = isTravelCollectionItemSaved(item);
+  button.setAttribute("aria-pressed", String(saved));
+  button.querySelector("i").textContent = saved ? "♥" : "♡";
+  button.querySelector("span").textContent = saved ? "已收藏" : "收藏此站";
+  button.setAttribute("aria-label", `${saved ? "取消收藏" : "收藏"}${item.title}`);
+}
+
 function renderJourneyRouteLedger(journey) {
   const state = journey?.state || {};
   const route = Array.isArray(journey?.route) ? journey.route : [];
@@ -3769,6 +4164,7 @@ function renderJourneyRouteLedger(journey) {
   setTouristMomentText("#ajing-window-kicker", `阿镜从${originName}出发 · 此刻`);
   const ledger = document.querySelector("#journey-route-ledger");
   if (ledger) ledger.setAttribute("aria-label", `本段旅程从${originName}出发，此刻在${currentName}，${nextLabel}${nextName}`);
+  syncCurrentWaypointSaveButton();
 }
 
 function captureLiveFootprint() {
@@ -4516,7 +4912,15 @@ function renderPersonalJourney(journey, options = {}) {
   personalJourney = journey;
   syncJourneySettingsFromServer(journey);
   removeGeneratedJournalSpreads();
-  const entries = [...(journey?.entries || [])].filter((entry) => entry.status === "ready").sort((a, b) => a.routeOrder - b.routeOrder);
+  const readyEntries = [...(journey?.entries || [])]
+    .filter((entry) => entry.status === "ready")
+    .sort((a, b) => a.routeOrder - b.routeOrder);
+  const mockEntries = window.CLOUD_WAYFARER_TWO_DAY_JOURNEY_MOCK?.entries || [];
+  const useMockEntries = readyEntries.length === 0
+    && mockEntries.length > 0
+    && pageParams.get("demo") !== "0";
+  // 空旅程先展示清楚标注的样例日页；真实条目一旦寄回，下一次渲染会自动让位。
+  const entries = useMockEntries ? [...mockEntries] : readyEntries;
   const days = backfillJournalDays(entries, groupJournalEntriesByDay(entries));
   const firstDaySpreadPage = getUserJournalMaxPage() + 1;
   for (const [dayIndex, day] of days.entries()) {
@@ -4543,9 +4947,9 @@ function renderPersonalJourney(journey, options = {}) {
     );
   }
   if (pendingGeneration?.[1]?.status === "generating") setUserJournalStatus("新的一页正在写进手帐");
-  else if (entries.length) setUserJournalStatus(`已记录 ${days.length} 天 · ${entries.length} 站`);
+  else if (entries.length) setUserJournalStatus(`已记录 ${days.length} 天 · ${entries.length} 站${useMockEntries || journey?.meta?.mock ? " · 演示数据" : ""}`);
   else setUserJournalStatus("等待第一站内容");
-  journalArrivalTriggered = entries.some((entry) => entry.locationId === "xiuwen");
+  journalArrivalTriggered = readyEntries.some((entry) => entry.locationId === "xiuwen");
   const maxPage = getUserJournalMaxPage();
   if (userJournalPage > maxPage) userJournalPage = maxPage;
   updateUserJournalControls(maxPage);
@@ -5152,9 +5556,13 @@ function renderCommerceDiscovery(discovery) {
     findImage.alt = discovery.imageAlt || discovery.title;
   }
   const save = document.querySelector("#journey-discovery-save");
-  const isSaved = savedCommerceIds().has(discovery.id);
+  const collectionItem = commerceTravelCollectionItem(discovery);
+  const isSaved = savedCommerceIds().has(discovery.id) || isTravelCollectionItemSaved(collectionItem);
+  if (savedCommerceIds().has(discovery.id) && !isTravelCollectionItemSaved(collectionItem)) {
+    addTravelCollectionItem(collectionItem, { announce: false });
+  }
   save?.setAttribute("aria-pressed", String(isSaved));
-  if (save) save.textContent = isSaved ? "已夹进手账" : "夹进手账";
+  if (save) save.textContent = isSaved ? "♥ 已收藏到想去" : "♡ 收藏到想去";
   const purchase = document.querySelector("#journey-discovery-purchase");
   const open = document.querySelector("#journey-discovery-open");
   if (purchase) purchase.hidden = true;
@@ -5235,10 +5643,13 @@ function initializeCommerceDiscovery() {
     if (!activeCommerceDiscovery) return;
     const next = save.getAttribute("aria-pressed") !== "true";
     save.setAttribute("aria-pressed", String(next));
-    save.textContent = next ? "已夹进手账" : "夹进手账";
+    save.textContent = next ? "♥ 已收藏到想去" : "♡ 收藏到想去";
     setCommerceSaved(activeCommerceDiscovery.id, next);
+    const collectionItem = commerceTravelCollectionItem(activeCommerceDiscovery);
+    if (next) addTravelCollectionItem(collectionItem, { announce: false });
+    else removeTravelCollectionItem(collectionItem, { announce: false });
     recordCommerceAction(next ? "saved" : "unsaved");
-    showTravelToast(next ? `${activeCommerceDiscovery.title}已夹进旅行手账` : `${activeCommerceDiscovery.title}已从手账取下`);
+    showTravelToast(next ? `${activeCommerceDiscovery.title}已收藏到“想去”` : `${activeCommerceDiscovery.title}已从“想去”取下`);
   });
 
   dismiss.addEventListener("click", () => {
@@ -6296,12 +6707,15 @@ document.querySelector("#mobile-visual-prev").addEventListener("click", previous
 
 document.querySelector("#bookmark-button").addEventListener("click", () => {
   if (!currentNode) return;
+  const collectionItem = collectionItemFromNode(currentNode);
   if (bookmarks.has(currentNode.id)) {
     bookmarks.delete(currentNode.id);
+    removeTravelCollectionItem(collectionItem, { announce: false });
     showToast(`已从夹页中取下：${currentNode.name}`);
   } else {
     bookmarks.add(currentNode.id);
-    showToast(`已夹住这一页：${currentNode.name}`);
+    addTravelCollectionItem(collectionItem, { announce: false });
+    showToast(`已收藏到“想去”：${currentNode.name}`);
   }
   saveBookmarks();
   updatePage(currentNode);
@@ -6510,6 +6924,12 @@ async function init() {
   sourceCatalog = details.sources || {};
   catalogEntries = spectrum.length ? spectrum : nodes;
   nodeById = new Map(nodes.map((node) => [node.id, node]));
+  bookmarks.forEach((nodeId) => {
+    const node = nodeById.get(nodeId);
+    if (node && !isTravelCollectionItemSaved(collectionItemFromNode(node))) {
+      addTravelCollectionItem(collectionItemFromNode(node), { announce: false });
+    }
+  });
   applyEditionCopy();
   renderChapterTabs();
   saveBookmarks();
@@ -6525,4 +6945,5 @@ initializeWorkspaceModules();
 setProductView(REQUESTED_VIEW || "travel");
 initializeAiToolPanel();
 initializeCommerceDiscovery();
+initializeTravelCollection();
 init();
