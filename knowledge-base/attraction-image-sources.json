@@ -1,0 +1,54 @@
+{
+  "title": "贵州名胜手账图片来源登记",
+  "updatedAt": "2026-08-29",
+  "usageBoundary": "当前图片仅用于产品内部原型与内容评审。来源页公开可见不等于已取得商业使用许可；产品公开发布、投放或印刷前，须逐张向图片权利方确认授权或替换为自有、采购及明确开放许可素材。",
+  "items": {
+    "WAT-001": { "name": "黄果树瀑布", "local": "prototype/assets/attractions/WAT-001.jpg", "credit": "客路 Klook", "page": "https://www.klook.com/en-US/activity/153780-guizhou-guiyang-huangguoshu-xiaoqikong-xijiang-qianhu-miao-village/", "image": "https://res.klook.com/images/fl_lossy.progressive%2Cq_65/c_crop%2Cx_0%2Cy_0%2Ch_906%2Cw_800/activities/yat3nwx1grawjrkcimua/4-DayTourtoHuangguoshuWaterfallandMiaoVillageinGuiyang.jpg", "rightsStatus": "原型使用，正式发布前需授权" },
+    "WAT-002": {
+      "name": "龙宫",
+      "local": "prototype/assets/attractions/WAT-002.jpg",
+      "credit": "携程攻略",
+      "page": "https://you.ctrip.com/sight/anshun518/17678.html",
+      "image": "https://youimg1.c-ctrip.com/target/0106r1200085cvjauB300_W_10000_1200.jpg?proc=autoorient",
+      "rightsStatus": "原型使用，正式发布前需授权",
+      "additional": [
+        {
+          "local": "prototype/assets/attractions/WAT-002-boat-xinhua.png",
+          "credit": "新华社",
+          "page": "https://jp.news.cn/20240114/a4aac5f64bdd43dab2144ceb934f1a02/c.html",
+          "image": "https://jp.news.cn/20240114/a4aac5f64bdd43dab2144ceb934f1a02/20240114a4aac5f64bdd43dab2144ceb934f1a02_2024011413ea29a2412f4586ae9b37cbbf4c1a0a.jpg",
+          "rightsStatus": "原型使用，正式发布前需向新华社取得授权"
+        },
+        {
+          "local": "prototype/assets/attractions/WAT-002-longmen-waterfall.jpg",
+          "credit": "龙宫镇政务报道 / 澎湃新闻政务号",
+          "page": "https://www.thepaper.cn/newsDetail_forward_23993525",
+          "image": "https://imagepphcloud.thepaper.cn/pph/image/262/923/433.jpg",
+          "rightsStatus": "原型使用，正式发布前需向图片权利方取得授权"
+        }
+      ]
+    },
+    "WAT-003": { "name": "赤水丹霞", "local": "prototype/assets/attractions/WAT-003.jpg", "credit": "中国驻大阪旅游代表处", "page": "https://www.cnta-osaka.jp/8742.html", "image": "https://www.cnta-osaka.jp/wp-content/uploads/2023/10/%E8%B5%A4%E6%B0%B4%E4%B8%B9%E9%9C%9E.jpeg", "rightsStatus": "原型使用，正式发布前需授权" },
+    "HER-001": { "name": "荔波小七孔", "local": "prototype/assets/attractions/HER-001.jpg", "credit": "新华社记者 陶亮", "page": "https://www.xinhuanet.com/photo/2021-04/16/c_1127338098.htm", "image": "https://www.xinhuanet.com/photo/2021-04/16/1127338098_16185555001961n.jpg", "rightsStatus": "原型使用，正式发布前需授权" },
+    "HER-002": { "name": "梵净山", "local": "prototype/assets/attractions/HER-002.jpg", "credit": "新华社发（李鹤 摄）", "page": "https://www.news.cn/photo/2022-08/13/c_1128912718.htm", "image": "https://www.news.cn/photo/2022-08/13/1128912718_16603755833381n.jpg", "rightsStatus": "原型使用，正式发布前需授权" },
+    "HER-003": { "name": "施秉云台山", "local": "prototype/assets/attractions/HER-003.jpg", "credit": "新华社记者 刘续", "page": "https://www.xinhuanet.com/culture/20220809/8b4a290b4fea43229de49ae7f0d98008/c.html", "image": "https://www.xinhuanet.com/culture/20220809/8b4a290b4fea43229de49ae7f0d98008/202208098b4a290b4fea43229de49ae7f0d98008_2022080921174bfc2a8847a584834feeccc94f99.jpg", "rightsStatus": "原型使用，正式发布前需授权" },
+    "HIS-101": { "name": "遵义会议会址", "local": "prototype/assets/culture/RED-004.jpg", "credit": "凤凰网资料图", "page": "https://news.ifeng.com/c/83jJdcaxTHz", "rightsStatus": "既有项目素材，正式发布前需复核授权" },
+    "HIS-102": { "name": "海龙屯", "local": "prototype/assets/hailongtun-now-wide.jpg", "credit": "项目现场采集", "rightsStatus": "项目自有素材，发布范围仍需按项目约定确认" },
+    "HIS-103": { "name": "安顺屯堡", "local": "prototype/assets/culture/PER-012.jpg", "credit": "贵州广播电视台 · 安顺地戏", "page": "https://movement.gzstv.com/news/detail/5EG97/", "rightsStatus": "既有项目素材，正式发布前需复核授权" },
+    "VIL-001": { "name": "西江千户苗寨", "local": "prototype/assets/attractions/VIL-001.jpg", "credit": "携程攻略", "page": "https://you.ctrip.com/sight/leishan2345/134057.html", "image": "https://dimg04.c-ctrip.com/images/1mh4312000fezcgky14DE_W_640_10000.jpg?proc=autoorient", "rightsStatus": "原型使用，正式发布前需授权" },
+    "VIL-002": { "name": "肇兴侗寨", "local": "prototype/assets/culture/CRA-009.png", "credit": "贵州广播电视台", "page": "https://www.gzstv.com/a/55fa9425304a4e35b7e0bbcab557aaf1", "rightsStatus": "既有项目素材，正式发布前需复核授权" },
+    "VIL-003": { "name": "加榜梯田", "local": "prototype/assets/attractions/VIL-003.jpg", "credit": "去哪儿攻略 · 游客图", "page": "https://touch.travel.qunar.com/comment/10157917946", "image": "https://youimg1.c-ctrip.com/target/100w11000000r4lljE24F.jpg", "rightsStatus": "原型使用，正式发布前需向作者授权" },
+    "CTY-001": { "name": "青岩古镇", "local": "prototype/assets/attractions/CTY-001.jpg", "credit": "携程攻略", "page": "https://you.ctrip.com/sight/guiyang33/20403.html", "image": "https://youimg1.c-ctrip.com/target/01028120005wxi2ud4835_D_10000_1200.jpg?proc=autoorient", "rightsStatus": "原型使用，正式发布前需授权" },
+    "CTY-002": { "name": "镇远古城", "local": "prototype/assets/attractions/CTY-002.png", "credit": "文化和旅游部", "page": "https://zhuanti.mct.gov.cn/xcss2024_xcygj/guizhou/detail/7184.html", "image": "https://zhuanti.mct.gov.cn/Uploads/Picture/2024/07/17/u66971d9fec981.png", "rightsStatus": "原型使用，正式发布前需授权" },
+    "CTY-003": { "name": "甲秀楼", "local": "prototype/assets/attractions/CTY-003.jpg", "credit": "携程攻略", "page": "https://you.ctrip.com/sight/guiyang33/18081.html", "image": "https://youimg1.c-ctrip.com/target/100q170000011jbcy479A.jpg", "rightsStatus": "原型使用，正式发布前需授权" },
+    "SEA-001": { "name": "百里杜鹃", "local": "prototype/assets/attractions/SEA-001.jpg", "credit": "新华社记者 杨楹", "page": "https://www.news.cn/photo/2023-03/28/c_1129473133.htm", "image": "https://www.news.cn/photo/2023-03/28/1129473133_16800112001351n.jpg", "rightsStatus": "原型使用，正式发布前需授权" },
+    "SEA-002": { "name": "妥乐古银杏", "local": "prototype/assets/attractions/SEA-002.jpg", "credit": "文化和旅游部", "page": "https://zhuanti.mct.gov.cn/csxz2022/guizhou/detail_g7yU_727/4425.html", "image": "https://zhuanti.mct.gov.cn/Uploads/Picture/2023/09/18/u6507fa6185a41.jpg", "rightsStatus": "原型使用，正式发布前需授权" },
+    "SEA-003": { "name": "威宁草海", "local": "prototype/assets/attractions/SEA-003.jpg", "credit": "国家林业和草原局 · 沈光勇 摄", "page": "https://www.forestry.gov.cn/c/www/zrzrbhq/611909.jhtml", "image": "https://www.forestry.gov.cn/u/cms/www/202502/26090409iixz.jpg", "rightsStatus": "原型使用，正式发布前需授权" },
+    "DEP-001": { "name": "织金洞", "local": "prototype/assets/attractions/DEP-001.jpg", "credit": "织金洞世界地质公园官网", "page": "https://www.zjdgeopark.com/cn/document/52.html", "image": "https://www.zjdgeopark.com/uploads/cms._document/20240425/4269927036629f568eb94a.jpg", "rightsStatus": "原型使用，正式发布前需授权" },
+    "DEP-002": { "name": "中国天眼", "local": "prototype/assets/attractions/DEP-002.png", "credit": "新华社记者 欧东衢 / 刘续", "page": "https://www.news.cn/photo/20250415/03894374060f43cf8548eb738106da93/c.html", "image": "https://www.news.cn/photo/20250415/03894374060f43cf8548eb738106da93/2025041503894374060f43cf8548eb738106da93_202504157fdf405fdbe848c7aa7f58c86f2e0514.jpg", "rightsStatus": "原型使用，正式发布前需授权" },
+    "DEP-003": { "name": "朱砂古镇", "local": "prototype/assets/culture/IND-002.png", "credit": "新华网 · 万山汞矿遗址", "page": "http://www.gz.news.cn/20240114/2cf25996a355488a886c500225aed074/c.html", "rightsStatus": "既有项目素材，正式发布前需复核授权" },
+    "PEK-001": { "name": "万峰林", "local": "prototype/assets/culture/ENV-001.jpg", "credit": "新华社", "page": "https://www.news.cn/photo/2023-05/28/c_1129651862_9.htm", "rightsStatus": "既有项目素材，正式发布前需复核授权" },
+    "PEK-002": { "name": "马岭河峡谷", "local": "prototype/assets/attractions/PEK-002.jpg", "credit": "贵州国际传播平台 / China Daily", "page": "https://www.eguizhou.gov.cn/guiyang/2020-06/25/c_730324.htm", "image": "https://subsites.chinadaily.com.cn/guizhou/guiyang/att/20220420/1650427470967014506.jpg", "rightsStatus": "原型使用，正式发布前需授权" },
+    "PEK-003": { "name": "乌蒙大草原", "local": "prototype/assets/attractions/PEK-003.jpg", "credit": "文化和旅游部", "page": "https://zhuanti.mct.gov.cn/csxz2022/guizhou/detail_g7yU_727/4425.html", "image": "https://zhuanti.mct.gov.cn/Uploads/Picture/2023/09/18/u6507fa8220838.jpg", "rightsStatus": "原型使用，正式发布前需授权" }
+  }
+}

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" role="img" aria-label="普通自行车">
+  <defs>
+    <linearGradient id="frame" x1="34" y1="28" x2="78" y2="61" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7f9a8c"/>
+      <stop offset="1" stop-color="#23483a"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="27" cy="55" r="20" stroke="#1b2924" stroke-width="5"/>
+    <circle cx="93" cy="55" r="20" stroke="#1b2924" stroke-width="5"/>
+    <circle cx="27" cy="55" r="16" stroke="#d8ded6" stroke-width="1.5" opacity=".9"/>
+    <circle cx="93" cy="55" r="16" stroke="#d8ded6" stroke-width="1.5" opacity=".9"/>
+    <path d="M27 55 47 31l18 24H27Zm38 0 14-28 14 28M47 31h32" stroke="url(#frame)" stroke-width="5"/>
+    <circle cx="65" cy="55" r="6" fill="#d9c17a" stroke="#24483a" stroke-width="3"/>
+    <path d="m65 55 9 6m-9-6-8-7" stroke="#24483a" stroke-width="2.5"/>
+    <path d="M43 26h13" stroke="#24332d" stroke-width="5"/>
+    <path d="m79 27-4-10m1 1h12" stroke="#24332d" stroke-width="4"/>
+    <path d="m88 19 6 4" stroke="#24332d" stroke-width="3"/>
+  </g>
+</svg>

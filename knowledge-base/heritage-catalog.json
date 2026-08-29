@@ -1,0 +1,2129 @@
+{
+  "meta": {
+    "name": "云游四方九城非遗扩充目录",
+    "version": "1.0.0",
+    "updatedAt": "2026-08-29",
+    "note": "从贵州省政府公布的第六批省级非遗名录中选择适合旅行阅读的项目，并补入少量国家级及第三批省级代表项目。当前均为目录线索，不替代完整官方名录。",
+    "grain": "一个城市中的一个非遗代表性项目线索",
+    "selection": "优先口述传统、音乐舞蹈、戏剧、节庆、传统技艺与地方饮食；传统医药仅少量收录并明确内容边界。"
+  },
+  "sources": {
+    "R-GZ-FY-06": {
+      "title": "贵州省人民政府：第六批省级非物质文化遗产代表性项目名录",
+      "url": "https://www.guizhou.gov.cn/zwgk/zcfg/szfwj/qff/202501/t20250102_86447162.html"
+    },
+    "R-GZ-FY-03": {
+      "title": "中国非物质文化遗产网：贵州第三批省级非物质文化遗产名录",
+      "url": "https://www.ihchina.cn/project_details/16923.html"
+    },
+    "R-GZ-FY-NAT": {
+      "title": "贵州省非物质文化遗产保护中心：国家级代表性项目目录",
+      "url": "https://www.gzfwz.org.cn/gjml/gjj/depgy/"
+    }
+  },
+  "stats": {
+    "total": 104,
+    "byCity": {
+      "贵阳": 12,
+      "遵义": 12,
+      "安顺": 8,
+      "六盘水": 12,
+      "毕节": 12,
+      "铜仁": 12,
+      "黔东南": 12,
+      "黔南": 12,
+      "黔西南": 12
+    },
+    "byDomain": {
+      "手工艺、服饰与传统美术": 27,
+      "节日、礼俗与信俗": 19,
+      "非遗文化与传统体育": 4,
+      "非遗文化与传统医药": 2,
+      "非遗文化与口述传统": 10,
+      "音乐、舞蹈与戏剧": 30,
+      "饮食、茶与酒 · 非遗技艺": 12
+    }
+  },
+  "nodes": [
+    {
+      "id": "IHC-GY-001",
+      "cityId": "guiyang",
+      "contentKind": "culture",
+      "name": "红军长征过贵阳的故事",
+      "domain": "非遗文化与口述传统",
+      "status": "A",
+      "summary": "红军长征过贵阳的故事由贵阳市申报，列入贵州省第六批省级非遗代表性项目。它把地方历史、族群记忆与口头讲述连在一起，适合从讲述者、版本和发生地继续深读。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "红军长征过贵阳的故事",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民间文学",
+        "location": "贵阳市",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-GY-002",
+      "cityId": "guiyang",
+      "contentKind": "culture",
+      "name": "贵州广陵派古琴艺术",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "贵州广陵派古琴艺术由贵阳市云岩区申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "贵州广陵派古琴艺术",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统音乐",
+        "location": "贵阳市云岩区",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-GY-003",
+      "cityId": "guiyang",
+      "contentKind": "culture",
+      "name": "清镇姊妹箫",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "清镇姊妹箫（名录项目：姊妹箫）由贵阳市清镇市申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "姊妹箫",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统音乐",
+        "location": "贵阳市清镇市",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-GY-004",
+      "cityId": "guiyang",
+      "contentKind": "culture",
+      "name": "清镇地戏",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "清镇地戏（名录项目：地戏）由贵阳市清镇市申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "地戏",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统戏剧",
+        "location": "贵阳市清镇市",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-GY-005",
+      "cityId": "guiyang",
+      "contentKind": "culture",
+      "name": "傩仪刀技",
+      "domain": "非遗文化与传统体育",
+      "status": "A",
+      "summary": "傩仪刀技由贵阳市云岩区申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从身体动作、器具、规则和节庆场景进入当地仍在传承的技艺。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "傩仪刀技",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统体育、游艺与杂技",
+        "location": "贵阳市云岩区",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-GY-006",
+      "cityId": "guiyang",
+      "contentKind": "culture",
+      "name": "贵阳剪纸",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "贵阳剪纸（名录项目：剪纸）由贵阳市申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "剪纸",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统美术",
+        "location": "贵阳市",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-GY-007",
+      "cityId": "guiyang",
+      "contentKind": "culture",
+      "name": "观山湖蜡染",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "观山湖蜡染（名录项目：蜡染技艺）由贵阳市观山湖区申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "蜡染技艺",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "贵阳市观山湖区",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-GY-008",
+      "cityId": "guiyang",
+      "contentKind": "culture",
+      "name": "乌当枫香印染",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "乌当枫香印染（名录项目：枫香印染技艺）由贵阳市乌当区申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "枫香印染技艺",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "贵阳市乌当区",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-GY-009",
+      "cityId": "guiyang",
+      "contentKind": "culture",
+      "name": "清镇地戏面具制作",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "清镇地戏面具制作（名录项目：地戏面具制作技艺）由贵阳市清镇市申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "地戏面具制作技艺",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "贵阳市清镇市",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-GY-010",
+      "cityId": "guiyang",
+      "contentKind": "culture",
+      "name": "贵阳布依族服饰",
+      "domain": "节日、礼俗与信俗",
+      "status": "A",
+      "summary": "贵阳布依族服饰（名录项目：布依族服饰）由贵阳市申报，列入贵州省第六批省级非遗代表性项目。这条目录线索先记录参与者、时间、场所和共同体关系，避免把仍在发生的民俗压成一次表演。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "布依族服饰",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民俗",
+        "location": "贵阳市",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-GY-011",
+      "cityId": "guiyang",
+      "contentKind": "culture",
+      "name": "清镇苗族跳场",
+      "domain": "节日、礼俗与信俗",
+      "status": "A",
+      "summary": "清镇苗族跳场（名录项目：苗族跳场）由贵阳市清镇市申报，列入贵州省第六批省级非遗代表性项目。这条目录线索先记录参与者、时间、场所和共同体关系，避免把仍在发生的民俗压成一次表演。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "苗族跳场",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民俗",
+        "location": "贵阳市清镇市",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-GY-012",
+      "cityId": "guiyang",
+      "contentKind": "culture",
+      "name": "清镇水龙节",
+      "domain": "节日、礼俗与信俗",
+      "status": "A",
+      "summary": "清镇水龙节（名录项目：水龙节）由贵阳市清镇市申报，列入贵州省第六批省级非遗代表性项目。这条目录线索先记录参与者、时间、场所和共同体关系，避免把仍在发生的民俗压成一次表演。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "水龙节",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民俗",
+        "location": "贵阳市清镇市",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-ZY-001",
+      "cityId": "zunyi",
+      "contentKind": "culture",
+      "name": "仡佬族吹打乐",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "仡佬族吹打乐由遵义市道真仡佬族苗族自治县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "仡佬族吹打乐",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统音乐",
+        "location": "遵义市道真仡佬族苗族自治县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-ZY-002",
+      "cityId": "zunyi",
+      "contentKind": "culture",
+      "name": "沙滩文化九月九诗会",
+      "domain": "节日、礼俗与信俗",
+      "status": "A",
+      "summary": "沙滩文化九月九诗会由遵义市新蒲新区申报，列入贵州省第六批省级非遗代表性项目。这条目录线索先记录参与者、时间、场所和共同体关系，避免把仍在发生的民俗压成一次表演。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "沙滩文化九月九诗会",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民俗",
+        "location": "遵义市新蒲新区",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-ZY-003",
+      "cityId": "zunyi",
+      "contentKind": "culture",
+      "name": "茅台镇重阳祭水习俗",
+      "domain": "节日、礼俗与信俗",
+      "status": "A",
+      "summary": "茅台镇重阳祭水习俗由遵义市仁怀市申报，列入贵州省第六批省级非遗代表性项目。这条目录线索先记录参与者、时间、场所和共同体关系，避免把仍在发生的民俗压成一次表演。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "茅台镇重阳祭水习俗",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民俗",
+        "location": "遵义市仁怀市",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-ZY-004",
+      "cityId": "zunyi",
+      "contentKind": "culture",
+      "name": "绥阳花灯戏",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "绥阳花灯戏（名录项目：花灯戏）由遵义市绥阳县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "花灯戏",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统戏剧",
+        "location": "遵义市绥阳县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-ZY-005",
+      "cityId": "zunyi",
+      "contentKind": "culture",
+      "name": "道真仡佬族剪纸",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "道真仡佬族剪纸（名录项目：剪纸（仡佬族剪纸））由遵义市道真仡佬族苗族自治县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "剪纸（仡佬族剪纸）",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统美术",
+        "location": "遵义市道真仡佬族苗族自治县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-ZY-006",
+      "cityId": "zunyi",
+      "contentKind": "culture",
+      "name": "黔北咂酒酿造技艺",
+      "domain": "饮食、茶与酒 · 非遗技艺",
+      "status": "A",
+      "summary": "黔北咂酒酿造技艺（名录项目：酿造酒传统制作技艺（黔北咂酒酿造技艺））由遵义市正安县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从原料、工具、火候与作坊传承进入地方味道，不把非遗只当成一道成品。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "酿造酒传统制作技艺（黔北咂酒酿造技艺）",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "遵义市正安县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-ZY-007",
+      "cityId": "zunyi",
+      "contentKind": "culture",
+      "name": "珍酒酿造技艺",
+      "domain": "饮食、茶与酒 · 非遗技艺",
+      "status": "A",
+      "summary": "珍酒酿造技艺（名录项目：蒸馏酒传统酿造技艺（珍酒酿造技艺））由遵义市汇川区申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从原料、工具、火候与作坊传承进入地方味道，不把非遗只当成一道成品。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "蒸馏酒传统酿造技艺（珍酒酿造技艺）",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "遵义市汇川区",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-ZY-008",
+      "cityId": "zunyi",
+      "contentKind": "culture",
+      "name": "习水酱香型白酒传统酿造技艺",
+      "domain": "饮食、茶与酒 · 非遗技艺",
+      "status": "A",
+      "summary": "习水酱香型白酒传统酿造技艺（名录项目：蒸馏酒传统酿造技艺（习水酱香型白酒传统酿造技艺））由遵义市习水县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从原料、工具、火候与作坊传承进入地方味道，不把非遗只当成一道成品。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "蒸馏酒传统酿造技艺（习水酱香型白酒传统酿造技艺）",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "遵义市习水县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-ZY-009",
+      "cityId": "zunyi",
+      "contentKind": "culture",
+      "name": "尚嵇豆腐皮制作技艺",
+      "domain": "饮食、茶与酒 · 非遗技艺",
+      "status": "A",
+      "summary": "尚嵇豆腐皮制作技艺（名录项目：豆制品制作技艺（尚嵇豆腐皮制作技艺））由遵义市播州区申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从原料、工具、火候与作坊传承进入地方味道，不把非遗只当成一道成品。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "豆制品制作技艺（尚嵇豆腐皮制作技艺）",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "遵义市播州区",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-ZY-010",
+      "cityId": "zunyi",
+      "contentKind": "culture",
+      "name": "赤水泉水豆花制作技艺",
+      "domain": "饮食、茶与酒 · 非遗技艺",
+      "status": "A",
+      "summary": "赤水泉水豆花制作技艺（名录项目：豆制品制作技艺（赤水泉水豆花制作技艺））由遵义市赤水市申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从原料、工具、火候与作坊传承进入地方味道，不把非遗只当成一道成品。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "豆制品制作技艺（赤水泉水豆花制作技艺）",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "遵义市赤水市",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-ZY-011",
+      "cityId": "zunyi",
+      "contentKind": "culture",
+      "name": "道真油茶制作技艺",
+      "domain": "饮食、茶与酒 · 非遗技艺",
+      "status": "A",
+      "summary": "道真油茶制作技艺（名录项目：油茶制作技艺）由遵义市道真仡佬族苗族自治县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从原料、工具、火候与作坊传承进入地方味道，不把非遗只当成一道成品。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "油茶制作技艺",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "遵义市道真仡佬族苗族自治县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-ZY-012",
+      "cityId": "zunyi",
+      "contentKind": "culture",
+      "name": "遵义鸡蛋糕制作技艺",
+      "domain": "饮食、茶与酒 · 非遗技艺",
+      "status": "A",
+      "summary": "遵义鸡蛋糕制作技艺由遵义市汇川区申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从原料、工具、火候与作坊传承进入地方味道，不把非遗只当成一道成品。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "遵义鸡蛋糕制作技艺",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "遵义市汇川区",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-AS-001",
+      "cityId": "anshun",
+      "contentKind": "culture",
+      "name": "丝头系腰制作技艺",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "丝头系腰制作技艺由安顺市西秀区申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "丝头系腰制作技艺",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "安顺市西秀区",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-AS-002",
+      "cityId": "anshun",
+      "contentKind": "culture",
+      "name": "紫云布依族民歌",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "紫云布依族民歌（名录项目：布依族民歌）由安顺市紫云苗族布依族自治县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "布依族民歌",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统音乐",
+        "location": "安顺市紫云苗族布依族自治县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-AS-003",
+      "cityId": "anshun",
+      "contentKind": "culture",
+      "name": "紫云苗族民歌",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "紫云苗族民歌（名录项目：苗族民歌）由安顺市紫云苗族布依族自治县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "苗族民歌",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统音乐",
+        "location": "安顺市紫云苗族布依族自治县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-AS-004",
+      "cityId": "anshun",
+      "contentKind": "culture",
+      "name": "屯堡豆腐乳制作技艺",
+      "domain": "饮食、茶与酒 · 非遗技艺",
+      "status": "A",
+      "summary": "屯堡豆腐乳制作技艺（名录项目：豆制品制作技艺（屯堡豆腐乳制作技艺））由安顺市平坝区申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从原料、工具、火候与作坊传承进入地方味道，不把非遗只当成一道成品。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "豆制品制作技艺（屯堡豆腐乳制作技艺）",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "安顺市平坝区",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-AS-005",
+      "cityId": "anshun",
+      "contentKind": "culture",
+      "name": "屯堡鸡辣子",
+      "domain": "饮食、茶与酒 · 非遗技艺",
+      "status": "A",
+      "summary": "屯堡鸡辣子（名录项目：辣子鸡制作技艺（屯堡鸡辣子））由安顺市西秀区申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从原料、工具、火候与作坊传承进入地方味道，不把非遗只当成一道成品。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "辣子鸡制作技艺（屯堡鸡辣子）",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "安顺市西秀区",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-AS-006",
+      "cityId": "anshun",
+      "contentKind": "culture",
+      "name": "上关辣子鸡制作技艺",
+      "domain": "饮食、茶与酒 · 非遗技艺",
+      "status": "A",
+      "summary": "上关辣子鸡制作技艺（名录项目：辣子鸡制作技艺（上关辣子鸡））由安顺市关岭布依族苗族自治县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从原料、工具、火候与作坊传承进入地方味道，不把非遗只当成一道成品。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "辣子鸡制作技艺（上关辣子鸡）",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "安顺市关岭布依族苗族自治县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-AS-007",
+      "cityId": "anshun",
+      "contentKind": "culture",
+      "name": "紫云布依族服饰",
+      "domain": "节日、礼俗与信俗",
+      "status": "A",
+      "summary": "紫云布依族服饰（名录项目：布依族服饰）由安顺市紫云苗族布依族自治县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索先记录参与者、时间、场所和共同体关系，避免把仍在发生的民俗压成一次表演。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "布依族服饰",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民俗",
+        "location": "安顺市紫云苗族布依族自治县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-AS-008",
+      "cityId": "anshun",
+      "contentKind": "culture",
+      "name": "平坝苗族婚俗",
+      "domain": "节日、礼俗与信俗",
+      "status": "A",
+      "summary": "平坝苗族婚俗（名录项目：苗族婚俗）由安顺市平坝区申报，列入贵州省第六批省级非遗代表性项目。这条目录线索先记录参与者、时间、场所和共同体关系，避免把仍在发生的民俗压成一次表演。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "苗族婚俗",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民俗",
+        "location": "安顺市平坝区",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-LPS-001",
+      "cityId": "liupanshui",
+      "contentKind": "culture",
+      "name": "水城新街面塑",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "水城新街面塑（名录项目：新街面塑）由六盘水市水城区申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "新街面塑",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统美术",
+        "location": "六盘水市水城区",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-LPS-002",
+      "cityId": "liupanshui",
+      "contentKind": "culture",
+      "name": "水城花灯戏",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "水城花灯戏（名录项目：花灯戏）由六盘水市水城区申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "花灯戏",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统戏剧",
+        "location": "六盘水市水城区",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-LPS-003",
+      "cityId": "liupanshui",
+      "contentKind": "culture",
+      "name": "六枝苗绣",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "六枝苗绣（名录项目：苗绣）由六盘水市六枝特区申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "苗绣",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统美术",
+        "location": "六盘水市六枝特区",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-LPS-004",
+      "cityId": "liupanshui",
+      "contentKind": "culture",
+      "name": "六枝斗纹布制作技艺",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "六枝斗纹布制作技艺（名录项目：布依族土布制作技艺（斗纹布制作技艺））由六盘水市六枝特区申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "布依族土布制作技艺（斗纹布制作技艺）",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "六盘水市六枝特区",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-LPS-005",
+      "cityId": "liupanshui",
+      "contentKind": "culture",
+      "name": "盘州扎龙技艺",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "盘州扎龙技艺（名录项目：彩扎（扎龙技艺））由六盘水市盘州市申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "彩扎（扎龙技艺）",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "六盘水市盘州市",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-LPS-006",
+      "cityId": "liupanshui",
+      "contentKind": "culture",
+      "name": "岩脚面制作技艺",
+      "domain": "饮食、茶与酒 · 非遗技艺",
+      "status": "A",
+      "summary": "岩脚面制作技艺（名录项目：传统面食制作技艺（岩脚面制作技艺））由六盘水市六枝特区申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从原料、工具、火候与作坊传承进入地方味道，不把非遗只当成一道成品。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "传统面食制作技艺（岩脚面制作技艺）",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "六盘水市六枝特区",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-LPS-007",
+      "cityId": "liupanshui",
+      "contentKind": "culture",
+      "name": "盘州苗医命蒂拔毒疗法",
+      "domain": "非遗文化与传统医药",
+      "status": "A",
+      "summary": "盘州苗医命蒂拔毒疗法（名录项目：苗医药（命蒂拔毒疗法））由六盘水市盘州市申报，列入贵州省第六批省级非遗代表性项目。本页只记录文化名录与传承线索，不提供诊疗建议；后续内容需同时完成医学边界和事实审核。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "苗医药（命蒂拔毒疗法）",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统医药",
+        "location": "六盘水市盘州市",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-LPS-008",
+      "cityId": "liupanshui",
+      "contentKind": "culture",
+      "name": "水城布依族婚俗",
+      "domain": "节日、礼俗与信俗",
+      "status": "A",
+      "summary": "水城布依族婚俗（名录项目：布依族婚俗）由六盘水市水城区申报，列入贵州省第六批省级非遗代表性项目。这条目录线索先记录参与者、时间、场所和共同体关系，避免把仍在发生的民俗压成一次表演。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "布依族婚俗",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民俗",
+        "location": "六盘水市水城区",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-LPS-009",
+      "cityId": "liupanshui",
+      "contentKind": "culture",
+      "name": "彝族铃铛舞",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "彝族铃铛舞由六盘水市申报，列入第二批国家级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-NAT"
+      ],
+      "heritage": {
+        "officialName": "彝族铃铛舞",
+        "level": "国家级",
+        "batch": "第二批国家级",
+        "category": "传统舞蹈",
+        "location": "六盘水市",
+        "sourceId": "R-GZ-FY-NAT"
+      }
+    },
+    {
+      "id": "IHC-LPS-010",
+      "cityId": "liupanshui",
+      "contentKind": "culture",
+      "name": "盘县砂陶制作技艺",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "盘县砂陶制作技艺（名录项目：砂陶制作技艺）由六盘水市盘州市申报，列入贵州省第三批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-03"
+      ],
+      "heritage": {
+        "officialName": "砂陶制作技艺",
+        "level": "省级",
+        "batch": "贵州省第三批",
+        "category": "传统技艺",
+        "location": "六盘水市盘州市",
+        "sourceId": "R-GZ-FY-03"
+      }
+    },
+    {
+      "id": "IHC-LPS-011",
+      "cityId": "liupanshui",
+      "contentKind": "culture",
+      "name": "六枝仡佬族吃新节",
+      "domain": "节日、礼俗与信俗",
+      "status": "A",
+      "summary": "六枝仡佬族吃新节（名录项目：仡佬族吃新节）由六盘水市六枝特区申报，列入贵州省第三批省级非遗代表性项目。这条目录线索先记录参与者、时间、场所和共同体关系，避免把仍在发生的民俗压成一次表演。",
+      "sourceIds": [
+        "R-GZ-FY-03"
+      ],
+      "heritage": {
+        "officialName": "仡佬族吃新节",
+        "level": "省级",
+        "batch": "贵州省第三批",
+        "category": "民俗",
+        "location": "六盘水市六枝特区",
+        "sourceId": "R-GZ-FY-03"
+      }
+    },
+    {
+      "id": "IHC-LPS-012",
+      "cityId": "liupanshui",
+      "contentKind": "culture",
+      "name": "水城苗族服饰",
+      "domain": "节日、礼俗与信俗",
+      "status": "A",
+      "summary": "水城苗族服饰（名录项目：苗族服饰）由六盘水市水城区申报，列入贵州省第三批省级非遗代表性项目。这条目录线索先记录参与者、时间、场所和共同体关系，避免把仍在发生的民俗压成一次表演。",
+      "sourceIds": [
+        "R-GZ-FY-03"
+      ],
+      "heritage": {
+        "officialName": "苗族服饰",
+        "level": "省级",
+        "batch": "贵州省第三批",
+        "category": "民俗",
+        "location": "六盘水市水城区",
+        "sourceId": "R-GZ-FY-03"
+      }
+    },
+    {
+      "id": "IHC-BJ-001",
+      "cityId": "bijie",
+      "contentKind": "culture",
+      "name": "金沙清池锣鼓",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "金沙清池锣鼓（名录项目：清池锣鼓）由毕节市金沙县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "清池锣鼓",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统音乐",
+        "location": "毕节市金沙县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-BJ-002",
+      "cityId": "bijie",
+      "contentKind": "culture",
+      "name": "赫章苗族喊歌",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "赫章苗族喊歌（名录项目：苗族喊歌）由毕节市赫章县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "苗族喊歌",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统音乐",
+        "location": "毕节市赫章县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-BJ-003",
+      "cityId": "bijie",
+      "contentKind": "culture",
+      "name": "彝族撒麻舞",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "彝族撒麻舞由毕节市七星关区申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "彝族撒麻舞",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统舞蹈",
+        "location": "毕节市七星关区",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-BJ-004",
+      "cityId": "bijie",
+      "contentKind": "culture",
+      "name": "织金苗族悬羊击鼓",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "织金苗族悬羊击鼓（名录项目：苗族悬羊击鼓）由毕节市织金县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "苗族悬羊击鼓",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统舞蹈",
+        "location": "毕节市织金县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-BJ-005",
+      "cityId": "bijie",
+      "contentKind": "culture",
+      "name": "黔西苗族米花叙情舞",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "黔西苗族米花叙情舞（名录项目：苗族米花叙情舞）由毕节市黔西市申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "苗族米花叙情舞",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统舞蹈",
+        "location": "毕节市黔西市",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-BJ-006",
+      "cityId": "bijie",
+      "contentKind": "culture",
+      "name": "威宁彝族刺绣",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "威宁彝族刺绣（名录项目：彝族刺绣）由毕节市威宁彝族回族苗族自治县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "彝族刺绣",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统美术",
+        "location": "毕节市威宁彝族回族苗族自治县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-BJ-007",
+      "cityId": "bijie",
+      "contentKind": "culture",
+      "name": "七星关留青竹刻",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "七星关留青竹刻（名录项目：留青竹刻）由毕节市七星关区申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "留青竹刻",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "毕节市七星关区",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-BJ-008",
+      "cityId": "bijie",
+      "contentKind": "culture",
+      "name": "威宁彝族古歌",
+      "domain": "非遗文化与口述传统",
+      "status": "A",
+      "summary": "威宁彝族古歌（名录项目：彝族古歌）由毕节市威宁彝族回族苗族自治县申报，列入贵州省第六批省级非遗代表性项目。它把地方历史、族群记忆与口头讲述连在一起，适合从讲述者、版本和发生地继续深读。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "彝族古歌",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民间文学",
+        "location": "毕节市威宁彝族回族苗族自治县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-BJ-009",
+      "cityId": "bijie",
+      "contentKind": "culture",
+      "name": "赫章支嘎阿鲁",
+      "domain": "非遗文化与口述传统",
+      "status": "A",
+      "summary": "赫章支嘎阿鲁（名录项目：支嘎阿鲁）由毕节市赫章县申报，列入贵州省第六批省级非遗代表性项目。它把地方历史、族群记忆与口头讲述连在一起，适合从讲述者、版本和发生地继续深读。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "支嘎阿鲁",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民间文学",
+        "location": "毕节市赫章县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-BJ-010",
+      "cityId": "bijie",
+      "contentKind": "culture",
+      "name": "黔西苗族多声部民歌",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "黔西苗族多声部民歌（名录项目：苗族多声部民歌）由毕节市黔西市申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "苗族多声部民歌",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统音乐",
+        "location": "毕节市黔西市",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-BJ-011",
+      "cityId": "bijie",
+      "contentKind": "culture",
+      "name": "威宁彝族月琴制作技艺",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "威宁彝族月琴制作技艺（名录项目：民间乐器制作技艺（彝族月琴制作技艺））由毕节市威宁彝族回族苗族自治县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "民间乐器制作技艺（彝族月琴制作技艺）",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "毕节市威宁彝族回族苗族自治县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-BJ-012",
+      "cityId": "bijie",
+      "contentKind": "culture",
+      "name": "赫章苗族服饰",
+      "domain": "节日、礼俗与信俗",
+      "status": "A",
+      "summary": "赫章苗族服饰（名录项目：苗族服饰）由毕节市赫章县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索先记录参与者、时间、场所和共同体关系，避免把仍在发生的民俗压成一次表演。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "苗族服饰",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民俗",
+        "location": "毕节市赫章县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-TR-001",
+      "cityId": "tongren",
+      "contentKind": "culture",
+      "name": "松桃苗族八人秋",
+      "domain": "非遗文化与传统体育",
+      "status": "A",
+      "summary": "松桃苗族八人秋（名录项目：苗族“八人秋”）由铜仁市松桃苗族自治县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从身体动作、器具、规则和节庆场景进入当地仍在传承的技艺。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "苗族“八人秋”",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统体育、游艺与杂技",
+        "location": "铜仁市松桃苗族自治县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-TR-002",
+      "cityId": "tongren",
+      "contentKind": "culture",
+      "name": "万山朱砂制作工艺",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "万山朱砂制作工艺（名录项目：朱砂制作工艺）由铜仁市万山区申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "朱砂制作工艺",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "铜仁市万山区",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-TR-003",
+      "cityId": "tongren",
+      "contentKind": "culture",
+      "name": "沿河土家族哭嫁习俗",
+      "domain": "节日、礼俗与信俗",
+      "status": "A",
+      "summary": "沿河土家族哭嫁习俗（名录项目：土家族哭嫁习俗）由铜仁市沿河土家族自治县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索先记录参与者、时间、场所和共同体关系，避免把仍在发生的民俗压成一次表演。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "土家族哭嫁习俗",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民俗",
+        "location": "铜仁市沿河土家族自治县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-TR-004",
+      "cityId": "tongren",
+      "contentKind": "culture",
+      "name": "石阡平安会",
+      "domain": "节日、礼俗与信俗",
+      "status": "A",
+      "summary": "石阡平安会（名录项目：平安会）由铜仁市石阡县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索先记录参与者、时间、场所和共同体关系，避免把仍在发生的民俗压成一次表演。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "平安会",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民俗",
+        "location": "铜仁市石阡县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-TR-005",
+      "cityId": "tongren",
+      "contentKind": "culture",
+      "name": "松桃傩戏",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "松桃傩戏（名录项目：傩戏）由铜仁市松桃苗族自治县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "傩戏",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统戏剧",
+        "location": "铜仁市松桃苗族自治县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-TR-006",
+      "cityId": "tongren",
+      "contentKind": "culture",
+      "name": "印江僰牌",
+      "domain": "非遗文化与传统体育",
+      "status": "A",
+      "summary": "印江僰牌（名录项目：僰牌）由铜仁市印江土家族苗族自治县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从身体动作、器具、规则和节庆场景进入当地仍在传承的技艺。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "僰牌",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统体育、游艺与杂技",
+        "location": "铜仁市印江土家族苗族自治县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-TR-007",
+      "cityId": "tongren",
+      "contentKind": "culture",
+      "name": "思南魁榜醒狮",
+      "domain": "非遗文化与传统体育",
+      "status": "A",
+      "summary": "思南魁榜醒狮（名录项目：舞狮（魁榜醒狮））由铜仁市思南县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从身体动作、器具、规则和节庆场景进入当地仍在传承的技艺。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "舞狮（魁榜醒狮）",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统体育、游艺与杂技",
+        "location": "铜仁市思南县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-TR-008",
+      "cityId": "tongren",
+      "contentKind": "culture",
+      "name": "德江土家族剪纸",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "德江土家族剪纸（名录项目：剪纸（土家族剪纸））由铜仁市德江县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "剪纸（土家族剪纸）",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统美术",
+        "location": "铜仁市德江县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-TR-009",
+      "cityId": "tongren",
+      "contentKind": "culture",
+      "name": "思南藤编技艺",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "思南藤编技艺（名录项目：藤编技艺）由铜仁市思南县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "藤编技艺",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "铜仁市思南县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-TR-010",
+      "cityId": "tongren",
+      "contentKind": "culture",
+      "name": "印江油纸伞制作工艺",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "印江油纸伞制作工艺（名录项目：油纸伞制作工艺）由铜仁市印江土家族苗族自治县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "油纸伞制作工艺",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "铜仁市印江土家族苗族自治县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-TR-011",
+      "cityId": "tongren",
+      "contentKind": "culture",
+      "name": "沿河土家族服饰",
+      "domain": "节日、礼俗与信俗",
+      "status": "A",
+      "summary": "沿河土家族服饰（名录项目：土家族服饰）由铜仁市沿河土家族自治县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索先记录参与者、时间、场所和共同体关系，避免把仍在发生的民俗压成一次表演。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "土家族服饰",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民俗",
+        "location": "铜仁市沿河土家族自治县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-TR-012",
+      "cityId": "tongren",
+      "contentKind": "culture",
+      "name": "石阡起房造屋习俗",
+      "domain": "节日、礼俗与信俗",
+      "status": "A",
+      "summary": "石阡起房造屋习俗（名录项目：起房造屋习俗）由铜仁市石阡县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索先记录参与者、时间、场所和共同体关系，避免把仍在发生的民俗压成一次表演。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "起房造屋习俗",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民俗",
+        "location": "铜仁市石阡县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QDN-001",
+      "cityId": "qiandongnan",
+      "contentKind": "culture",
+      "name": "麻江瑶族舅爷歌",
+      "domain": "非遗文化与口述传统",
+      "status": "A",
+      "summary": "麻江瑶族舅爷歌（名录项目：瑶族舅爷歌）由黔东南州麻江县申报，列入贵州省第六批省级非遗代表性项目。它把地方历史、族群记忆与口头讲述连在一起，适合从讲述者、版本和发生地继续深读。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "瑶族舅爷歌",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民间文学",
+        "location": "黔东南州麻江县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QDN-002",
+      "cityId": "qiandongnan",
+      "contentKind": "culture",
+      "name": "剑河侗族古歌",
+      "domain": "非遗文化与口述传统",
+      "status": "A",
+      "summary": "剑河侗族古歌（名录项目：侗族古歌）由黔东南州剑河县申报，列入贵州省第六批省级非遗代表性项目。它把地方历史、族群记忆与口头讲述连在一起，适合从讲述者、版本和发生地继续深读。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "侗族古歌",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民间文学",
+        "location": "黔东南州剑河县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QDN-003",
+      "cityId": "qiandongnan",
+      "contentKind": "culture",
+      "name": "麻江畲族阿忙民歌",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "麻江畲族阿忙民歌（名录项目：畲族阿忙民歌）由黔东南州麻江县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "畲族阿忙民歌",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统音乐",
+        "location": "黔东南州麻江县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QDN-004",
+      "cityId": "qiandongnan",
+      "contentKind": "culture",
+      "name": "岑巩思州战鼓",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "岑巩思州战鼓（名录项目：思州战鼓）由黔东南州岑巩县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "思州战鼓",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统音乐",
+        "location": "黔东南州岑巩县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QDN-005",
+      "cityId": "qiandongnan",
+      "contentKind": "culture",
+      "name": "榕江水族斗牛舞",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "榕江水族斗牛舞（名录项目：水族斗牛舞）由黔东南州榕江县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "水族斗牛舞",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统舞蹈",
+        "location": "黔东南州榕江县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QDN-006",
+      "cityId": "qiandongnan",
+      "contentKind": "culture",
+      "name": "剑河侗族踩虫舞",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "剑河侗族踩虫舞（名录项目：侗族踩虫舞）由黔东南州剑河县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "侗族踩虫舞",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统舞蹈",
+        "location": "黔东南州剑河县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QDN-007",
+      "cityId": "qiandongnan",
+      "contentKind": "culture",
+      "name": "锦屏瑶白大戏",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "锦屏瑶白大戏（名录项目：瑶白大戏）由黔东南州锦屏县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "瑶白大戏",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统戏剧",
+        "location": "黔东南州锦屏县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QDN-008",
+      "cityId": "qiandongnan",
+      "contentKind": "culture",
+      "name": "湾水苗族刀具制作技艺",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "湾水苗族刀具制作技艺由黔东南州凯里市申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "湾水苗族刀具制作技艺",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "黔东南州凯里市",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QDN-009",
+      "cityId": "qiandongnan",
+      "contentKind": "culture",
+      "name": "天柱滚山节",
+      "domain": "节日、礼俗与信俗",
+      "status": "A",
+      "summary": "天柱滚山节（名录项目：滚山节）由黔东南州天柱县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索先记录参与者、时间、场所和共同体关系，避免把仍在发生的民俗压成一次表演。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "滚山节",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民俗",
+        "location": "黔东南州天柱县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QDN-010",
+      "cityId": "qiandongnan",
+      "contentKind": "culture",
+      "name": "锦屏大同堂皇歌会",
+      "domain": "节日、礼俗与信俗",
+      "status": "A",
+      "summary": "锦屏大同堂皇歌会（名录项目：侗族歌会（大同堂皇歌会））由黔东南州锦屏县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索先记录参与者、时间、场所和共同体关系，避免把仍在发生的民俗压成一次表演。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "侗族歌会（大同堂皇歌会）",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民俗",
+        "location": "黔东南州锦屏县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QDN-011",
+      "cityId": "qiandongnan",
+      "contentKind": "culture",
+      "name": "黄平苗族贾理",
+      "domain": "非遗文化与口述传统",
+      "status": "A",
+      "summary": "黄平苗族贾理（名录项目：苗族贾理）由黔东南州黄平县申报，列入贵州省第六批省级非遗代表性项目。它把地方历史、族群记忆与口头讲述连在一起，适合从讲述者、版本和发生地继续深读。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "苗族贾理",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民间文学",
+        "location": "黔东南州黄平县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QDN-012",
+      "cityId": "qiandongnan",
+      "contentKind": "culture",
+      "name": "榕江苗族古瓢舞",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "榕江苗族古瓢舞（名录项目：苗族古瓢舞）由黔东南州榕江县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "苗族古瓢舞",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统舞蹈",
+        "location": "黔东南州榕江县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QN-001",
+      "cityId": "qiannan",
+      "contentKind": "culture",
+      "name": "长顺苗族牵羊舞",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "长顺苗族牵羊舞（名录项目：苗族牵羊舞）由黔南州长顺县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "苗族牵羊舞",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统舞蹈",
+        "location": "黔南州长顺县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QN-002",
+      "cityId": "qiannan",
+      "contentKind": "culture",
+      "name": "都匀叶咔香制作技艺",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "都匀叶咔香制作技艺（名录项目：叶咔香制作技艺）由黔南州都匀市申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "叶咔香制作技艺",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "黔南州都匀市",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QN-003",
+      "cityId": "qiannan",
+      "contentKind": "culture",
+      "name": "荔波水族医药骨伤治疗",
+      "domain": "非遗文化与传统医药",
+      "status": "A",
+      "summary": "荔波水族医药骨伤治疗（名录项目：水族医药（骨伤治疗））由黔南州荔波县申报，列入贵州省第六批省级非遗代表性项目。本页只记录文化名录与传承线索，不提供诊疗建议；后续内容需同时完成医学边界和事实审核。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "水族医药（骨伤治疗）",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统医药",
+        "location": "黔南州荔波县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QN-004",
+      "cityId": "qiannan",
+      "contentKind": "culture",
+      "name": "独山布依族民歌",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "独山布依族民歌（名录项目：布依族民歌）由黔南州独山县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "布依族民歌",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统音乐",
+        "location": "黔南州独山县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QN-005",
+      "cityId": "qiannan",
+      "contentKind": "culture",
+      "name": "都匀苗族芦笙舞",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "都匀苗族芦笙舞（名录项目：苗族芦笙舞）由黔南州都匀市申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "苗族芦笙舞",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统舞蹈",
+        "location": "黔南州都匀市",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QN-006",
+      "cityId": "qiannan",
+      "contentKind": "culture",
+      "name": "三都苗族跳月",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "三都苗族跳月（名录项目：苗族跳月）由黔南州三都水族自治县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "苗族跳月",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统舞蹈",
+        "location": "黔南州三都水族自治县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QN-007",
+      "cityId": "qiannan",
+      "contentKind": "culture",
+      "name": "罗甸苗绣",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "罗甸苗绣（名录项目：苗绣）由黔南州罗甸县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "苗绣",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统美术",
+        "location": "黔南州罗甸县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QN-008",
+      "cityId": "qiannan",
+      "contentKind": "culture",
+      "name": "长顺枫香印染",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "长顺枫香印染（名录项目：枫香印染技艺）由黔南州长顺县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "枫香印染技艺",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "黔南州长顺县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QN-009",
+      "cityId": "qiannan",
+      "contentKind": "culture",
+      "name": "荔波竹编",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "荔波竹编（名录项目：竹编）由黔南州荔波县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "竹编",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "黔南州荔波县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QN-010",
+      "cityId": "qiannan",
+      "contentKind": "culture",
+      "name": "独山高寨贡茶制作技艺",
+      "domain": "饮食、茶与酒 · 非遗技艺",
+      "status": "A",
+      "summary": "独山高寨贡茶制作技艺（名录项目：绿茶制作技艺（独山高寨贡茶制作技艺））由黔南州独山县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从原料、工具、火候与作坊传承进入地方味道，不把非遗只当成一道成品。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "绿茶制作技艺（独山高寨贡茶制作技艺）",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "黔南州独山县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QN-011",
+      "cityId": "qiannan",
+      "contentKind": "culture",
+      "name": "惠水苗族银饰锻制技艺",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "惠水苗族银饰锻制技艺（名录项目：银饰锻制技艺（苗族银饰锻制技艺））由黔南州惠水县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "银饰锻制技艺（苗族银饰锻制技艺）",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "黔南州惠水县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QN-012",
+      "cityId": "qiannan",
+      "contentKind": "culture",
+      "name": "三都水族芦笙制作技艺",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "三都水族芦笙制作技艺（名录项目：民间乐器制作技艺（水族芦笙制作技艺））由黔南州三都水族自治县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "民间乐器制作技艺（水族芦笙制作技艺）",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "黔南州三都水族自治县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QXN-001",
+      "cityId": "qianxinan",
+      "contentKind": "culture",
+      "name": "红军在北盘江红水河的传说",
+      "domain": "非遗文化与口述传统",
+      "status": "A",
+      "summary": "红军在北盘江红水河的传说由黔西南州望谟县申报，列入贵州省第六批省级非遗代表性项目。它把地方历史、族群记忆与口头讲述连在一起，适合从讲述者、版本和发生地继续深读。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "红军在北盘江红水河的传说",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民间文学",
+        "location": "黔西南州望谟县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QXN-002",
+      "cityId": "qianxinan",
+      "contentKind": "culture",
+      "name": "张锳张之洞在贵州的传说",
+      "domain": "非遗文化与口述传统",
+      "status": "A",
+      "summary": "张锳张之洞在贵州的传说由黔西南州安龙县申报，列入贵州省第六批省级非遗代表性项目。它把地方历史、族群记忆与口头讲述连在一起，适合从讲述者、版本和发生地继续深读。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "张锳张之洞在贵州的传说",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民间文学",
+        "location": "黔西南州安龙县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QXN-003",
+      "cityId": "qianxinan",
+      "contentKind": "culture",
+      "name": "布依族阿羞和弹妹的传说",
+      "domain": "非遗文化与口述传统",
+      "status": "A",
+      "summary": "布依族阿羞和弹妹的传说（名录项目：布依族“阿羞和弹妹的传说”）由黔西南州晴隆县申报，列入贵州省第六批省级非遗代表性项目。它把地方历史、族群记忆与口头讲述连在一起，适合从讲述者、版本和发生地继续深读。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "布依族“阿羞和弹妹的传说”",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民间文学",
+        "location": "黔西南州晴隆县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QXN-004",
+      "cityId": "qianxinan",
+      "contentKind": "culture",
+      "name": "布依族史诗《安王与祖王》",
+      "domain": "非遗文化与口述传统",
+      "status": "A",
+      "summary": "布依族史诗《安王与祖王》（名录项目：布依族史诗（安王与祖王））由黔西南州望谟县申报，列入贵州省第六批省级非遗代表性项目。它把地方历史、族群记忆与口头讲述连在一起，适合从讲述者、版本和发生地继续深读。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "布依族史诗（安王与祖王）",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民间文学",
+        "location": "黔西南州望谟县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QXN-005",
+      "cityId": "qianxinan",
+      "contentKind": "culture",
+      "name": "兴仁布依族铜鼓祭祀乐",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "兴仁布依族铜鼓祭祀乐（名录项目：布依族铜鼓祭祀乐）由黔西南州兴仁市申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "布依族铜鼓祭祀乐",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统音乐",
+        "location": "黔西南州兴仁市",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QXN-006",
+      "cityId": "qianxinan",
+      "contentKind": "culture",
+      "name": "兴仁苗族四眼箫",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "兴仁苗族四眼箫（名录项目：苗族四眼箫音乐艺术）由黔西南州兴仁市申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "苗族四眼箫音乐艺术",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统音乐",
+        "location": "黔西南州兴仁市",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QXN-007",
+      "cityId": "qianxinan",
+      "contentKind": "culture",
+      "name": "兴仁蚕丝织造技艺",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "兴仁蚕丝织造技艺（名录项目：蚕丝织造技艺）由黔西南州兴仁市申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "蚕丝织造技艺",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "黔西南州兴仁市",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QXN-008",
+      "cityId": "qianxinan",
+      "contentKind": "culture",
+      "name": "布依族舞狮脸谱制作技艺",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "布依族舞狮脸谱制作技艺由黔西南州兴仁市申报，列入贵州省第六批省级非遗代表性项目。这条目录线索从材料、工具、制作步骤与传承人进入手艺，独立图像和深度正文将在核验后补齐。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "布依族舞狮脸谱制作技艺",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统技艺",
+        "location": "黔西南州兴仁市",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QXN-009",
+      "cityId": "qianxinan",
+      "contentKind": "culture",
+      "name": "兴仁苗族八月八",
+      "domain": "节日、礼俗与信俗",
+      "status": "A",
+      "summary": "兴仁苗族八月八（名录项目：苗族八月八）由黔西南州兴仁市申报，列入贵州省第六批省级非遗代表性项目。这条目录线索先记录参与者、时间、场所和共同体关系，避免把仍在发生的民俗压成一次表演。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "苗族八月八",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民俗",
+        "location": "黔西南州兴仁市",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QXN-010",
+      "cityId": "qianxinan",
+      "contentKind": "culture",
+      "name": "兴仁布依族官亭习俗",
+      "domain": "节日、礼俗与信俗",
+      "status": "A",
+      "summary": "兴仁布依族官亭习俗（名录项目：布依族官亭习俗）由黔西南州兴仁市申报，列入贵州省第六批省级非遗代表性项目。这条目录线索先记录参与者、时间、场所和共同体关系，避免把仍在发生的民俗压成一次表演。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "布依族官亭习俗",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "民俗",
+        "location": "黔西南州兴仁市",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QXN-011",
+      "cityId": "qianxinan",
+      "contentKind": "culture",
+      "name": "普安苗族口弦",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "普安苗族口弦（名录项目：苗族口弦）由黔西南州普安县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "苗族口弦",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统音乐",
+        "location": "黔西南州普安县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    },
+    {
+      "id": "IHC-QXN-012",
+      "cityId": "qianxinan",
+      "contentKind": "culture",
+      "name": "册亨阳戏",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "册亨阳戏（名录项目：阳戏）由黔西南州册亨县申报，列入贵州省第六批省级非遗代表性项目。这条目录线索关注声音、动作、演出场合与传习关系，后续将补入可听、可看的现场材料。",
+      "sourceIds": [
+        "R-GZ-FY-06"
+      ],
+      "heritage": {
+        "officialName": "阳戏",
+        "level": "省级",
+        "batch": "贵州省第六批",
+        "category": "传统戏剧",
+        "location": "黔西南州册亨县",
+        "sourceId": "R-GZ-FY-06"
+      }
+    }
+  ]
+}

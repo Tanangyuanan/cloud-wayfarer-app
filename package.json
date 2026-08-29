@@ -1,0 +1,24 @@
+{
+  "name": "cloud-wayfarer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "云游四方：与阿镜同行的 AI 云旅行产品原型与受控外部数据工具层",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "data:validate": "node scripts/validate-ajing-world-data.js",
+    "data:smoke": "node scripts/check-public-world-live.js",
+    "copy:deepseek": "node scripts/run-deepseek-copy-pass.js",
+    "copy:deepseek:prepare": "node scripts/build-deepseek-copy-input.js",
+    "test": "node --test server/*.test.js"
+  },
+  "dependencies": {
+    "@earendil-works/pi-agent-core": "0.84.4",
+    "@earendil-works/pi-ai": "0.84.4",
+    "satellite.js": "^6.0.2"
+  }
+}

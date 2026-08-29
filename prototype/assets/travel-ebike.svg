@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" role="img" aria-label="城市踏板式电动车">
+  <defs>
+    <linearGradient id="body" x1="28" y1="27" x2="91" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#91a69a"/>
+      <stop offset="0.48" stop-color="#4d7564"/>
+      <stop offset="1" stop-color="#23483a"/>
+    </linearGradient>
+  </defs>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="26" cy="57" r="18" fill="#202b27" stroke="#eef0e8" stroke-width="1.5"/>
+    <circle cx="94" cy="57" r="18" fill="#202b27" stroke="#eef0e8" stroke-width="1.5"/>
+    <circle cx="26" cy="57" r="11" fill="#80928a" stroke="#d9ded7" stroke-width="2"/>
+    <circle cx="94" cy="57" r="11" fill="#80928a" stroke="#d9ded7" stroke-width="2"/>
+    <circle cx="26" cy="57" r="4" fill="#d9c17a"/>
+    <circle cx="94" cy="57" r="4" fill="#d9c17a"/>
+    <path d="M17 47c4-11 12-17 23-18h19c8 0 14 4 17 11l7 15H34c-3-5-8-8-17-8Z" fill="url(#body)" stroke="#eef0e8" stroke-width="2"/>
+    <path d="M43 31h19l-5 19H38z" fill="#b98a36" stroke="#f0e6cd" stroke-width="1.5"/>
+    <path d="m51 34-6 8h6l-4 6" fill="none" stroke="#fff0b9" stroke-width="2.4"/>
+    <path d="M51 50h33l8 8H45z" fill="#345949" stroke="#e9eadf" stroke-width="2"/>
+    <path d="M76 50c5-7 6-15 4-23l9-3c4 10 5 21 5 34H82Z" fill="url(#body)" stroke="#eef0e8" stroke-width="2"/>
+    <path d="M79 28 76 15m-1 1h16" fill="none" stroke="#26342f" stroke-width="4"/>
+    <path d="m89 17 7 5" fill="none" stroke="#26342f" stroke-width="3"/>
+    <path d="M34 25h30c2 0 4 2 4 4s-2 4-5 4H34c-3 0-5-2-5-4s2-4 5-4Z" fill="#25332e" stroke="#d9ded7" stroke-width="1.4"/>
+    <path d="M14 29h19" fill="none" stroke="#26342f" stroke-width="4"/>
+    <path d="M20 30 16 45" fill="none" stroke="#26342f" stroke-width="3"/>
+    <circle cx="89" cy="28" r="5" fill="#f2d27b" stroke="#6f5722" stroke-width="1.5"/>
+    <path d="M58 56h22" fill="none" stroke="#d8c48a" stroke-width="3"/>
+    <path d="M22 38c5-4 10-5 16-5" fill="none" stroke="#d5dfd8" stroke-width="2" opacity=".72"/>
+  </g>
+</svg>

@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#182b21">
+  <meta name="description" content="云游四方：阿镜沿真实路线在贵州旅行，把照片、声音和沿途见闻写进你的旅行手帐。">
+  <link rel="alternate" media="(max-width: 899px)" href="/app/">
+  <link rel="icon" type="image/png" href="/prototype/assets/brand/yunyou-sifang-icon-512.png">
+  <link rel="apple-touch-icon" href="/prototype/assets/brand/yunyou-sifang-icon-180.png">
+  <title>云游四方｜另一个自己，正在贵州旅行</title>
+  <script src="responsive-entry.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="styles.css?v=20260829-journey-origin-v3">
+  <link rel="stylesheet" href="/prototype/ajing-chat.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <script src="map-config.js" defer></script>
+  <script src="map-runtime.js" defer></script>
+  <script src="app.js?v=20260829-journey-origin-v3" defer></script>
+  <script src="/prototype/ajing-chat.js" defer></script>
+</head>
+<body class="is-first-visit" data-state="closed" data-mobile-leaf="visual" data-view="travel" data-journal-mode="library" data-workspace-module="agent">
+  <a class="skip-link" href="#travel-map">跳到云旅行地图</a>
+
+  <main class="travel-home" id="travel-home">
+    <header class="travel-header">
+      <a class="travel-brand" href="?intro=1" aria-label="返回云游四方·黔首页">
+        <img class="travel-brand-logo" src="/prototype/assets/brand/yunyou-sifang-logo-horizontal.png" alt="" width="2126" height="740">
+        <b class="brand-title-suffix" aria-hidden="true">·黔</b>
+      </a>
+
+      <div class="travel-running-mark" aria-live="polite">
+        <i aria-hidden="true"></i>
+        <span><small>旅程进行中</small><b id="travel-clock">DAY 01 · 13:42</b></span>
+      </div>
+
+      <button class="province-journal" id="open-province-journal" type="button" aria-label="打开贵州城市文化指南">
+        <span class="journal-mini-cover" aria-hidden="true"><i>筑</i><small>01</small></span>
+        <span class="journal-mini-copy"><small>贵州 · 九城文化指南</small><b>当前：贵阳指南</b></span>
+        <span class="journal-mini-action">选一本 <i aria-hidden="true">↗</i></span>
+      </button>
+    </header>
+
+    <section class="travel-layout" aria-label="云游四方行旅主页">
+      <section class="first-visit-home" id="first-visit-home" aria-labelledby="first-visit-title">
+        <div class="first-visit-paper-bg" aria-hidden="true"></div>
+        <svg class="first-visit-thread" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M-30 728C163 667 266 697 385 594c122-105 191-88 292-168 124-98 219-20 331-99 101-72 182-137 460-92"/>
+        </svg>
+
+        <div class="first-visit-copy">
+          <p class="first-visit-kicker"><span>云游四方</span><i aria-hidden="true"></i>贵州首站 · FIRST STOP: GUIZHOU</p>
+          <h1 id="first-visit-title">另一个自己，<br><em>正在贵州旅行。</em></h1>
+          <p class="first-visit-lead">她叫阿镜。她沿真实路线走进贵州，把一路的照片、声音和见闻写进手帐。等你真正来到这里，也可以拍下眼前，请她陪你看懂此地的历史与生活。</p>
+          <div class="first-visit-actions">
+            <button id="start-cloud-journey" type="button"><span>进入我的旅行手帐</span><i aria-hidden="true">↗</i></button>
+          </div>
+          <ol class="first-visit-journey" aria-label="云游四方的三段连续体验">
+            <li><i>01</i><span>沿真实路线旅行</span></li>
+            <li><i>02</i><span>到现场问阿镜</span></li>
+            <li><i>03</i><span>见闻写进手帐</span></li>
+          </ol>
+        </div>
+
+        <figure class="first-visit-encounter" aria-label="海龙屯真实旅行现场与一张远方明信片">
+          <div class="encounter-photo">
+            <img src="assets/hailongtun-now-wide.jpg" alt="贵州海龙屯遗址与山地森林">
+            <span class="encounter-photo-shade" aria-hidden="true"></span>
+            <div class="encounter-photo-meta"><span>贵州 · 海龙屯</span><small>真实现场资料图</small></div>
+            <figcaption><i aria-hidden="true"></i><span>阿镜正在贵州旅行</span><small>每一次抵达，都会长成新的一页</small></figcaption>
+          </div>
+          <article class="encounter-postcard">
+            <header><span>远方明信片 · 001</span><i>海龙屯</i></header>
+            <p>我还在路上。<br>今天走到海龙屯，雨刚停。</p>
+            <small>照片、声音和一路记下的见闻，都会从远方寄回来。</small>
+            <footer><span>写于路上</span><img class="postcard-brand-mark" src="/prototype/assets/brand/yunyou-sifang-icon-512.png" alt="" aria-hidden="true"></footer>
+          </article>
+          <span class="encounter-thread-knot" aria-hidden="true"></span>
+        </figure>
+
+        <footer class="first-visit-footer">
+          <span>沿真实路线旅行</span><i aria-hidden="true"></i><span>到现场问阿镜</span><i aria-hidden="true"></i><span>见闻写进手帐</span>
+        </footer>
+      </section>
+
+      <section class="journey-arrival" aria-label="云游四方行旅桌面">
+        <div class="workspace-paper" aria-hidden="true"></div>
+
+        <nav class="workspace-module-rail workspace-top-navigation" aria-label="行旅桌面模块" role="tablist" aria-orientation="horizontal">
+          <div class="workspace-rail-heading">
+            <a class="workspace-home-link" href="?intro=1" aria-label="返回云游四方首页">
+              <img class="workspace-brand-logo" src="/prototype/assets/brand/yunyou-sifang-logo-horizontal.png" alt="">
+            </a>
+            <span><small>行旅导航</small><b>云游四方</b></span>
+          </div>
+
+          <button class="workspace-module-card is-agent" type="button" role="tab" id="workspace-tab-agent" aria-controls="workspace-panel-agent" aria-selected="true" data-workspace-module-target="agent">
+            <span class="module-nav-index" aria-hidden="true">01</span>
+            <span class="module-nav-copy">
+              <small>远方现场 · CLOUD TRAVEL</small>
+              <strong>云游</strong>
+              <b><span id="workspace-agent-status">准备出发</span><i aria-hidden="true">·</i><span id="workspace-agent-location">贵州 · 贵阳</span></b>
+              <em><span id="workspace-agent-freshness">旅程状态</span> · 阿镜此刻与实时行旅地图</em>
+            </span>
+            <i class="module-nav-arrow" aria-hidden="true">→</i>
+          </button>
+
+          <button class="workspace-module-card is-journal" type="button" role="tab" id="workspace-tab-journal" aria-controls="workspace-panel-journal" aria-selected="false" data-workspace-module-target="journal">
+            <span class="module-nav-index" aria-hidden="true">02</span>
+            <span class="module-nav-copy">
+              <small>沿途装订 · TRAVEL JOURNAL</small>
+              <strong>游记</strong>
+              <b id="workspace-journal-summary">封面 · 等待出发</b>
+            </span>
+            <i class="module-nav-arrow" aria-hidden="true">→</i>
+          </button>
+
+          <p class="workspace-rail-note" aria-hidden="true"><i></i>贵州首发 · 阿镜在路上</p>
+        </nav>
+
+        <section class="user-travel-journal" id="workspace-panel-journal" role="tabpanel" aria-labelledby="workspace-tab-journal" aria-label="我的旅行手账">
+          <div class="user-journal-book" id="user-journal-book" data-page="0" data-open="false">
+            <div class="user-journal-spread is-current" data-user-journal-spread="0">
+              <article class="user-journal-page user-journal-cover" role="button" tabindex="0" aria-label="打开我的旅行手账" aria-expanded="false">
+                <div class="user-journal-cover-inner">
+                  <small>YUNYOU SIFANG · PERSONAL JOURNEY</small>
+
+                  <div class="user-journal-cover-notes">
+                    <span class="user-journal-cover-seal" aria-hidden="true">黔</span>
+                    <ol aria-label="这本旅行手账如何长出来">
+                      <li>
+                        <small>REAL WORLD</small>
+                        <strong>真实世界持续发生</strong>
+                        <span>天气、地形与路线，会改变她今天看见什么</span>
+                      </li>
+                      <li>
+                        <small>HER OWN WAY</small>
+                        <strong>她有自己的下一步</strong>
+                        <span>你留下线索，她仍保留路线与生活的选择</span>
+                      </li>
+                      <li>
+                        <small>SHARED MEMORY</small>
+                        <strong>共同多出一页生命</strong>
+                        <span>见闻、明信片与回信，装订成只属于你们的手账</span>
+                      </li>
+                    </ol>
+                  </div>
+
+                  <div class="user-journal-cover-title">
+                    <span>阿镜在贵州继续旅行</span>
+                    <h2>我的<br>旅行手账</h2>
+                    <p>我沿着真实的路继续生活，<br>把能核实的见闻和自己的感受写进来。</p>
+                  </div>
+                  <footer><span>贵州 · 持续探索</span><b>下一站未知</b></footer>
+                </div>
+              </article>
+            </div>
+
+            <div class="user-journal-spread" data-user-journal-spread="1" data-journal-label="手账详情" aria-hidden="true">
+              <article class="user-journal-page generated-letter-page" aria-label="阿镜写给你的开场">
+                <p class="journal-page-index"><span>阿镜来信 · OPENING NOTE</span><b>01</b></p>
+                <div class="letter-body compact">
+                  <small>YUNYOU SIFANG · PERSONAL JOURNEY</small>
+                  <h2>我替你多走一段，<br>也把感受寄回来。</h2>
+                  <p>我是阿镜，是你留在远方的另一个自己。我会沿真实路线走进贵州，让天气、体力和路上的犹豫改变脚步，再把亲自走过的那一刻写进这本手帐。</p>
+                  <p>我也会顺着眼前的山河与遗址，去读一段历史为什么发生在这里。能核实的故事认真讲，仍说不准的地方就留一点空白，等后面的路来回答。</p>
+                  <footer><span>阿镜</span><time>正在替你远行</time></footer>
+                </div>
+              </article>
+              <article class="user-journal-page waiting-page" aria-label="手账详情等待页">
+                <p class="journal-page-index"><span>旅途详情 · JOURNEY DESK</span><b>02</b></p>
+                <div class="waiting-sheet">
+                  <i aria-hidden="true"></i>
+                  <h2>下一页，等我从远方带回来。</h2>
+                  <p>每一次真正抵达，都会留下新的路线、照片和一段当时的心情。山河背后的历史也会慢慢跟上来。你不必替我赶路，只要偶尔翻回来，看看我又在哪里停了一会儿。</p>
+                  <dl>
+                    <div><dt>当前目的地</dt><dd>贵州</dd></div>
+                    <div><dt>手账状态</dt><dd>持续生长</dd></div>
+                    <div><dt>阅读方式</dt><dd>双页翻阅</dd></div>
+                  </dl>
+                </div>
+              </article>
+            </div>
+
+            <button class="user-journal-edge is-prev" id="user-journal-prev" type="button" aria-label="点击左侧页边翻到上一页" disabled></button>
+            <button class="user-journal-edge is-next" id="user-journal-next" type="button" aria-label="点击右侧页边翻到下一页"></button>
+          </div>
+
+          <div class="journey-primary-action" aria-label="开启与阿镜的贵州旅程">
+            <div>
+              <strong>从贵阳出发，看我一步步往前走</strong>
+              <span>路线不预设 · 自驾 · 慢慢沉浸</span>
+            </div>
+            <button id="plan-ai-journey" type="button">和阿镜一起启程 <i aria-hidden="true">→</i></button>
+          </div>
+
+          <footer class="user-journal-pagination">
+            <span id="user-journal-page-label">封面</span>
+            <i aria-hidden="true"></i>
+            <small>点页边或左右滑动</small>
+          </footer>
+        </section>
+
+        <aside class="workspace-guide city-journal-library" aria-labelledby="workspace-guide-title">
+          <header>
+            <span id="workspace-guide-title">九城指南</span>
+            <b id="workspace-city-progress">9 本 · 上下滑动</b>
+          </header>
+          <nav class="workspace-city-list" id="workspace-city-list" aria-label="贵州九城文化指南，纵向滑动浏览"></nav>
+        </aside>
+      </section>
+
+      <section class="travel-map-stage" id="travel-map" role="dialog" aria-modal="true" aria-label="阿镜的实时行旅地图" tabindex="-1">
+        <div class="map-stage-ambient" aria-hidden="true">
+          <small>阿镜的视野 · 此刻贵州</small>
+          <h2>路还没定，<br>我会自己决定往哪里走。</h2>
+          <p>左上角的地图会跟着我的脚步移动。</p>
+        </div>
+
+        <div class="journey-map real-map" id="real-travel-map" role="application" aria-label="真实地图：只展示阿镜已经走过的轨迹和当前位置"></div>
+        <p class="map-load-state" id="map-load-state" aria-live="polite">真实地图与已走轨迹加载中…</p>
+        <header class="map-titlebar" aria-live="polite">
+          <div>
+            <small>阿镜此刻 · 路上状态</small>
+            <h2 id="travel-location">贵州 · 等待出发</h2>
+          </div>
+          <p>
+            <span id="travel-eta">道路时间待确认</span>
+            <small id="travel-route-detail">只展示已经发生的轨迹</small>
+            <small id="travel-sim-eta"></small>
+          </p>
+        </header>
+        <button class="map-expand-trigger" id="expand-travel-map" type="button" aria-expanded="false" aria-controls="real-travel-map">
+          <span id="map-compact-status">贵州 · 探索地图</span><b>点击查看地图 <i aria-hidden="true">↗</i></b>
+        </button>
+        <div class="expanded-map-tools" aria-label="地图控制">
+          <button id="follow-travel-agent" type="button" aria-pressed="true"><span aria-hidden="true">●</span> 正在跟随阿镜</button>
+          <button id="collapse-travel-map" type="button"><span aria-hidden="true">×</span> 关闭地图</button>
+        </div>
+
+        <footer class="map-legend">
+          <span><i class="legend-agent"></i>阿镜此刻</span>
+          <span><i class="legend-route"></i>已经走过</span>
+          <span><i class="legend-future"></i>下一段未公开</span>
+          <small class="map-credit"><span id="route-source-mode">只显示已经发生的轨迹</span> · <span id="map-attribution">地图 © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap 贡献者</a> · 路线 <a href="https://project-osrm.org/" target="_blank" rel="noreferrer">OSRM</a></span></small>
+        </footer>
+      </section>
+
+      <aside class="journey-brief" id="workspace-panel-agent" role="tabpanel" aria-labelledby="workspace-tab-agent" aria-label="阿镜此刻与行旅地图">
+        <div class="journey-context-bar">
+          <button class="agent-map-preview module-map-preview" id="agent-map-preview" type="button" aria-label="放大查看阿镜的实时行旅地图" aria-controls="travel-map" aria-expanded="false">
+            <span class="workspace-mini-map" id="workspace-mini-map" aria-hidden="true"></span>
+            <span class="module-map-loading" aria-hidden="true"><i></i></span>
+          </button>
+          <header class="ajing-window-head">
+            <div class="ajing-window-title">
+              <small id="ajing-window-kicker">阿镜在贵州 · 此刻</small>
+              <p><span id="journey-title">贵阳 · 南明河畔</span><time id="ajing-moment-time">11:23 · 旅程状态刚更新</time></p>
+            </div>
+            <div class="journey-header-actions">
+              <div class="history-footprint-control">
+                <button class="history-footprint-trigger" id="history-footprint-trigger" type="button" aria-expanded="false" aria-controls="history-footprint-panel">
+                  <span aria-hidden="true" class="history-footprint-mark"><i></i><i></i><i></i></span>
+                  <span><b>历史足迹</b><small id="history-footprint-trigger-note">回看走过的片刻</small></span>
+                  <i class="history-footprint-caret" aria-hidden="true">⌄</i>
+                </button>
+                <section class="history-footprint-panel" id="history-footprint-panel" aria-label="选择一个历史时刻" hidden>
+                  <header>
+                    <div><small>FOOTPRINT ARCHIVE</small><h3>她走过的时间</h3></div>
+                    <button id="history-footprint-close" type="button" aria-label="关闭历史足迹">×</button>
+                  </header>
+                  <p>每一枚时间戳，都是路上曾经发生过的现场。</p>
+                  <div class="history-footprint-list" id="history-footprint-list" role="listbox" aria-label="历史足迹时间列表"></div>
+                </section>
+              </div>
+              <div class="journey-management-control">
+                <button class="journey-management-trigger" id="journey-management-trigger" type="button" aria-expanded="false" aria-controls="journey-management-panel">
+                  <span class="journey-management-mark" aria-hidden="true"><i></i></span>
+                  <span><b>管理旅程</b><small id="journey-management-state">旅行进行中</small></span>
+                  <i class="journey-management-caret" aria-hidden="true">⌄</i>
+                </button>
+                <section class="journey-management-panel" id="journey-management-panel" aria-label="管理阿镜的旅程" hidden>
+                  <header>
+                    <div><small>JOURNEY NOTE</small><h3>和阿镜商量下一步</h3></div>
+                    <button id="journey-management-close" type="button" aria-label="关闭旅程管理">×</button>
+                  </header>
+                  <p class="journey-management-summary"><span id="journey-management-location">贵州·路上</span><b id="journey-management-description">阿镜正在按照自己的节奏往前走。</b></p>
+                  <div class="journey-management-options">
+                    <button class="journey-management-option" id="journey-pause-action" type="button">
+                      <span class="journey-option-sign is-pause" aria-hidden="true"><i></i><i></i></span>
+                      <span><b id="journey-pause-label">暂停当前旅程</b><small id="journey-pause-note">停在此刻，路线和手账都会保留</small></span>
+                      <i aria-hidden="true">→</i>
+                    </button>
+                    <button class="journey-management-option is-new" id="journey-new-action" type="button" aria-expanded="false" aria-controls="journey-new-confirmation">
+                      <span class="journey-option-sign is-new" aria-hidden="true">+</span>
+                      <span><b>开启一段新旅程</b><small>收好这一程，重新选择方向与节奏</small></span>
+                      <i aria-hidden="true">→</i>
+                    </button>
+                  </div>
+                  <div class="journey-new-confirmation" id="journey-new-confirmation" hidden>
+                    <p><b>把这一程收进手账？</b><span>已走过的路与见闻不会消失，新旅程将从设置开始。</span></p>
+                    <div><button id="journey-new-cancel" type="button">先不开始</button><button id="journey-new-confirm" type="button">收好并开新程</button></div>
+                  </div>
+                  <footer>暂停可以随时继续。新旅程不会覆盖这一程留下的手账。</footer>
+                </section>
+              </div>
+            </div>
+          </header>
+          <div class="journey-route-ledger" id="journey-route-ledger" aria-label="本段旅程从甲秀楼出发，下一站修文龙场">
+            <p class="is-origin"><small>旅程起点</small><b id="journey-origin-name">甲秀楼</b></p>
+            <span class="journey-route-stroke" aria-hidden="true"><i></i></span>
+            <p class="is-next"><small id="journey-next-label">下一站</small><b id="journey-next-name">修文龙场</b><span id="journey-next-reason">沿山地生活与知行线索继续走</span></p>
+          </div>
+        </div>
+        <div class="journey-idle-state">
+          <div class="ai-journey-heading">
+            <p>本次旅行</p>
+            <span>等待阿镜选择方向</span>
+          </div>
+          <div class="ai-journey-destination">
+            <small>贵州 · 第一程</small>
+            <h2>贵州</h2>
+            <p>起点将在贵州随机落下 · 出发后公布下一站</p>
+          </div>
+          <dl class="idle-journey-facts">
+            <div><dt>出行方式</dt><dd id="idle-travel-mode">自驾</dd></div>
+            <div><dt>旅程节奏</dt><dd id="idle-travel-pace">沉浸节奏</dd></div>
+            <div><dt>推进方式</dt><dd id="idle-travel-duration">约 10× 加速</dd></div>
+          </dl>
+          <button class="edit-ai-journey" id="edit-ai-journey" type="button">编辑旅行设置 <i aria-hidden="true">↗</i></button>
+        </div>
+        <div class="journey-live-state">
+          <section class="ajing-window" aria-labelledby="journey-title">
+            <div class="ajing-presence-board" aria-label="阿镜刚寄回的旅途手记">
+              <div class="ajing-moment-copy">
+                <h2 id="ajing-event-title">我在南明河边慢了下来。</h2>
+                <blockquote id="ajing-thought">南明河把城市的路分到两岸。我沿河走了一段，腿有点沉，想先在桥边停一会儿。</blockquote>
+                <div class="ajing-body-notes" aria-label="阿镜此刻的身体与环境">
+                  <span id="ajing-energy-note">脚步还轻</span>
+                  <span id="ajing-comfort-note">体感舒服</span>
+                  <span id="ajing-scene-condition">天气正在同步</span>
+                </div>
+              </div>
+
+              <div class="ajing-photo-notes" aria-label="阿镜刚刚看到的三个现场片段">
+                <figure class="is-wide ajing-photo-primary">
+                  <img id="ajing-scene-image" src="assets/attractions/CTY-001.jpg" alt="贵阳城市街巷与公共生活">
+                  <figcaption><small id="ajing-photo-label-1">眼前</small><span id="ajing-photo-copy-1">南明河穿过城市</span></figcaption>
+                </figure>
+                <figure class="ajing-photo-detail is-left">
+                  <img id="ajing-photo-2" src="assets/attractions/CTY-003.jpg" alt="贵阳甲秀楼与南明河城市景观">
+                  <figcaption><small id="ajing-photo-label-2">刚经过</small><span id="ajing-photo-copy-2">城市贴着河生长</span></figcaption>
+                </figure>
+                <figure class="ajing-photo-detail is-right">
+                  <img id="ajing-photo-3" src="assets/culture/FOD-002.jpg" alt="贵州地方饮食与日常相聚">
+                  <figcaption><small id="ajing-photo-label-3">沿途资料</small><span id="ajing-photo-copy-3">城市日常还在继续</span></figcaption>
+                </figure>
+              </div>
+
+              <p class="ajing-choice-line">
+                <span><small>接下来想</small><i aria-hidden="true">NEXT</i></span>
+                <strong id="ajing-choice-title">先在河边停一会儿</strong>
+              </p>
+            </div>
+
+            <section class="history-story-canvas" id="history-footprint-story" hidden aria-live="polite"></section>
+
+            <div class="ajing-discovery-grid">
+              <details class="ajing-time-door" id="ajing-time-door">
+                <summary>
+                  <span class="ajing-paper-clip" aria-hidden="true"></span>
+                  <span class="ajing-discovery-register"><small>这个地方的前世今生</small><b id="ajing-history-era">明代以来</b></span>
+                  <strong id="ajing-history-title">南明河上的甲秀楼，为什么留在水路之间</strong>
+                  <p id="ajing-history-summary">沿着南明河走到甲秀楼，贵阳老城怎样借河道与桥梁展开，也就有了具体的样子。</p>
+                  <i>打开过去之眼</i>
+                </summary>
+                <div class="ajing-time-reveal">
+                  <figure>
+                    <img id="ajing-history-image" src="assets/attractions/CTY-003.jpg" alt="贵阳甲秀楼与南明河城市景观">
+                    <figcaption id="ajing-history-image-note">历史建筑现状 · 不是古代复原图</figcaption>
+                  </figure>
+                  <div>
+                    <small id="ajing-history-kicker">从河道与桥梁看贵阳</small>
+                    <p id="ajing-history-copy">几百年前，这里先要解决的是怎样过河、怎样借水路通行与防护。后来城市沿河岸继续生长，道路越铺越开，甲秀楼仍留在河与桥相接的地方。</p>
+                    <span>史实、现状和复原推测会分别标注。</span>
+                  </div>
+                </div>
+              </details>
+
+              <aside class="ajing-local-find" aria-labelledby="ajing-find-title">
+                <span class="ajing-find-tape" aria-hidden="true"></span>
+                <figure><img id="ajing-find-image" src="assets/culture/FOD-002.jpg" alt="贵州地方饮食与日常相聚"></figure>
+                <div>
+                  <small>她在当地发现的</small>
+                  <h3 id="ajing-find-title">一口真正属于这里的味道</h3>
+                  <p id="ajing-find-copy">先知道它为什么属于这里，再决定要不要尝尝。</p>
+                  <button id="ajing-discovery-trigger" type="button" data-commerce-intent="true">跟她去看看 <i aria-hidden="true">↗</i></button>
+                </div>
+              </aside>
+            </div>
+
+            <section class="journey-discovery" id="journey-discovery" hidden aria-labelledby="journey-discovery-title">
+              <header><div><small>沿途发现</small><h4 id="journey-discovery-title">阿镜沿途留意到了一样东西</h4></div><button id="journey-discovery-dismiss" type="button" aria-label="关闭沿途发现">×</button></header>
+              <div class="journey-discovery-body">
+                <figure><img id="journey-discovery-image" src="assets/culture/FOD-002.jpg" alt="贵州地方饮食"><figcaption id="journey-discovery-verification">来源待核验</figcaption></figure>
+                <div class="journey-discovery-copy">
+                  <p id="journey-discovery-moment">阿镜在当地遇见</p>
+                  <h5 id="journey-discovery-name">贵州地方味道</h5>
+                  <p id="journey-discovery-question">想知道它为什么属于这里，再决定是否带走。</p>
+                  <dl><div><dt>来自</dt><dd id="journey-discovery-origin">贵州</dd></div><div><dt>履约</dt><dd id="journey-discovery-fulfillment">由第三方平台完成</dd></div></dl>
+                  <p class="journey-discovery-price" id="journey-discovery-price">价格以平台实时信息为准</p>
+                  <div class="journey-discovery-actions"><button id="journey-discovery-open" type="button" aria-expanded="false">想尝尝</button><button id="journey-discovery-save" type="button" aria-pressed="false">夹进手账</button></div>
+                </div>
+              </div>
+              <div class="journey-discovery-purchase" id="journey-discovery-purchase" hidden><div><small>第三方信息入口</small><b>地址、付款、订单、物流和售后都留在平台内</b></div><div id="journey-discovery-offers"></div></div>
+              <p id="journey-discovery-disclosure">非商业推荐；云游四方不参与第三方交易，也不读取支付信息。</p>
+            </section>
+
+            <section class="journey-ai-tools ajing-question" aria-labelledby="ajing-reply-label">
+              <header><div><small>想知道更多</small><h3 id="ajing-reply-label">直接问她</h3></div></header>
+              <form class="journey-ai-form" id="journey-ai-form">
+                <label for="journey-ai-question">关于她所在的地方</label>
+                <textarea id="journey-ai-question" name="question" rows="2" maxlength="800" placeholder="比如：这里几百年前是什么样？这附近有什么当地人常吃的？"></textarea>
+                <button id="journey-ai-submit" type="submit" aria-label="向阿镜提问"><span>问她</span><i aria-hidden="true">→</i></button>
+              </form>
+              <div class="journey-ai-answer" id="journey-ai-answer" hidden aria-live="polite">
+                <div class="journey-ai-answer-meta"><span id="journey-ai-answer-kind">阿镜 · 此刻回应</span><time id="journey-ai-answer-time"></time></div>
+                <p id="journey-ai-answer-copy"></p>
+                <div class="journey-ai-sources" id="journey-ai-sources"></div>
+              </div>
+            </section>
+          </section>
+        </div>
+      </aside>
+    </section>
+
+    <section class="onsite-companion" id="onsite-companion" role="dialog" aria-modal="true" aria-hidden="true" inert aria-labelledby="onsite-title">
+      <div class="onsite-backdrop" data-close-onsite aria-hidden="true"></div>
+      <div class="onsite-shell">
+        <header class="onsite-header">
+          <div>
+            <span class="onsite-seal" aria-hidden="true">黔</span>
+            <p><small>A-JING · WITH YOU</small><b>阿镜 · 此刻同行</b></p>
+          </div>
+          <button id="close-onsite-companion" type="button" aria-label="关闭阿镜的现场同行">×</button>
+        </header>
+
+        <div class="onsite-layout">
+          <section class="onsite-capture" aria-labelledby="onsite-title">
+            <p class="onsite-kicker">我看你此刻看见的</p>
+            <h2 id="onsite-title">拍给我看。<br>我陪你读懂这里。</h2>
+            <p class="onsite-intro">一座旧墙、一条街、一只碗，都可以是故事的入口。我会结合照片、你允许的位置和云游四方资料，先请你确认“这是哪里”。</p>
+
+            <figure class="onsite-photo-frame">
+              <img id="onsite-photo-preview" src="assets/hailongtun-now-web.jpg" alt="今天被植被覆盖的海龙屯石砌遗存">
+              <figcaption><span id="onsite-photo-status">样例现场</span><b id="onsite-photo-place">遵义 · 海龙屯</b></figcaption>
+              <i class="onsite-viewfinder top-left" aria-hidden="true"></i>
+              <i class="onsite-viewfinder top-right" aria-hidden="true"></i>
+              <i class="onsite-viewfinder bottom-left" aria-hidden="true"></i>
+              <i class="onsite-viewfinder bottom-right" aria-hidden="true"></i>
+            </figure>
+
+            <label class="onsite-photo-action" for="onsite-photo-input">
+              <span aria-hidden="true">◎</span><b>拍照或选一张现场照片</b><i aria-hidden="true">→</i>
+            </label>
+            <input id="onsite-photo-input" type="file" accept="image/*" capture="environment" hidden>
+            <p class="onsite-privacy">你决定是否上传照片与位置。当前样机只在本机预览，并使用海龙屯演示识别结果。</p>
+          </section>
+
+          <section class="onsite-conversation" id="onsite-conversation" data-state="ready" aria-live="polite">
+            <div class="onsite-recognition">
+              <span><i aria-hidden="true"></i><small>识别候选</small><b>海龙屯飞虎关附近</b></span>
+              <button id="confirm-onsite-place" type="button" aria-pressed="true">就是这里 <i aria-hidden="true">✓</i></button>
+            </div>
+
+            <div class="companion-message">
+              <span class="companion-avatar" aria-hidden="true">搭</span>
+              <div>
+                <small>阿镜</small>
+                <p id="onsite-companion-copy">你先别急着往前走。你镜头里这些被树影盖住的石墙，四百多年前不是一处安静的遗址，而是山顶上层层设防的土司屯堡。你现在站的这段山势，本身就是它防御的一部分。</p>
+              </div>
+            </div>
+
+            <div class="onsite-topic-block">
+              <p>想先听哪一种讲法？</p>
+              <div class="onsite-topics" role="group" aria-label="选择讲述角度">
+                <button class="is-active" type="button" data-onsite-topic="past">这里以前什么样</button>
+                <button type="button" data-onsite-topic="elders">老一辈怎么讲</button>
+                <button type="button" data-onsite-topic="legend">这里流传过什么</button>
+                <button type="button" data-onsite-topic="culture">为什么建在这里</button>
+              </div>
+            </div>
+
+            <article class="onsite-story-card" data-source-state="local">
+              <header><span id="onsite-story-type">史实脉络</span><b id="onsite-story-title">从山上的城，到林中的遗址</b></header>
+              <p id="onsite-story-copy">海龙屯长期是播州杨氏土司的山地防御据点。1599 年播州之役后，原有建筑与政治秩序改变；后来的废弃、植被生长与考古工作，共同造成你今天看到的样子。</p>
+              <footer id="onsite-story-source"><span>已确认事实</span><span>云游四方知识库</span><button type="button">展开检索来源 ↗</button></footer>
+              <div class="onsite-source-results" id="onsite-source-results" hidden></div>
+            </article>
+
+            <form class="onsite-question" id="onsite-question-form">
+              <label for="onsite-question-input">像问朋友一样，继续问我</label>
+              <div><input id="onsite-question-input" type="text" maxlength="160" placeholder="比如：以前老人都怎么讲这道关？"><button type="submit">问问它 <span aria-hidden="true">↑</span></button></div>
+            </form>
+
+            <footer class="onsite-actions">
+              <button id="listen-onsite-story" type="button"><span aria-hidden="true">◉</span>听它讲</button>
+              <button id="save-onsite-story" type="button"><span aria-hidden="true">夹</span>收进我的旅行手帐</button>
+            </footer>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <aside class="travel-settings" id="travel-settings" role="dialog" aria-modal="true" aria-hidden="true" inert aria-labelledby="travel-settings-title" aria-describedby="travel-settings-intro">
+      <button class="travel-settings-close" id="close-travel-settings" type="button" aria-label="关闭旅程设置">×</button>
+      <header class="travel-settings-header">
+        <div>
+          <p class="travel-settings-kicker">旅程配置 <span>JOURNEY SETUP</span></p>
+          <h2 id="travel-settings-title">想让远方的自己记着什么？</h2>
+          <p id="travel-settings-intro">先给我一个大致方向就好。真正上路以后，我会照着天气、体力和已经遇见的生活，自己决定下一站。</p>
+        </div>
+        <dl class="travel-destination-fixed">
+          <dt>此次目的地</dt>
+          <dd>贵州</dd>
+          <span>首发探索范围</span>
+        </dl>
+      </header>
+
+      <div class="travel-settings-body">
+        <div class="travel-settings-primary">
+          <fieldset class="travel-setting-section travel-theme-section">
+            <legend>
+              <span class="travel-setting-index">01</span>
+              <span><strong>这一程，希望遇见怎样的贵州？</strong><small>它只是起点，不会把路提前写死</small></span>
+            </legend>
+            <div class="travel-option-row travel-theme-row" data-option-group="theme">
+              <button type="button" data-theme="第一次认识贵州" class="is-selected"><span>第一次认识</span><small>山水、城市与日常，先建立整体印象</small></button>
+              <button type="button" data-theme="山水与安静的地方"><span>山水与安静</span><small>顺着山地、水系与安静聚落慢慢走</small></button>
+              <button type="button" data-theme="贵州美食与日常生活"><span>美食与日常</span><small>从市场、餐桌和街巷理解当地生活</small></button>
+              <button type="button" data-theme="非遗、手艺与真实人物故事"><span>非遗与手艺</span><small>去见手艺、人物与仍在继续的传统</small></button>
+              <button type="button" data-theme="不预设，由阿镜自由探索"><span>阿镜自由探索</span><small>不设主题，让当天的路和遇见带她往前</small></button>
+            </div>
+          </fieldset>
+
+          <fieldset class="travel-setting-section travel-commission-field">
+            <legend>
+              <span class="travel-setting-index">02</span>
+              <span><strong>要留一个念头给我吗？</strong><small>可选，把此刻真正好奇的事轻轻放在这里</small></span>
+            </legend>
+            <label for="travel-commission">此刻想让我记着的事</label>
+            <textarea id="travel-commission" rows="3" maxlength="600" placeholder="空着也行。若心里真有一个想让我留意的问题，再写在这里。"></textarea>
+            <small>全凭你自愿。只有你亲手写下并确认的内容，才会被带进这趟旅程。</small>
+          </fieldset>
+        </div>
+
+        <div class="travel-settings-secondary">
+          <fieldset class="travel-setting-section">
+            <legend>
+              <span class="travel-setting-index">03</span>
+              <span><strong>怎么走？</strong><small>出行方式会改变旅程的距离感</small></span>
+            </legend>
+            <div class="travel-option-row travel-mode-row" data-option-group="mode">
+              <button type="button" data-mode="自驾" class="is-selected">自驾</button>
+              <button type="button" data-mode="自行车">自行车</button>
+              <button type="button" data-mode="电动车">电动车</button>
+              <button type="button" data-mode="步行">步行</button>
+              <button type="button" data-mode="阿镜决定">阿镜决定</button>
+            </div>
+          </fieldset>
+
+          <fieldset class="travel-setting-section travel-pace-section">
+            <legend>
+              <span class="travel-setting-index">04</span>
+              <span><strong>这一段想走多快？</strong><small>它会改变地图推进和我寄回见闻的疏密</small></span>
+            </legend>
+            <div class="travel-option-row travel-pace-row" data-option-group="pace">
+              <button type="button" data-pace="实时同行"><span>实时同行</span><small>按真实道路时间</small></button>
+              <button type="button" data-pace="沉浸节奏" class="is-selected"><span>沉浸节奏</span><small>约 10× 加速</small></button>
+              <button type="button" data-pace="快速云游"><span>快速云游</span><small>约 40× 加速</small></button>
+              <button type="button" data-pace="自定义"><span>自定义</span><small>自定云游时长</small></button>
+            </div>
+            <div class="custom-pace-control" id="custom-pace-control" hidden>
+              <label for="custom-travel-duration">这一段旅程用多久</label>
+              <input id="custom-travel-duration" type="range" min="5" max="120" step="5" value="30">
+              <output id="custom-duration-value" for="custom-travel-duration">30 分钟</output>
+            </div>
+          </fieldset>
+
+          <details class="travel-settings-data-note">
+            <summary>阿镜会使用哪些信息？</summary>
+            <p>写手帐时，阿镜会使用你留下的话、已走轨迹、地点候选、当地天气和相关知识片段。图片服务只收到地点、环境与文化主题。不会发送你的真实位置、密钥或手帐私人批注。</p>
+          </details>
+        </div>
+      </div>
+
+      <footer class="travel-settings-footer">
+        <p><strong>可以出发了</strong><span>确认后，我会从贵州的一条真实道路开始这段旅程。</span></p>
+        <button class="confirm-ai-journey" id="confirm-ai-journey" type="button"><span>好，和阿镜一起出发</span><i aria-hidden="true">→</i></button>
+      </footer>
+    </aside>
+
+    <div class="travel-toast" id="travel-toast" role="status" aria-live="polite"></div>
+  </main>
+
+  <main class="journal-app" id="main-content">
+    <button class="return-to-travel" id="return-to-travel" type="button"><span aria-hidden="true">←</span> 回到云旅行</button>
+    <button class="return-to-city-library" id="return-to-city-library" type="button"><span aria-hidden="true">←</span> 返回九城指南</button>
+
+    <section class="city-journal-gallery" id="city-journal-gallery" aria-labelledby="city-journal-gallery-title">
+      <header>
+        <p><span>贵州总览</span><i aria-hidden="true"></i>NINE CITY GUIDES</p>
+        <h1 id="city-journal-gallery-title">九座城，九种贵州。</h1>
+        <div>
+          <p>选一座城，读它的山水、街巷和日子。读累了就换一座，随时都可以回来。</p>
+          <span>9 座城市 · 选择一座开始阅读</span>
+        </div>
+      </header>
+      <nav class="city-journal-gallery-grid" id="city-journal-gallery-grid" aria-label="贵州九城文化指南"></nav>
+      <footer><span>GUIZHOU · CITY GUIDE COLLECTION</span><b>云游四方 · 2026</b></footer>
+    </section>
+
+    <section class="book-stage" id="book-stage" aria-label="贵阳城市文化旅行指南">
+      <div class="book-shadow" aria-hidden="true"></div>
+      <div class="book" id="book">
+        <section class="book-cover" id="book-cover" role="button" tabindex="0" aria-labelledby="cover-title" aria-label="打开贵阳城市文化旅行指南" aria-hidden="false">
+          <img class="cover-image" src="assets/cloud-wayfarer-world-v1.png" alt="贵州山地、村寨、河谷与当代城市交叠的文化长卷">
+          <div class="cover-cloth" aria-hidden="true"></div>
+          <div class="cover-contours" aria-hidden="true"></div>
+          <span class="cover-corner top"></span>
+          <span class="cover-corner bottom"></span>
+
+          <div class="cover-copy">
+            <div class="cover-number"><span id="cover-volume">贵州九城文化指南 · 第 01 册</span><b id="cover-code">01</b></div>
+            <p id="cover-kicker">GUIYANG · PLACES AND LIVING CULTURE</p>
+            <h1 id="cover-title">贵阳</h1>
+            <strong class="cover-edition" id="cover-edition">城市文化旅行指南</strong>
+            <div class="cover-rule"></div>
+            <blockquote id="cover-quote">从一片山水进去，<br>慢慢走进它的时间和日子。</blockquote>
+          </div>
+
+          <div class="cover-object" aria-hidden="true">
+            <span class="sun"></span>
+            <i class="mountain mountain-one"></i>
+            <i class="mountain mountain-two"></i>
+            <i class="mountain mountain-three"></i>
+            <span class="river"></span>
+          </div>
+
+          <footer><span id="cover-footer-topics">地方 · 人群 · 时间 · 生活</span><span>黔 2026</span></footer>
+        </section>
+
+        <section class="book-spread" id="book-spread" aria-live="polite" aria-hidden="true" inert>
+          <div class="spine" aria-hidden="true"></div>
+
+          <article class="paper-page visual-page" id="visual-page">
+            <header class="folio-line">
+              <span id="folio-domain">山地环境与生计</span>
+              <b id="folio-left">001</b>
+            </header>
+
+            <section class="place-guide" id="place-guide" hidden></section>
+
+            <div class="culture-plate" id="culture-plate" data-group="environment">
+              <img class="plate-image" id="plate-image" src="assets/cloud-wayfarer-world-v1.png" alt="贵州山地文化图景">
+              <span class="photo-tape photo-tape-top" aria-hidden="true"></span>
+              <span class="photo-tape photo-tape-side" aria-hidden="true"></span>
+              <div class="plate-register" aria-hidden="true"><span id="plate-node-id">ENV-001</span><b id="plate-register-label">文化图版 · ARCHIVAL PLATE</b></div>
+              <div class="plate-contours" aria-hidden="true"></div>
+              <div class="plate-landscape" aria-hidden="true">
+                <i></i><i></i><i></i>
+              </div>
+              <span class="plate-glyph" id="plate-glyph">山</span>
+              <p class="plate-object" id="plate-object">滴水的岩洞</p>
+              <button class="bookmark-button" id="bookmark-button" type="button" aria-pressed="false">
+                <span aria-hidden="true">⌑</span><b>收藏这一页</b>
+              </button>
+            </div>
+
+            <div class="visual-caption">
+              <p>现场切片 · FIELD OBSERVATION</p>
+              <h3 id="plate-scene">云雾中的峰丛与洞穴水系</h3>
+              <div class="plate-provenance">
+                <span id="plate-kind">实景照片</span>
+                <b id="plate-credit">先看整体，再找细节</b>
+              </div>
+              <div id="visual-keywords"></div>
+              <div class="visual-focus" id="visual-focus" hidden></div>
+            </div>
+
+            <button class="page-corner page-prev" id="page-prev" type="button" tabindex="-1" aria-label="阅读上一篇"></button>
+            <button class="page-corner mobile-story-next" id="mobile-story-next" type="button" tabindex="-1" aria-label="继续阅读下一页"></button>
+          </article>
+
+          <article class="paper-page story-page" id="story-page">
+            <header class="folio-line right">
+              <span>CLOUD WAYFARER · FIELD NOTE</span>
+              <b id="folio-right">002</b>
+            </header>
+
+            <div class="chapter-label">
+              <span id="chapter-index">第一章</span>
+              <i></i>
+              <b id="chapter-domain">山与人的生活</b>
+            </div>
+
+            <h2 id="culture-title">贵州喀斯特</h2>
+            <p class="culture-summary" id="culture-summary"></p>
+
+            <dl class="culture-meta" id="culture-meta" aria-label="文化条目概况"></dl>
+
+            <section class="interactive-leaf" id="interactive-leaf" aria-live="polite" hidden></section>
+
+            <p class="continue-reading"><span aria-hidden="true">↓</span> 继续读这一页</p>
+            <div class="story-sections" id="story-sections"></div>
+
+            <section class="field-guide" aria-labelledby="field-guide-title">
+              <span>到现场时，不妨留意</span>
+              <h3 id="field-guide-title">把文化放回日子里看</h3>
+              <ul id="field-guide-list"></ul>
+            </section>
+
+            <aside class="margin-note">
+              <span>听这一页</span>
+              <p id="culture-listen"></p>
+              <button id="narrate-page" type="button"><i aria-hidden="true">◉</i>播放页边讲述</button>
+            </aside>
+
+            <section class="threads" aria-labelledby="threads-title">
+              <div class="section-title">
+                <span id="threads-kicker">这一页还没完</span>
+                <b id="threads-title">顺着线索，翻到下一页</b>
+              </div>
+              <div class="thread-list" id="thread-list"></div>
+            </section>
+
+            <footer class="evidence-line">
+              <span class="evidence-stamp" id="evidence-stamp">A · 已有权威来源</span>
+              <button id="open-source-note" type="button">查看资料依据</button>
+            </footer>
+
+            <button class="page-corner mobile-visual-prev" id="mobile-visual-prev" type="button" tabindex="-1" aria-label="返回上一页"></button>
+            <button class="page-corner page-next" id="page-next" type="button" tabindex="-1" aria-label="阅读下一篇"></button>
+          </article>
+
+          <section class="chapter-index-spread" id="chapter-index-spread" aria-live="polite" aria-hidden="true" inert>
+            <article class="chapter-index-page chapter-index-single">
+              <header class="folio-line">
+                <span>主题目录 · CHAPTER INDEX</span>
+                <b id="chapter-index-folio">目001</b>
+              </header>
+              <div class="chapter-index-overview">
+                <div class="chapter-index-heading">
+                  <span class="chapter-index-glyph" id="chapter-index-glyph">山</span>
+                  <div>
+                    <p id="chapter-index-kicker">第一章</p>
+                    <h2 id="chapter-index-title">山水奇境</h2>
+                    <span id="chapter-index-description">瀑布、峰林、峡谷、洞穴与高原生态</span>
+                  </div>
+                </div>
+                <div class="chapter-index-guide">
+                  <p>这一章共 <b id="chapter-index-count">0</b> 页</p>
+                  <span>点一页，直接翻到现场与故事。</span>
+                </div>
+              </div>
+              <div class="chapter-index-list" id="chapter-index-list"></div>
+              <footer class="chapter-index-footer">
+                <span>贵阳城市文化旅行指南</span>
+                <b>从目录进入，也可以沿页间关系继续翻。</b>
+              </footer>
+            </article>
+          </section>
+
+          <div class="turning-leaf" id="turning-leaf" aria-hidden="true"></div>
+
+          <nav class="chapter-tabs" id="chapter-tabs" aria-label="文化章节"></nav>
+          <nav class="place-tabs" id="place-tabs" aria-label="当前章节景点"></nav>
+        </section>
+      </div>
+    </section>
+
+    <aside class="photo-pocket" id="photo-pocket" aria-hidden="true" aria-labelledby="photo-title" inert>
+      <button class="pocket-close" id="photo-close" type="button" aria-label="收起照片夹页">×</button>
+      <p class="pocket-kicker">看 · 现实夹页</p>
+      <h2 id="photo-title">把眼前这一刻，<br>夹进书里。</h2>
+      <figure>
+        <img src="assets/hailongtun-now-web.jpg" alt="今天被植被覆盖的海龙屯石砌遗存">
+        <figcaption><span>识别候选</span><b>遵义 · 海龙屯</b></figcaption>
+      </figure>
+      <p>正式产品会结合照片、位置和文化知识库给出候选。这一版先演示确认以后，书如何替你翻到它的来处。</p>
+      <button class="pocket-primary" id="confirm-hailongtun" type="button">确认是海龙屯，夹入下一页</button>
+      <label class="pocket-secondary" for="photo-input">选择一张照片模拟识别</label>
+      <input id="photo-input" type="file" accept="image/*" hidden>
+      <small>照片不上传；结构样机统一使用海龙屯演示。</small>
+    </aside>
+
+    <aside class="source-slip" id="source-slip" aria-hidden="true" aria-labelledby="source-title" inert>
+      <button id="source-close" type="button" aria-label="收起依据说明">×</button>
+      <span>页后附记</span>
+      <h2 id="source-title">这一页的资料从哪里来？</h2>
+      <dl>
+        <div><dt>已确认内容</dt><dd id="source-confirmed">有权威来源支持，可进入事实整理。</dd></div>
+        <div><dt id="source-expression-label">情境重构说明</dt><dd id="source-expression-copy">只负责把已有事实讲清楚，不冒充照片、口述或历史记录。</dd></div>
+        <div><dt>仍然未知</dt><dd>资料不足与存在争议的地方会明确留白，不把猜测说成真的。</dd></div>
+      </dl>
+      <section class="source-list" aria-labelledby="source-list-title">
+        <h3 id="source-list-title">这一页依据什么</h3>
+        <div id="source-links"></div>
+      </section>
+    </aside>
+
+    <div class="audio-ribbon" id="audio-ribbon" hidden aria-live="polite">
+      <span class="audio-mark" aria-hidden="true">声</span>
+      <div><small>页边讲述</small><p id="audio-copy"></p></div>
+      <button id="audio-stop" type="button">停止</button>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <noscript><p class="noscript">这份城市指南需要 JavaScript 才能翻页。文化总谱仍可在 knowledge-base/贵州文化总谱.md 中阅读。</p></noscript>
+  </main>
+</body>
+</html>

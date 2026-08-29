@@ -1,0 +1,173 @@
+{
+  "meta": {
+    "name": "阿镜世界推演规则目录",
+    "version": "1.1.0",
+    "updatedAt": "2026-08-29",
+    "principle": "推演结果永远保存依据、置信度和表达边界；推演不能升级成直接观测。"
+  },
+  "rules": [
+    {
+      "id": "active_precipitation",
+      "status": "implemented",
+      "kind": "event_detection",
+      "requires": ["weather.precipitationMm", "weather.condition"],
+      "logic": "precipitationMm > 0 或 condition 包含雨/雪/雷",
+      "output": "当前有降水",
+      "confidence": "high",
+      "evidenceMode": "modelled_observation",
+      "affects": ["身体", "衣着", "路面", "路线", "拍摄"]
+    },
+    {
+      "id": "confirmed_fog",
+      "status": "implemented",
+      "kind": "event_detection",
+      "requires": ["weather.condition"],
+      "logic": "condition 包含雾",
+      "output": "天气模型报告当前有雾",
+      "confidence": "high",
+      "evidenceMode": "modelled_observation",
+      "affects": ["能见度", "路线", "光线", "停留"]
+    },
+    {
+      "id": "low_visibility",
+      "status": "implemented",
+      "kind": "event_detection",
+      "requires": ["weather.visibilityM"],
+      "logic": "visibilityM < 3000",
+      "output": "能见度偏低",
+      "confidence": "high",
+      "evidenceMode": "modelled_observation",
+      "affects": ["安全", "路线", "观看范围"]
+    },
+    {
+      "id": "humid_body_load",
+      "status": "implemented",
+      "kind": "embodiment_inference",
+      "requires": ["weather.relativeHumidityPercent", "weather.apparentTemperatureC"],
+      "logic": "湿度 >= 85%，并结合体感温度区分闷热与潮冷",
+      "output": "湿度正在增加身体负担",
+      "confidence": "medium",
+      "evidenceMode": "derived",
+      "affects": ["舒适度", "衣着", "休息", "行走速度"]
+    },
+    {
+      "id": "wet_ground_risk",
+      "status": "implemented",
+      "kind": "route_inference",
+      "requires": ["weather.precipitationMm", "weather.condition"],
+      "logic": "当前有降水时，推演露天路面存在湿滑可能",
+      "output": "露天路面可能湿滑",
+      "confidence": "medium",
+      "evidenceMode": "derived",
+      "affects": ["鞋具", "速度", "路线"],
+      "boundary": "不能断言具体台阶或室内地面已经湿滑"
+    },
+    {
+      "id": "golden_hour_window",
+      "status": "implemented",
+      "kind": "astronomy_calculation",
+      "requires": ["localTime", "weather.today.sunrise", "weather.today.sunset"],
+      "logic": "当前时间在日出后或日落前60分钟内",
+      "output": "接近日出或日落光线窗口",
+      "confidence": "high",
+      "evidenceMode": "calculated",
+      "affects": ["光线注意", "拍摄", "停留"],
+      "boundary": "云层和遮挡可能使金色光线不可见"
+    },
+    {
+      "id": "air_quality_load",
+      "status": "implemented",
+      "kind": "embodiment_inference",
+      "requires": ["airQuality.usAqi"],
+      "logic": "US AQI >= 100 时提示减少高强度户外活动",
+      "output": "空气质量可能增加呼吸负担",
+      "confidence": "medium",
+      "evidenceMode": "derived_from_model",
+      "affects": ["活动强度", "路线", "停留"]
+    },
+    {
+      "id": "cloud_sea_probability",
+      "status": "ready",
+      "kind": "environment_inference",
+      "requires": ["山顶与山谷高差", "低云量", "湿度", "能见度", "风", "温度逆温代理"],
+      "logic": "多信号概率模型",
+      "output": "云海形成概率",
+      "confidence": "low_to_medium",
+      "evidenceMode": "derived",
+      "affects": ["注意", "路线", "等待"],
+      "boundary": "只能说概率，影像或现场确认后才能说云海已经形成"
+    },
+    {
+      "id": "fungi_emergence_likelihood",
+      "status": "ready",
+      "kind": "phenology_inference",
+      "requires": ["过去7天降水", "土壤温度", "土壤湿度", "季节", "植被类型"],
+      "logic": "物种或功能群模型",
+      "output": "菌类出现条件指数",
+      "confidence": "low_to_medium",
+      "evidenceMode": "derived",
+      "affects": ["研究", "寻找", "生态注意"],
+      "boundary": "不能说某种菌已经出现，更不能据此判断可食用"
+    },
+    {
+      "id": "phenology_stage",
+      "status": "ready",
+      "kind": "phenology_inference",
+      "requires": ["历史温度", "积温", "降水", "海拔", "物种基线", "近期观察记录"],
+      "logic": "积温与历史物候模型，近期观察校正",
+      "output": "发芽、开花、变色或成熟概率",
+      "confidence": "medium_when_calibrated",
+      "evidenceMode": "derived",
+      "affects": ["路线", "季节理解", "注意"],
+      "boundary": "没有近期影像或观察记录时只表达概率"
+    },
+    {
+      "id": "rain_volume_over_area",
+      "status": "ready",
+      "kind": "unit_conversion",
+      "requires": ["区域平均降水毫米", "区域面积平方公里"],
+      "logic": "雨量吨数 = 降水毫米 × 面积平方公里 × 1000",
+      "output": "某区域接住的雨水质量估算",
+      "confidence": "medium",
+      "evidenceMode": "calculated",
+      "affects": ["尺度理解", "水循环"],
+      "boundary": "必须说明区域、时间窗口和空间平均方法"
+    },
+    {
+      "id": "waterfall_mass_flow",
+      "status": "ready",
+      "kind": "unit_conversion",
+      "requires": ["经核验的河流体积流量", "叙事秒数"],
+      "logic": "水质量吨 ≈ 流量m³/s × 秒数",
+      "output": "阅读一段话期间流过或落下的水量",
+      "confidence": "high_if_flow_is_direct",
+      "evidenceMode": "calculated",
+      "affects": ["尺度理解", "感官表达"],
+      "boundary": "全球水文模型不能直接替代瀑布现场流量"
+    },
+    {
+      "id": "event_rarity",
+      "status": "implemented",
+      "kind": "historical_baseline",
+      "requires": ["同地点同季节历史观测", "事件规则版本", "当前事件"],
+      "logic": "第一阶段比较当天预报最高温与过去十年同日期前后七天再分析均值；绝对温差达到5℃时进入事件层。降水分位数已入库，待日累计观测接入后再启用降水稀缺性。",
+      "output": "当前实现输出同期温度显著偏离及可解释温差",
+      "confidence": "depends_on_history_coverage",
+      "evidenceMode": "calculated",
+      "affects": ["注意", "记忆", "内容优先级"],
+      "boundary": "没有完整历史覆盖时不得声称‘一年仅发生N次’"
+    },
+    {
+      "id": "bridge_thermal_expansion",
+      "status": "candidate",
+      "kind": "engineering_estimate",
+      "requires": ["桥梁材料", "有效长度", "结构温度", "热膨胀系数"],
+      "logic": "ΔL = α × L × ΔT",
+      "output": "温度形变理论估算",
+      "confidence": "low_without_sensor_calibration",
+      "evidenceMode": "derived",
+      "affects": ["工程理解"],
+      "boundary": "不得称为桥梁实际位移，除非有传感器校准"
+    }
+  ]
+}

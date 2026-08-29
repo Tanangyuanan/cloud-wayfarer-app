@@ -1,0 +1,38 @@
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+
+# Dependencies and test output
+node_modules/
+.cache/
+coverage/
+playwright-report/
+test-results/
+*.log
+
+# Runtime-generated private data
+data/journeys/
+data/user-memories/
+
+# Personal workspaces and agent runtime state
+.harness/
+.gstack/
+.agents/
+.codex/
+.claude/
+01_工作台/
+05_drafts/
+
+# Drafts, generated artifacts, and local production material
+tmp/
+output/
+design/
+sites-preview/
+参赛材料/
+00_当前状态.md
+AI工具层_使用说明.md
+.impeccable.md
+
+# OS files
+.DS_Store

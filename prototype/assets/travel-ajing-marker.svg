@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 72" role="img" aria-label="俯视行走的阿镜">
+  <defs>
+    <linearGradient id="coat" x1="20" y1="22" x2="45" y2="52" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6f8878"/>
+      <stop offset="1" stop-color="#294d40"/>
+    </linearGradient>
+    <linearGradient id="hair" x1="23" y1="7" x2="42" y2="27" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#45382f"/>
+      <stop offset="1" stop-color="#201d1a"/>
+    </linearGradient>
+    <filter id="soft-shadow" x="-45%" y="-35%" width="190%" height="200%">
+      <feDropShadow dx="0" dy="3.5" stdDeviation="2.8" flood-color="#10251c" flood-opacity=".42"/>
+    </filter>
+  </defs>
+
+  <ellipse cx="32" cy="61" rx="15" ry="5" fill="#132a20" opacity=".22"/>
+  <g filter="url(#soft-shadow)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M27 47 24 61" fill="none" stroke="#293d49" stroke-width="7"/>
+    <path d="m38 47 3 14" fill="none" stroke="#293d49" stroke-width="7"/>
+    <path d="M24 62h-5" fill="none" stroke="#e5dfce" stroke-width="4"/>
+    <path d="M41 62h5" fill="none" stroke="#e5dfce" stroke-width="4"/>
+
+    <path d="M22 29c2-6 7-9 10-9s9 3 11 9l2 18c-4 5-22 5-26 0l3-18Z" fill="url(#coat)" stroke="#eee9dc" stroke-width="1.7"/>
+    <path d="m21 32-6 13" fill="none" stroke="#486b5c" stroke-width="6"/>
+    <path d="m43 32 7 12" fill="none" stroke="#486b5c" stroke-width="6"/>
+    <circle cx="14.5" cy="46" r="3" fill="#d7ae8e" stroke="#eee9dc" stroke-width="1.2"/>
+    <circle cx="50.5" cy="45" r="3" fill="#d7ae8e" stroke="#eee9dc" stroke-width="1.2"/>
+
+    <path d="M20 28c2-4 6-7 12-7s10 3 12 7" fill="none" stroke="#b84e3f" stroke-width="4.5"/>
+    <path d="M42 27c4 1 7 3 9 7" fill="none" stroke="#b84e3f" stroke-width="3"/>
+
+    <circle cx="32" cy="15" r="10.5" fill="#d9b18f" stroke="#eee9dc" stroke-width="1.7"/>
+    <path d="M22 15c0-7 4-11 10-11 7 0 11 5 11 12-3-1-5-3-6-7-3 4-8 6-15 6Z" fill="url(#hair)"/>
+    <path d="M23 14c-1 5 2 10 7 12-6-1-10-5-10-10 0-3 1-6 3-8" fill="#2b2420"/>
+    <path d="M41 13c2 5 0 10-4 13 5-1 8-5 8-10 0-3-1-6-4-9" fill="#2b2420"/>
+    <circle cx="28.5" cy="16.5" r="1" fill="#3b2b24"/>
+    <circle cx="35.5" cy="16.5" r="1" fill="#3b2b24"/>
+    <path d="M29.5 21c1.7 1.2 3.3 1.2 5 0" fill="none" stroke="#9b5c52" stroke-width="1.2"/>
+
+    <path d="M25 30c8 3 14 7 18 15" fill="none" stroke="#d39a42" stroke-width="2.6"/>
+    <rect x="38" y="39" width="9" height="9" rx="2" fill="#b77835" stroke="#f2e7ce" stroke-width="1.2" transform="rotate(-8 38 39)"/>
+  </g>
+</svg>

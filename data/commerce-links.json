@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "updatedAt": "2026-08-29",
+  "policy": {
+    "commercial": false,
+    "affiliateTracking": false,
+    "description": "人工整理的第三方信息与购买入口，不收取推广费用，不参与第三方交易。",
+    "recommendation": {
+      "minimumLocationSources": 3,
+      "minimumIndependentReviewSources": 3,
+      "minimumReviewCount": 200,
+      "minimumRatingOutOfFive": 4.5,
+      "minimumPositiveRate": 0.85,
+      "maximumEvidenceAgeDays": 90,
+      "cooldownHours": 168,
+      "maximumPerJourney": 2,
+      "description": "只有地点资料充分、评价证据达到门槛且与当前对话相关时，才允许阿镜决定是否主动推荐。缺少评价证据时一律不主动推送。"
+    }
+  },
+  "offersByDiscoveryId": {
+    "guiyang-maojian-travel-tin": [
+      {
+        "platform": "taobao",
+        "platformLabel": "淘宝",
+        "actionLabel": "在淘宝查找",
+        "href": "https://s.taobao.com/search?q=%E9%83%BD%E5%8C%80%E6%AF%9B%E5%B0%96",
+        "note": "平台检索结果 · 购买前请核对产地与商家",
+        "linkType": "search",
+        "verifiedAt": "2026-08-29"
+      }
+    ],
+    "qingyan-rose-candy": [
+      {
+        "platform": "taobao",
+        "platformLabel": "淘宝",
+        "actionLabel": "在淘宝查找",
+        "href": "https://s.taobao.com/search?q=%E9%9D%92%E5%B2%A9%E7%8E%AB%E7%91%B0%E7%B3%96",
+        "note": "平台检索结果 · 购买前请核对门店与配料",
+        "linkType": "search",
+        "verifiedAt": "2026-08-29"
+      }
+    ],
+    "fanjingshan-ticket": [
+      {
+        "platform": "ctrip",
+        "platformLabel": "携程",
+        "actionLabel": "查看梵净山门票",
+        "href": "https://you.ctrip.com/sight/jiangkou2334/21690.html",
+        "note": "景点详情与第三方购票入口",
+        "linkType": "detail",
+        "verifiedAt": "2026-08-29"
+      }
+    ],
+    "zunyi-egg-cake-travel-box": [
+      {
+        "platform": "taobao",
+        "platformLabel": "淘宝",
+        "actionLabel": "在淘宝查找",
+        "href": "https://s.taobao.com/search?q=%E9%81%B5%E4%B9%89%E9%B8%A1%E8%9B%8B%E7%B3%95",
+        "note": "平台检索结果 · 购买前请核对生产者与保质期",
+        "linkType": "search",
+        "verifiedAt": "2026-08-29"
+      }
+    ],
+    "hailongtun-future-visit": [
+      {
+        "platform": "ctrip",
+        "platformLabel": "携程",
+        "actionLabel": "查看海龙屯门票",
+        "href": "https://you.ctrip.com/sight/zunyi204/20480.html",
+        "note": "景点详情与第三方购票入口",
+        "linkType": "detail",
+        "verifiedAt": "2026-08-29"
+      }
+    ],
+    "chishui-sun-vinegar": [
+      {
+        "platform": "taobao",
+        "platformLabel": "淘宝",
+        "actionLabel": "在淘宝查找",
+        "href": "https://s.taobao.com/search?q=%E8%B5%A4%E6%B0%B4%E6%99%92%E9%86%8B",
+        "note": "平台检索结果 · 购买前请核对生产者与执行标准",
+        "linkType": "search",
+        "verifiedAt": "2026-08-29"
+      }
+    ]
+  }
+}

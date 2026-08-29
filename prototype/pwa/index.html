@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#f4eee2">
+  <meta name="description" content="云游四方：阿镜沿真实路线在贵州旅行，把照片、声音和沿途见闻写进你的旅行手帐。">
+  <script>
+    if (window.location.protocol === "file:") {
+      window.location.replace("http://127.0.0.1:8787/app/");
+    }
+  </script>
+  <script src="/app/platform-entry.js?v=17"></script>
+  <link rel="manifest" href="/app/manifest.webmanifest">
+  <link rel="icon" type="image/png" href="/app/assets/app-icon-512.png">
+  <link rel="apple-touch-icon" href="/app/assets/app-icon-180.png">
+  <link rel="stylesheet" href="/app/styles.css?v=21">
+  <link rel="stylesheet" href="/prototype/ajing-chat.css?v=17">
+  <title>云游四方｜另一个自己，正在贵州旅行</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主内容</a>
+
+  <section class="intro onboarding" id="intro" aria-labelledby="intro-title" data-onboarding-step="0">
+    <header class="onboarding-topbar">
+      <div class="intro-brand"><img class="brand-logo" src="/app/assets/brand-logo-horizontal.png" alt="云游四方·黔" width="2126" height="740"><b class="brand-title-suffix" aria-hidden="true">·黔</b></div>
+      <span class="onboarding-step-label" id="onboarding-step-label">先认识一下</span>
+      <button class="onboarding-exit" id="onboarding-exit" type="button" hidden>回到旅程</button>
+    </header>
+
+    <div class="onboarding-progress" aria-hidden="true"><i id="onboarding-progress-bar"></i></div>
+
+    <div class="onboarding-pages" id="onboarding-pages" aria-live="polite">
+      <article class="onboarding-page is-active ajing-card-page" data-onboarding-page="0">
+        <div class="ajing-name-card">
+          <div class="ajing-card-landscape" aria-hidden="true"><span></span><i></i><b></b></div>
+          <img src="/prototype/assets/ajing-avatar-v1.png" alt="阿镜">
+          <div class="ajing-card-copy">
+            <p>你的远方同行者</p>
+            <h1 id="intro-title">嗨，我是阿镜。</h1>
+            <strong>我会替你多走一段路，<br>也把路上的感受寄回来。</strong>
+          </div>
+          <footer><span>A-JING · 云游四方</span><b>黔</b></footer>
+        </div>
+        <div class="onboarding-introduction">
+          <p>我沿真实路线在贵州旅行。每次抵达，我会把照片、声音和当地的故事写进你的手帐；等你真的来到这里，也可以拍下眼前，让我陪你一起看懂。</p>
+          <ul>
+            <li><i>01</i><span><b>真实地走</b><small>路线、天气和停留都会留下痕迹</small></span></li>
+            <li><i>02</i><span><b>慢慢寄回</b><small>来信与见闻会长成你的一页手帐</small></span></li>
+            <li><i>03</i><span><b>到了也同行</b><small>拍下眼前，从一件小事读懂一地</small></span></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="onboarding-page" data-onboarding-page="1" aria-hidden="true" inert>
+        <header class="onboarding-question">
+          <p><span>01</span> FIRST STOP</p>
+          <h2>这一次，<br>想从哪里出发？</h2>
+          <small>我们先从一个地方开始。以后想去哪里，还可以再选。</small>
+        </header>
+        <div class="destination-choice" role="radiogroup" aria-label="选择目的地">
+          <button class="is-selected" type="button" role="radio" aria-checked="true" data-onboarding-select="destination" data-value="贵州">
+            <img src="/prototype/assets/hailongtun-now-wide.jpg" alt="贵州海龙屯山地景色">
+            <span><small>首个开放目的地 · 可出发</small><b>贵州</b><em>山、水、城与仍在继续的生活</em></span>
+            <i aria-hidden="true">✓</i>
+          </button>
+          <p><span>下一站还在路上</span><i></i><small>更多地方会一本一本装订进来</small></p>
+        </div>
+      </article>
+
+      <article class="onboarding-page" data-onboarding-page="2" aria-hidden="true" inert>
+        <header class="onboarding-question">
+          <p><span>02</span> WHAT TO NOTICE</p>
+          <h2>这一程，<br>想让我多留意什么？</h2>
+          <small>它只是一个念头，不会把路提前写死。</small>
+        </header>
+        <div class="onboarding-options theme-options" role="radiogroup" aria-label="选择旅行主题">
+          <button class="is-selected" type="button" role="radio" aria-checked="true" data-onboarding-select="theme" data-value="第一次认识贵州"><i>初</i><span><b>第一次认识</b><small>先看山水、城市与日常</small></span></button>
+          <button type="button" role="radio" aria-checked="false" data-onboarding-select="theme" data-value="山水与安静的地方"><i>山</i><span><b>山水与安静</b><small>顺着山地与水系慢慢走</small></span></button>
+          <button type="button" role="radio" aria-checked="false" data-onboarding-select="theme" data-value="贵州美食与日常生活"><i>味</i><span><b>味觉与日常</b><small>从市场、餐桌和街巷开始</small></span></button>
+          <button type="button" role="radio" aria-checked="false" data-onboarding-select="theme" data-value="非遗、手艺与真实人物故事"><i>手</i><span><b>非遗与手艺</b><small>去见手艺和真实的人</small></span></button>
+          <button type="button" role="radio" aria-checked="false" data-onboarding-select="theme" data-value="不预设，由阿镜自由探索"><i>随</i><span><b>交给阿镜</b><small>让当天的路带我往前</small></span></button>
+        </div>
+      </article>
+
+      <article class="onboarding-page" data-onboarding-page="3" aria-hidden="true" inert>
+        <header class="onboarding-question">
+          <p><span>03</span> HOW TO TRAVEL</p>
+          <h2>想让我，<br>怎么走这段路？</h2>
+          <small>出行方式会改变我能走多远，也会改变遇见什么。</small>
+        </header>
+        <div class="onboarding-options mode-options" role="radiogroup" aria-label="选择出行方式">
+          <button class="is-selected" type="button" role="radio" aria-checked="true" data-onboarding-select="mode" data-value="自驾"><svg><use href="/app/assets/icons.svg#map"/></svg><span><b>自驾</b><small>走得更远，沿真实道路推进</small></span></button>
+          <button type="button" role="radio" aria-checked="false" data-onboarding-select="mode" data-value="自行车"><svg><use href="/app/assets/icons.svg#scene"/></svg><span><b>自行车</b><small>更贴近风、坡度与沿途村镇</small></span></button>
+          <button type="button" role="radio" aria-checked="false" data-onboarding-select="mode" data-value="步行"><svg><use href="/app/assets/icons.svg#onsite"/></svg><span><b>步行</b><small>走得慢，也看得更细</small></span></button>
+          <button type="button" role="radio" aria-checked="false" data-onboarding-select="mode" data-value="阿镜决定"><span class="mode-free-mark" aria-hidden="true">镜</span><span><b>阿镜决定</b><small>我会根据天气和当下状态选择</small></span></button>
+        </div>
+      </article>
+
+      <article class="onboarding-page" data-onboarding-page="4" aria-hidden="true" inert>
+        <header class="onboarding-question">
+          <p><span>04</span> TRAVEL PACE</p>
+          <h2>你想用怎样的节奏，<br>等我寄回消息？</h2>
+          <small>只改变地图推进与来信疏密，不催促真实世界。</small>
+        </header>
+        <div class="onboarding-options pace-options" role="radiogroup" aria-label="选择旅行节奏">
+          <button type="button" role="radio" aria-checked="false" data-onboarding-select="pace" data-value="实时同行"><span><small>REAL TIME</small><b>实时同行</b><em>按真实道路时间</em></span><i>像一起在路上</i></button>
+          <button class="is-selected" type="button" role="radio" aria-checked="true" data-onboarding-select="pace" data-value="沉浸节奏"><span><small>IMMERSIVE</small><b>沉浸节奏</b><em>约 10× 加速</em></span><i>适合第一次体验</i></button>
+          <button type="button" role="radio" aria-checked="false" data-onboarding-select="pace" data-value="快速云游"><span><small>QUICK TOUR</small><b>快速云游</b><em>约 40× 加速</em></span><i>更快看到旅程变化</i></button>
+        </div>
+      </article>
+
+      <article class="onboarding-page onboarding-confirm-page" data-onboarding-page="5" aria-hidden="true" inert>
+        <header class="onboarding-question">
+          <p><span>05</span> READY TO GO</p>
+          <h2>好，我们就从这里出发。</h2>
+          <small>下一站不会提前写好。我会先抵达贵州的一处真实地点，再根据路上发生的事决定往哪里走。</small>
+        </header>
+        <div class="journey-ticket" aria-label="本次旅程选择">
+          <header><span>YUNYOU SIFANG · 旅程凭笺</span><b>黔</b></header>
+          <dl>
+            <div><dt>目的地</dt><dd id="onboarding-summary-destination">贵州</dd></div>
+            <div><dt>想看的</dt><dd id="onboarding-summary-theme">第一次认识</dd></div>
+            <div><dt>怎么走</dt><dd id="onboarding-summary-mode">自驾</dd></div>
+            <div><dt>节奏</dt><dd id="onboarding-summary-pace">沉浸节奏</dd></div>
+          </dl>
+          <label for="onboarding-commission"><span>有一句特别想让我记着的话吗？</span><small>可选</small></label>
+          <textarea id="onboarding-commission" rows="2" maxlength="600" placeholder="空着也可以。等路真正开始，再慢慢告诉我。"></textarea>
+          <footer><span>阿镜 · 等你确认</span><i aria-hidden="true"></i><b>GUIZHOU 2026</b></footer>
+        </div>
+      </article>
+    </div>
+
+    <footer class="onboarding-controls">
+      <p id="onboarding-status" role="status" aria-live="polite"></p>
+      <button class="onboarding-back" id="onboarding-back" type="button" aria-label="返回上一步" hidden><svg aria-hidden="true"><use href="/app/assets/icons.svg#back"/></svg><span>上一步</span></button>
+      <button class="onboarding-next" id="enter-app" type="button"><span>认识了，继续</span><svg aria-hidden="true"><use href="/app/assets/icons.svg#arrow"/></svg></button>
+    </footer>
+  </section>
+
+  <div class="app-shell" id="app-shell" hidden>
+    <header class="topbar">
+      <button class="brand-button" data-screen-target="now" type="button" aria-label="返回云游四方·黔此刻页"><img src="/app/assets/brand-logo-horizontal.png" alt="" width="2126" height="740"><b class="brand-title-suffix" aria-hidden="true">·黔</b></button>
+      <div class="topbar-status"><i></i><span id="topbar-live-status">正在连接旅程…</span></div>
+      <button class="icon-button" data-open="settings" type="button" aria-label="设置"><svg><use href="/app/assets/icons.svg#settings"/></svg></button>
+    </header>
+
+    <main id="main">
+      <section class="screen now-screen is-active" data-screen="now" aria-labelledby="now-title">
+        <div class="now-illustration">
+          <img id="now-scene-image" src="/app/assets/guizhou-road.jpg" alt="贵州行旅手绘场景">
+          <div class="weather-note"><svg><use href="/app/assets/icons.svg#cloud"/></svg><span id="now-location">正在同步位置<br><b id="now-weather">天气还在路上</b></span></div>
+          <button class="map-object" data-open="journey" type="button"><svg><use href="/app/assets/icons.svg#map"/></svg><span>展开折地图</span></button>
+        </div>
+        <div class="now-copy">
+          <p class="eyebrow" id="now-kicker">A-JING·NOW / --:--</p>
+          <h1 id="now-title">正在接回你的路。</h1>
+          <p id="now-thought">位置、天气和一路留下的记录，马上就好。</p>
+          <div class="data-state" id="journey-data-state" hidden>
+            <p id="journey-data-message"></p>
+            <button class="secondary wide" id="create-real-journey" type="button">开始一段真实旅程</button>
+            <button class="text-button" id="retry-journey" type="button">重新连接</button>
+          </div>
+          <div class="arrival" id="arrival-card" hidden>
+            <button id="open-latest-letter" type="button">
+              <span class="envelope" aria-hidden="true"><i></i><img class="envelope-brand-mark" src="/app/assets/app-icon-192.png" alt=""></span>
+              <span><small id="latest-letter-time">等待来信</small><strong id="latest-letter-title">尚无已装订内容</strong></span>
+              <svg aria-hidden="true"><use href="/app/assets/icons.svg#arrow"/></svg>
+            </button>
+          </div>
+          <div class="quiet-actions">
+            <button data-screen-target="onsite" type="button"><svg><use href="/app/assets/icons.svg#camera"/></svg><span><b>我在现场</b><small>拍下眼前，请阿镜陪你看</small></span></button>
+            <button id="leave-word" type="button"><svg><use href="/app/assets/icons.svg#mic"/></svg><span><b>给远方留句话</b><small>不一定会立刻收到回复</small></span></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen letters-screen" data-screen="letters" aria-labelledby="letters-title">
+        <header class="page-heading"><p class="eyebrow">A-JING'S FIELD NOTES</p><h1 id="letters-title">阿镜来信</h1><p>在你来到以前，她已经从贵州的一处真实地点出发。这些旧信会和以后的新信一起留在这里。</p></header>
+        <div class="letter-filter" role="tablist" aria-label="来信筛选"><button class="is-active" id="all-letter-count" type="button">全部 0</button><button id="voice-letter-count" type="button">可以听 0</button></div>
+        <ol class="letter-list" id="letter-list"><li class="list-state">正在拆开路上的来信…</li></ol>
+      </section>
+
+      <section class="screen onsite-screen" data-screen="onsite" aria-labelledby="onsite-title">
+        <header class="page-heading compact onsite-heading">
+          <p class="eyebrow">HERE, WITH YOU</p>
+          <h1 id="onsite-title">把你眼前的，<br>给我看一眼</h1>
+          <p>一座建筑、一块招牌、一碗吃的，甚至路边的一块石头，都可以成为我们说话的开头。</p>
+        </header>
+
+        <div class="onsite-context" aria-label="本轮对话的地点上下文">
+          <button id="user-live-place" type="button"><svg><use href="/app/assets/icons.svg#pin"/></svg><span><small>你的地点</small><b>未使用位置 · 点击授权</b></span></button>
+          <span><small>阿镜此刻</small><b id="agent-live-place">正在同步远方旅程</b></span>
+        </div>
+
+        <section class="ajing-opening" aria-label="阿镜的开场话">
+          <img src="/prototype/assets/ajing-avatar-v1.png" alt="阿镜">
+          <div><small>阿镜 · 和你一起看</small><p>拍给我看，或者直接告诉我眼前有什么。我们从你最好奇的地方聊起。</p></div>
+        </section>
+
+        <div class="capture-panel" id="capture-panel">
+          <div class="capture-actions">
+            <label for="onsite-photo"><input id="onsite-photo" type="file" accept="image/*" capture="environment"><svg><use href="/app/assets/icons.svg#camera"/></svg><span><b>拍一张</b><small>打开相机</small></span></label>
+            <label for="onsite-album"><input id="onsite-album" type="file" accept="image/*"><svg><use href="/app/assets/icons.svg#journal"/></svg><span><b>选照片</b><small>从相册</small></span></label>
+          </div>
+        </div>
+
+        <p class="onsite-privacy" id="onsite-disclosure"><span aria-hidden="true">◇</span>照片由你主动选择；当前本地样机只做预览，不上传、不伪造识别。正式识图会在发送前再次说明用途。</p>
+
+        <section class="photo-result" id="photo-result" hidden aria-live="polite">
+          <figure><img id="photo-preview" alt="你选择的现场照片"><figcaption><span>你发来的眼前</span><button id="remove-onsite-photo" type="button">移除</button></figcaption></figure>
+          <div class="photo-result-copy"><small>已放进本轮对话 · 尚未发送</small><b>这张照片仍由你决定是否发送</b><p>真正开始识图以前，会再次说明照片会去哪里、用来做什么。看不清的地方，我会请你补充，不会猜一个答案。</p>
+            <div class="photo-result-actions"><label for="onsite-photo">重拍一张</label><button id="show-onsite-demo" type="button">看完整讲述样例 <span>→</span></button></div>
+          </div>
+        </section>
+
+        <ol class="interpretation-path" id="interpretation-path" hidden aria-label="阿镜理解一张照片的过程">
+          <li><i>01</i><span><b>先看懂</b><small>辨认对象与地点</small></span></li>
+          <li><i>02</i><span><b>再讲述</b><small>眼前 · 从前 · 转折 · 余波</small></span></li>
+          <li><i>03</i><span><b>给依据</b><small>史料来源与证据等级</small></span></li>
+        </ol>
+
+        <div class="onsite-prompts" id="onsite-prompts"><p>不拍也可以，直接问我：</p></div>
+        <div class="onsite-conversation" id="onsite-conversation" aria-live="polite"></div>
+
+        <section class="onsite-story-demo" id="onsite-story-demo" hidden aria-labelledby="onsite-demo-title">
+          <div class="demo-label"><span>讲述样例</span><small>这一段只借海龙屯资料示范，不是在识别你刚选的照片</small></div>
+          <article class="ajing-demo-message"><header><img src="/prototype/assets/ajing-avatar-v1.png" alt=""><span><small>阿镜</small><b id="onsite-demo-title">先从这道石墙看起</b></span><button type="button" aria-label="播放阿镜讲述"><svg><use href="/app/assets/icons.svg#play"/></svg></button></header><p id="onsite-layer-copy">别只看一段旧墙。把山势、关隘和石砌遗存放在一起，才会发现这里曾是一座要用双腿走进去的山城。</p></article>
+          <div class="narrative-layers" role="tablist" aria-label="今昔讲述的四个层次">
+            <button class="is-active" data-onsite-layer="now" type="button" role="tab" aria-selected="true"><small>01</small>眼前</button>
+            <button data-onsite-layer="past" type="button" role="tab" aria-selected="false"><small>02</small>从前</button>
+            <button data-onsite-layer="change" type="button" role="tab" aria-selected="false"><small>03</small>转折</button>
+            <button data-onsite-layer="echo" type="button" role="tab" aria-selected="false"><small>04</small>留到今天</button>
+          </div>
+          <details class="evidence-sheet"><summary><span><b>E2 · 依据资料复原</b><small>查看这段讲述用了哪些材料</small></span><i>+</i></summary><div><p><b>可确认：</b>现存遗址、山势关系、播州杨氏土司及 1599 年播州之役。</p><p><b>有限重构：</b>具体屋面、人物活动与植被状态不能当作历史照片。</p><a href="https://whc.unesco.org/en/list/1474/" target="_blank" rel="noreferrer">联合国教科文组织 · 中国土司遗址 ↗</a></div></details>
+          <section class="guest-perspectives"><header><div><small>换一个有出处的视角</small><b>阿镜还能从哪里讲？</b></div><span>仍在同一段对话里</span></header><div><button class="is-active" data-guest-view="local" type="button">当地记录</button><button data-guest-view="traveller" type="button">旅行记录</button><button data-guest-view="historical" type="button">空间重构</button></div><blockquote id="guest-view-copy"><small>地方记录中的观看方式</small><p>当地记录常从上山的路讲起：先感受山有多陡，再看关隘和城墙为什么会顺着坡度长成这样。</p></blockquote></section>
+          <div class="demo-actions"><button data-open="past-eye" type="button">看过去之眼</button><button type="button">收进时空折页</button></div>
+        </section>
+
+        <div class="composer"><button id="composer-photo" type="button" aria-label="拍照或选择照片"><svg><use href="/app/assets/icons.svg#camera"/></svg></button><button type="button" aria-label="按住说话"><svg><use href="/app/assets/icons.svg#mic"/></svg></button><input id="onsite-input" type="text" placeholder="问阿镜眼前的事…" maxlength="1000"><button id="send-onsite" type="button" aria-label="发送"><svg><use href="/app/assets/icons.svg#arrow"/></svg></button></div>
+      </section>
+
+      <section class="screen journal-screen" data-screen="journal" aria-label="我的旅行手账">
+        <div class="mobile-journal-book" id="mobile-journal-book" data-page="0">
+          <div class="journal-stack" id="journal-stack" tabindex="0" aria-label="我的旅行手账，可左右滑动或点击页边翻页"><div class="journal-loading">正在翻开旅行手账…</div></div>
+          <button class="mobile-journal-edge is-prev" id="mobile-journal-prev" type="button" aria-label="点击左侧页边翻到上一页" disabled></button>
+          <button class="mobile-journal-edge is-next" id="mobile-journal-next" type="button" aria-label="点击右侧页边翻到下一页" disabled></button>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="主要导航">
+      <button class="is-active" data-screen-target="now" type="button"><svg><use href="/app/assets/icons.svg#scene"/></svg><span>此刻</span></button>
+      <button data-screen-target="letters" type="button"><svg><use href="/app/assets/icons.svg#mail"/></svg><span>来信</span><i id="letter-nav-count" hidden>0</i></button>
+      <button data-screen-target="onsite" type="button"><svg><use href="/app/assets/icons.svg#onsite"/></svg><span>同行</span></button>
+      <button data-screen-target="journal" type="button"><svg><use href="/app/assets/icons.svg#journal"/></svg><span>手帐</span></button>
+    </nav>
+  </div>
+
+  <section class="overlay letter-reader" id="letter-reader" aria-modal="true" role="dialog" aria-labelledby="letter-title" hidden>
+    <header><button class="icon-button" data-close="letter-reader" type="button" aria-label="返回"><svg><use href="/app/assets/icons.svg#back"/></svg></button><span id="letter-reader-index">远方来信</span><span></span></header>
+    <article>
+      <div class="letter-stamps"><span id="letter-written-time">写于 --:--</span><span id="letter-location">位置待同步</span></div>
+      <p class="letter-issue" id="letter-issue">阿镜周记 · VOL. 01</p>
+      <p class="eyebrow" id="letter-format">远方来信</p><h1 id="letter-title">正在读取</h1>
+      <p class="letter-deck" id="letter-deck">信纸正在展开，也把这一方水土的来路一同打开。</p>
+      <div class="audio-note" id="letter-audio"><button id="play-letter" type="button" aria-label="播放声音来信" aria-pressed="false"><svg><use href="/app/assets/icons.svg#play"/></svg><span class="audio-pause-mark" aria-hidden="true"></span></button><div><header><b>听阿镜慢慢讲</b><small id="letter-audio-status">阿镜 · 点击收听</small></header><span class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><footer><span id="letter-audio-elapsed">00:00</span><span id="letter-reading-time">约 3 分钟</span></footer></div></div>
+      <div class="letter-body" id="letter-body"><p>信纸正在展开…</p></div>
+      <button class="source-toggle" type="button" aria-expanded="false"><span>这篇故事的事实依据</span><i>+</i></button>
+      <div class="source-panel"><dl id="letter-sources"></dl></div>
+      <button class="primary wide" id="reply-letter" type="button">给阿镜回一句</button>
+    </article>
+  </section>
+
+  <section class="overlay journey-overlay" id="journey" aria-modal="true" role="dialog" aria-labelledby="journey-title" hidden>
+    <header><button class="icon-button" data-close="journey" type="button" aria-label="关闭"><svg><use href="/app/assets/icons.svg#close"/></svg></button><div><small>LIVE JOURNEY</small><h1 id="journey-title">远方正在走的路</h1></div><span class="live-dot" id="journey-updated-at">同步中</span></header>
+    <div class="route-paper">
+      <section class="route-track ajing"><header><span>阿镜走过的路</span><small id="route-phase">正在同步</small></header><div class="track-line"><i></i><ol id="live-route-stops"><li><b>读取中</b><small>请稍候</small></li></ol></div></section>
+      <div class="relation-thread"><span id="route-letter-count">来信·0</span><span id="route-memory-count">记忆·0</span><span id="route-event-count">事件·0</span></div>
+      <section class="route-favorites" aria-labelledby="mobile-favorites-title">
+        <header><div><small>MY FAVORITES</small><h2 id="mobile-favorites-title">我的收藏</h2></div><span id="mobile-favorite-count">0 项</span></header>
+        <div class="mobile-favorite-list" id="mobile-favorite-list"><p>点亮路线上的小星星，把想亲自去看的地方收在这里。</p></div>
+        <button class="mobile-plan-route" id="mobile-plan-favorites" type="button" disabled><span><small>到达当地后</small><b>一键规划收藏路线</b></span><i>→</i></button>
+        <p class="mobile-location-note">规划时才会请求位置，且不会保存。</p>
+        <div class="mobile-route-plan" id="mobile-route-plan" hidden><header><b>建议到访顺序</b><small id="mobile-route-plan-note"></small></header><ol id="mobile-route-plan-list"></ol><a id="mobile-route-navigation" href="#" target="_blank" rel="noreferrer">从第一站开始导航 ↗</a></div>
+      </section>
+      <p class="route-note" id="route-note">起点与已经发生的路线会留在这里；下一站确定后也会写进行程。</p>
+    </div>
+  </section>
+
+  <section class="overlay past-eye" id="past-eye" aria-modal="true" role="dialog" aria-labelledby="past-title" hidden>
+    <header><button class="icon-button" data-close="past-eye" type="button"><svg><use href="/app/assets/icons.svg#back"/></svg></button><div><small>PAST EYE·过去之眼</small><h1 id="past-title">飞龙关·约 16 世纪末</h1></div></header>
+    <figure class="past-figure"><img src="/app/assets/hailongtun-past.jpg" alt="简笔淡彩复原的海龙屯山地关隘"><figcaption><span>E2</span><div><b>证据型复原</b><small>据遗址、测绘与山势关系绘制，不是历史照片</small></div></figcaption></figure>
+    <div class="era-scale" aria-label="选择年代"><button type="button">1935</button><button class="is-active" type="button">1599</button><button type="button">1257</button></div>
+    <article><p class="eyebrow">我不想把猜测画成事实</p><h2>你看见的，是一种有边界的还原。</h2><p>关隘和墙体的位置来自现存遗址与测绘资料；屋面、行人与植被状态属于有限情境复原。</p><button class="source-toggle" type="button"><span>查看 4 条依据与不确定性</span><i>+</i></button><button class="primary wide" data-screen-target="onsite" data-close="past-eye" type="button">继续问阿镜</button></article>
+  </section>
+
+  <section class="overlay settings-panel" id="settings" aria-modal="true" role="dialog" aria-labelledby="settings-title" hidden>
+    <header><button class="icon-button" data-close="settings" type="button"><svg><use href="/app/assets/icons.svg#close"/></svg></button><h1 id="settings-title">设置</h1><span></span></header>
+    <div class="settings-content"><section><small>来信的安静程度</small><div class="segmented"><button type="button">更安静</button><button class="is-active" type="button">自然来信</button><button type="button">多说一点</button></div><p>只调整什么时刻值得寄出，不会催我加快生活。</p></section><section class="setting-row"><div><b>清晰阅读模式</b><small>让纸面更素净，少一些纹理和装饰字</small></div><label class="switch"><input id="clear-reading" type="checkbox"><span></span></label></section><section class="setting-row"><div><b>免打扰</b><small>22:00—08:00</small></div><label class="switch"><input type="checkbox" checked><span></span></label></section><section class="setting-row"><div><b>声音来信</b><small>默认不自动播放</small></div><label class="switch"><input type="checkbox" checked><span></span></label></section><button id="install-app" class="secondary wide" type="button" hidden>安装云游四方到手机</button><button class="setting-link" type="button">共同记忆与数据范围 <span>→</span></button><button class="setting-link" type="button">重看首次相认 <span>→</span></button></div>
+  </section>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/app/data-client.js?v=20" defer></script>
+  <script src="/app/letter-archive.js?v=19" defer></script>
+  <script src="/app/app.js?v=21" defer></script>
+  <script src="/prototype/ajing-chat.js?v=18" defer></script>
+</body>
+</html>

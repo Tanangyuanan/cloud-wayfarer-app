@@ -1,0 +1,351 @@
+{
+  "meta": {
+    "name": "云游四方贵州文化节点种子库",
+    "version": "0.1.0",
+    "updatedAt": "2026-08-28",
+    "sourceDocument": "贵州文化总谱.md",
+    "note": "用于前端概念样机。事实发布前仍需按节点完成来源、授权与专家审核。"
+  },
+  "relationTypes": {
+    "originates_from": "形成于",
+    "located_at": "发生或保存于",
+    "practiced_by": "由谁实践",
+    "made_from": "使用材料",
+    "used_in": "用于",
+    "changed_by": "被改变",
+    "sounds_like": "可听见",
+    "tastes_like": "可尝到",
+    "connects_to": "关联",
+    "supported_by": "来源支撑"
+  },
+  "nodes": [
+    {
+      "id": "ENV-001",
+      "name": "贵州喀斯特",
+      "domain": "山地环境与生计",
+      "status": "A",
+      "summary": "石灰岩、地下水和漫长地质过程塑造了峰丛、洞穴、峡谷，也持续影响贵州人的聚落、道路和生计。",
+      "canvas": { "x": -1120, "y": -640, "scene": "云雾中的峰丛与洞穴水系", "entryObject": "滴水的岩洞" },
+      "listen": "先听水从岩缝滴落，再听见远处村寨与集市。",
+      "see": ["峰丛", "溶洞", "石灰岩", "天坑"],
+      "relations": [
+        { "target": "ARC-001", "type": "connects_to", "reason": "喀斯特洞穴保存了史前人类活动" },
+        { "target": "BUI-013", "type": "connects_to", "reason": "山地地形影响村落选址与形态" }
+      ]
+    },
+    {
+      "id": "ENV-005",
+      "name": "赤水河",
+      "domain": "山地环境与生计",
+      "status": "A",
+      "summary": "同一条河连接了盐运、酿酒、长征和今天的酒旅生活。",
+      "canvas": { "x": 1260, "y": -520, "scene": "红土河谷、木船、渡口与酒坊", "entryObject": "河面上的木船" },
+      "listen": "水声中依次出现船工号子、酒甑蒸汽和渡河口令。",
+      "see": ["赤水河", "渡口", "盐船", "酒坊"],
+      "relations": [
+        { "target": "FOD-035", "type": "connects_to", "reason": "酱香酒产区与河谷气候、物产相连" },
+        { "target": "RED-007", "type": "located_at", "reason": "四渡赤水发生于这条河及其支流渡口" }
+      ]
+    },
+    {
+      "id": "ARC-001",
+      "name": "黔西观音洞",
+      "domain": "史前、深时与考古",
+      "status": "A",
+      "summary": "观音洞保存了中国南方旧石器时代早期的重要文化遗存。",
+      "canvas": { "x": -1540, "y": 120, "scene": "观音洞遗址：岩壁、洞口与被时间保存的堆积", "entryObject": "一处被地层保存的现场" },
+      "listen": "石器敲击声在洞穴中回响。",
+      "see": ["洞穴", "石器", "化石"],
+      "relations": [
+        { "target": "ENV-001", "type": "located_at", "reason": "洞穴环境为史前人类提供栖居空间" }
+      ]
+    },
+    {
+      "id": "ARC-005",
+      "name": "可乐遗址与夜郎考古",
+      "domain": "史前、深时与考古",
+      "status": "A",
+      "summary": "赫章可乐遗址的墓葬和器物，为理解战国秦汉时期的夜郎及区域交流提供实物证据。",
+      "canvas": { "x": -960, "y": 520, "scene": "高原墓地、青铜器与往来使者", "entryObject": "一件铜釜" },
+      "listen": "风声掠过高原，铜器轻响，远处有马蹄和驿使。",
+      "see": ["青铜器", "墓葬", "夜郎"],
+      "relations": [
+        { "target": "HIS-001", "type": "supported_by", "reason": "考古材料支撑夜郎文化研究" }
+      ]
+    },
+    {
+      "id": "HIS-003",
+      "name": "土司制度",
+      "domain": "历史制度、迁徙与思想",
+      "status": "A",
+      "summary": "土司制度记录了中央王朝与西南地方社会长期互动的制度过程。",
+      "canvas": { "x": 760, "y": -980, "scene": "山地司治、印信、驿道和村寨", "entryObject": "一枚土司印信" },
+      "listen": "驿马、宣读文书与山寨日常声交叠。",
+      "see": ["土司遗址", "印信", "司治", "山城"],
+      "relations": [
+        { "target": "HIS-005", "type": "connects_to", "reason": "海龙屯是播州土司制度的重要遗存" },
+        { "target": "HIS-007", "type": "connects_to", "reason": "土司与卫所共同构成明代西南治理结构" }
+      ]
+    },
+    {
+      "id": "HIS-005",
+      "name": "海龙屯",
+      "domain": "历史制度、迁徙与思想",
+      "status": "A",
+      "summary": "依山构筑的军事与宫殿遗址，保存了播州杨氏土司和土司制度变迁的物证。",
+      "canvas": { "x": 1120, "y": -1120, "scene": "山脊城墙、九道关隘与被森林收回的宫殿", "entryObject": "覆苔的墙基" },
+      "listen": "脚步沿石阶上行，风穿过关隘，声音逐渐转入 1600 年的战火。",
+      "see": ["遗址", "城墙", "关隘", "海龙屯"],
+      "relations": [
+        { "target": "HIS-003", "type": "supported_by", "reason": "遗址是土司制度历史的物证" },
+        { "target": "RED-004", "type": "connects_to", "reason": "两者共同呈现贵州作为历史转折空间的不同阶段" }
+      ]
+    },
+    {
+      "id": "HIS-009",
+      "name": "龙场悟道",
+      "domain": "历史制度、迁徙与思想",
+      "status": "A",
+      "summary": "王阳明在贵州龙场的困顿、悟道和讲学，是阳明心学形成的重要阶段。",
+      "canvas": { "x": -320, "y": -820, "scene": "雨夜洞穴、书页、竹影和书院晨光", "entryObject": "洞中石桌" },
+      "listen": "雨声、翻页声与一段关于知行的自问。",
+      "see": ["阳明洞", "书院", "碑刻"],
+      "relations": [
+        { "target": "HIS-011", "type": "connects_to", "reason": "贵州思想与学术传统的另一条时间线" }
+      ]
+    },
+    {
+      "id": "HIS-011",
+      "name": "沙滩文化",
+      "domain": "历史制度、迁徙与思想",
+      "status": "A",
+      "summary": "遵义沙滩村在晚清形成了以郑珍、莫友芝、黎庶昌等人为代表的学术群体。",
+      "canvas": { "x": 140, "y": -1120, "scene": "河畔村落、书房、雕版与远洋信札", "entryObject": "一本《黔诗纪略》" },
+      "listen": "毛笔摩擦纸面，夹杂远行船只的汽笛。",
+      "see": ["古籍", "书房", "沙滩村"],
+      "relations": [
+        { "target": "ORA-007", "type": "connects_to", "reason": "贵州地方文献与民间文书共同保存区域历史" }
+      ]
+    },
+    {
+      "id": "RED-004",
+      "name": "遵义会议",
+      "domain": "红色文化",
+      "status": "A",
+      "summary": "1935 年召开的遵义会议是中国共产党历史上具有重大转折意义的会议。",
+      "canvas": { "x": 520, "y": 160, "scene": "冬夜会址、长桌、地图、油灯与街巷", "entryObject": "桌上的红蓝铅笔" },
+      "listen": "室内低声讨论与室外冬夜脚步形成对比。",
+      "see": ["遵义会议会址", "历史建筑", "会议文物"],
+      "relations": [
+        { "target": "RED-007", "type": "changed_by", "reason": "会议后的军事行动进入四渡赤水阶段" },
+        { "target": "HIS-005", "type": "connects_to", "reason": "都与黔北山地交通和历史转折有关" }
+      ]
+    },
+    {
+      "id": "RED-007",
+      "name": "四渡赤水",
+      "domain": "红色文化",
+      "status": "A",
+      "summary": "中央红军在赤水河流域多次机动渡河，形成长征中的重要战役过程。",
+      "canvas": { "x": 1460, "y": 80, "scene": "河谷、多处渡口、移动路线与马灯", "entryObject": "湿漉漉的渡河绳" },
+      "listen": "水声、木筏、急促脚步和远处口令随路线变化。",
+      "see": ["赤水河", "渡口", "红军遗址"],
+      "relations": [
+        { "target": "ENV-005", "type": "located_at", "reason": "战役与赤水河水系和山地道路直接相连" },
+        { "target": "RED-004", "type": "connects_to", "reason": "属于遵义会议前后连续历史进程" }
+      ]
+    },
+    {
+      "id": "ORA-003",
+      "name": "水书",
+      "domain": "语言、口述与文字",
+      "status": "A",
+      "summary": "水书使用水族文字记录历法、仪式和传统知识，与水族社会生活相连。",
+      "canvas": { "x": -1460, "y": -1020, "scene": "纸页、字符、水历和节令星象", "entryObject": "一页水书" },
+      "listen": "翻页声与水族语言讲述。",
+      "see": ["水书文字", "古籍", "三都"],
+      "relations": [
+        { "target": "CRA-006", "type": "connects_to", "reason": "同属水族知识与生活体系" }
+      ]
+    },
+    {
+      "id": "ORA-007",
+      "name": "清水江文书",
+      "domain": "语言、口述与文字",
+      "status": "A",
+      "summary": "清水江流域民间契约记录了林业、土地、家族和乡村治理的具体运作。",
+      "canvas": { "x": -620, "y": 960, "scene": "木排码头、契约签订与山林边界", "entryObject": "盖有指印的契约" },
+      "listen": "木排碰撞、算盘和契约条款的念读。",
+      "see": ["契约", "印章", "木排", "清水江"],
+      "relations": [
+        { "target": "CRA-009", "type": "made_from", "reason": "木材贸易与木构文化共享山林资源背景" },
+        { "target": "HIS-011", "type": "connects_to", "reason": "不同层面的贵州地方文献传统" }
+      ]
+    },
+    {
+      "id": "PER-001",
+      "name": "侗族大歌",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "侗族大歌是无指挥、无伴奏的多声部民歌传统，歌班、鼓楼和社区共同维持它的传承。",
+      "canvas": { "x": -1180, "y": 1180, "scene": "鼓楼火塘周围逐层出现的歌班", "entryObject": "领唱者的一次吸气" },
+      "listen": "先出现一个高声部，随后低声部从四周汇入。",
+      "see": ["鼓楼", "侗族歌班", "黎平", "从江"],
+      "relations": [
+        { "target": "CRA-009", "type": "located_at", "reason": "鼓楼是大歌的重要公共空间" },
+        { "target": "CON-006", "type": "connects_to", "reason": "传统与当代公共音乐空间形成呼应" }
+      ]
+    },
+    {
+      "id": "PER-012",
+      "name": "安顺地戏",
+      "domain": "音乐、舞蹈与戏剧",
+      "status": "A",
+      "summary": "安顺地戏与屯堡军屯传统相连，以木刻面具、锣鼓和历史演义构成表演。",
+      "canvas": { "x": 1080, "y": 780, "scene": "石头巷道中的面具、锣鼓与武戏", "entryObject": "一张开脸面具" },
+      "listen": "锣鼓先到，人物随后从石巷中出现。",
+      "see": ["地戏面具", "屯堡", "安顺"],
+      "relations": [
+        { "target": "CRA-015", "type": "made_from", "reason": "表演依赖木雕面具制作" },
+        { "target": "HIS-007", "type": "originates_from", "reason": "地戏与屯堡历史和社区生活相连" }
+      ]
+    },
+    {
+      "id": "FES-016",
+      "name": "石阡说春",
+      "domain": "节日、礼俗与信俗",
+      "status": "A",
+      "summary": "春官手持春牛、唱春词走村串户，把节气、农事和祝愿带入家庭。",
+      "canvas": { "x": -220, "y": 1240, "scene": "春官沿山路入村，家门依次打开", "entryObject": "手中的春牛" },
+      "listen": "春词随着脚步接近，又沿另一条山路远去。",
+      "see": ["春牛", "春官", "石阡"],
+      "relations": [
+        { "target": "FOD-029", "type": "connects_to", "reason": "同属联合国教科文组织相关复合项目中的贵州实践线索" }
+      ]
+    },
+    {
+      "id": "CRA-001",
+      "name": "苗绣",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "苗绣在不同地区支系中形成多样针法、纹样和服饰用途，承载家族与社区记忆。",
+      "canvas": { "x": -460, "y": 420, "scene": "门前绣架、盛装和日常衣物同时出现", "entryObject": "针尖正在完成的一小段纹样" },
+      "listen": "布面摩擦、低声交谈和节庆前的准备。",
+      "see": ["苗绣", "苗族服饰", "刺绣"],
+      "relations": [
+        { "target": "CRA-004", "type": "used_in", "reason": "刺绣与银饰常在完整盛装中共同出现" },
+        { "target": "CON-003", "type": "connects_to", "reason": "传统服饰进入当代乡村时尚表达" }
+      ]
+    },
+    {
+      "id": "CRA-006",
+      "name": "水族马尾绣",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "马尾绣以马尾作芯线，用丝线包裹盘绕，常用于水族服饰和生活用品。",
+      "canvas": { "x": -1680, "y": -380, "scene": "马尾芯线、盘绕针法和水族服饰", "entryObject": "一圈尚未收针的马尾线" },
+      "listen": "针线轻响与制作者对图案来历的讲述。",
+      "see": ["马尾绣", "水族服饰", "三都"],
+      "relations": [
+        { "target": "ORA-003", "type": "practiced_by", "reason": "与水族文字、节令和礼俗共享文化语境" }
+      ]
+    },
+    {
+      "id": "CRA-009",
+      "name": "侗族木构营造",
+      "domain": "手工艺、服饰与传统美术",
+      "status": "A",
+      "summary": "鼓楼和风雨桥的营造依靠木料选择、墨线、榫卯与社区协作。",
+      "canvas": { "x": -820, "y": 1420, "scene": "木匠在地面放样，鼓楼从构件中升起", "entryObject": "一处咬合的榫卯" },
+      "listen": "斧凿、木料敲合，随后被鼓楼中的歌声接住。",
+      "see": ["鼓楼", "风雨桥", "榫卯"],
+      "relations": [
+        { "target": "PER-001", "type": "used_in", "reason": "建筑为侗族大歌和公共生活提供空间" },
+        { "target": "ORA-007", "type": "connects_to", "reason": "木材、山林与流域交易构成共同背景" }
+      ]
+    },
+    {
+      "id": "FOD-002",
+      "name": "苗族酸汤",
+      "domain": "饮食、茶与酒",
+      "status": "A",
+      "summary": "以米汤或毛辣果等原料发酵形成的酸汤，是黔东南饮食和家庭生活的重要组成部分。",
+      "canvas": { "x": 160, "y": 680, "scene": "灶台、陶坛、毛辣果、米汤与围锅", "entryObject": "冒出细小气泡的酸汤坛" },
+      "listen": "开坛声、沸汤声和家常对话。",
+      "see": ["酸汤", "酸汤鱼", "发酵坛", "毛辣果"],
+      "relations": [
+        { "target": "FOD-003", "type": "used_in", "reason": "酸汤鱼是酸汤文化的代表菜式" },
+        { "target": "ENV-009", "type": "originates_from", "reason": "与山地环境中的发酵和保存经验有关" }
+      ]
+    },
+    {
+      "id": "FOD-029",
+      "name": "都匀毛尖",
+      "domain": "饮食、茶与酒",
+      "status": "A",
+      "summary": "都匀毛尖连接贵州山地茶园、手工制茶技艺和当代茶产业。",
+      "canvas": { "x": -420, "y": -1480, "scene": "晨雾茶山、采茶手与炒茶锅", "entryObject": "锅中卷曲的一片茶叶" },
+      "listen": "清晨虫鸣、采茶声和锅中茶叶摩擦声。",
+      "see": ["茶园", "都匀毛尖", "炒茶"],
+      "relations": [
+        { "target": "FES-016", "type": "connects_to", "reason": "与二十四节气和农时知识相连" }
+      ]
+    },
+    {
+      "id": "FOD-035",
+      "name": "茅台酒酿制技艺",
+      "domain": "饮食、茶与酒",
+      "status": "A",
+      "summary": "端午制曲、重阳下沙与多轮次工艺，把赤水河谷的时节、粮食、微生物和劳动组织在一起。",
+      "canvas": { "x": 1700, "y": -920, "scene": "河谷酒坊、曲块、蒸粮、窖池和季节轮转", "entryObject": "一块温热的酒曲" },
+      "listen": "蒸汽、翻粮、酒甑和重阳河边仪式声。",
+      "see": ["茅台镇", "酒坊", "酒曲", "高粱"],
+      "relations": [
+        { "target": "ENV-005", "type": "located_at", "reason": "酿造与赤水河谷环境和商路相连" },
+        { "target": "RED-007", "type": "connects_to", "reason": "同一河谷叠加了酒业与长征历史" }
+      ]
+    },
+    {
+      "id": "IND-002",
+      "name": "万山汞矿",
+      "domain": "工业、三线与现代建设",
+      "status": "A",
+      "summary": "万山连接古代朱砂采冶、近现代汞工业、工人社区和资源型城市转型。",
+      "canvas": { "x": 1480, "y": 760, "scene": "红色矿石、地下坑道、矿灯和老工人社区", "entryObject": "一盏矿灯" },
+      "listen": "滴水、矿车和交班铃声。",
+      "see": ["矿洞", "朱砂", "汞矿遗址", "万山"],
+      "relations": [
+        { "target": "ARC-007", "type": "changed_by", "reason": "同一矿产从古代采冶延伸到现代工业" },
+        { "target": "CON-010", "type": "connects_to", "reason": "资源衰退后的社区与地方转型" }
+      ]
+    },
+    {
+      "id": "CON-001",
+      "name": "村超",
+      "domain": "当代群众文化",
+      "status": "A",
+      "summary": "榕江村超把乡村足球、村寨组织、民族文化、夜市和互联网传播放在同一座球场上。",
+      "canvas": { "x": 820, "y": 1280, "scene": "夜间球场、村寨啦啦队、长桌与摊贩", "entryObject": "一只沾泥的足球" },
+      "listen": "方言解说、欢呼、芦笙和摊贩叫卖混在一起。",
+      "see": ["足球场", "榕江", "村超"],
+      "relations": [
+        { "target": "PER-001", "type": "connects_to", "reason": "传统歌舞进入当代群众赛事现场" },
+        { "target": "CON-003", "type": "connects_to", "reason": "共同构成正在发生的乡村公共文化" }
+      ]
+    },
+    {
+      "id": "CON-006",
+      "name": "贵阳路边音乐会",
+      "domain": "当代群众文化",
+      "status": "A",
+      "summary": "城市街角成为开放舞台，专业与普通表演者、居民和游客共同构成当代公共文化空间。",
+      "canvas": { "x": 360, "y": 1480, "scene": "夜色街角、简单灯光、乐队和围观人群", "entryObject": "递向人群的一支麦克风" },
+      "listen": "歌曲、掌声、城市交通和临时加入的合唱。",
+      "see": ["街头演出", "贵阳", "路边音乐会"],
+      "relations": [
+        { "target": "PER-001", "type": "connects_to", "reason": "不同年代的公共歌唱空间相互照见" },
+        { "target": "CON-001", "type": "connects_to", "reason": "群众自组织与公共参与是共同底层关系" }
+      ]
+    }
+  ]
+}
